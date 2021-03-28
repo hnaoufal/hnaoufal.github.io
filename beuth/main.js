@@ -498,7 +498,7 @@ class MainComponent {
     }
 }
 MainComponent.ɵfac = function MainComponent_Factory(t) { return new (t || MainComponent)(); };
-MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 66, vars: 2, consts: [[1, "columns"], [1, "column", "has-text-centered"], [1, "is-title", "is-1"], ["src", "assets/images/java_error_in_idea_5723.png"], [1, "column"], [1, "is-title", "is-2"], ["href", "https://prof.beuth-hochschule.de/gers/", "target", "_blank"], [3, "routerLink"]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
+MainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MainComponent, selectors: [["app-main"]], decls: 66, vars: 2, consts: [[1, "columns"], [1, "column", "has-text-centered"], [1, "is-title", "is-1"], ["src", "beuth/assets/images/java_error_in_idea_5723.png"], [1, "column"], [1, "is-title", "is-2"], ["href", "https://prof.beuth-hochschule.de/gers/", "target", "_blank"], [3, "routerLink"]], template: function MainComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h1", 2);
