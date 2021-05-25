@@ -1,0 +1,403 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Technische Informatik - Dokumentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Technische Informatik - Dokumentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Eingeben zur Suche"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Datei</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <span class="name">
+                            <b>
+                            title</b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;machine&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
+  &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+    &lt;button
+      mat-icon-button
+      class&#x3D;&quot;example-icon&quot;
+      aria-label&#x3D;&quot;Example icon-button with menu icon&quot;
+    &gt;
+      &lt;mat-icon&gt;menu&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;span&gt;Automaten-Simulator&lt;/span&gt;
+    &lt;span class&#x3D;&quot;divider&quot;&gt; | &lt;/span&gt;
+    &lt;a
+      [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;
+      [routerLinkActive]&#x3D;&quot;[&#x27;active&#x27;]&quot;
+      [routerLinkActiveOptions]&#x3D;&quot;{ exact: true }&quot;
+      mat-button
+      class&#x3D;&quot;menu-link&quot;
+    &gt;
+      Home
+    &lt;/a&gt;
+    &lt;a
+      [routerLink]&#x3D;&quot;[&#x27;/dea&#x27;]&quot;
+      [routerLinkActive]&#x3D;&quot;[&#x27;active&#x27;]&quot;
+      mat-button
+      class&#x3D;&quot;menu-link&quot;
+    &gt;
+      DEA
+    &lt;/a&gt;
+    &lt;a
+      [routerLink]&#x3D;&quot;[&#x27;/grammar&#x27;]&quot;
+      [routerLinkActive]&#x3D;&quot;[&#x27;active&#x27;]&quot;
+      mat-button
+      class&#x3D;&quot;menu-link&quot;
+    &gt;
+      Grammatik
+    &lt;/a&gt;
+    &lt;a
+      [routerLink]&#x3D;&quot;[&#x27;/keller&#x27;]&quot;
+      [routerLinkActive]&#x3D;&quot;[&#x27;active&#x27;]&quot;
+      mat-button
+      class&#x3D;&quot;menu-link&quot;
+    &gt;
+      Kellerautomat
+    &lt;/a&gt;
+    &lt;a
+      [routerLink]&#x3D;&quot;[&#x27;/tm&#x27;]&quot;
+      [routerLinkActive]&#x3D;&quot;[&#x27;active&#x27;]&quot;
+      mat-button
+      href&#x3D;&quot;/tm&quot;
+      class&#x3D;&quot;menu-link&quot;
+    &gt;
+      TM
+    &lt;/a&gt;
+  &lt;/mat-toolbar&gt;
+&lt;/p&gt;
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;box&quot;&gt;
+    &lt;nav class&#x3D;&quot;breadcrumb&quot; aria-label&#x3D;&quot;breadcrumbs&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;&gt;Automation-Simulator&lt;/a&gt;&lt;/li&gt;
+        &lt;li class&#x3D;&quot;is-active&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;footer class&#x3D;&quot;footer&quot;&gt;
+  &lt;div class&#x3D;&quot;content has-text-centered&quot;&gt;
+    &lt;p&gt;
+      &lt;strong&gt;Automaten-Simulator&lt;/strong&gt; by
+      &lt;a href&#x3D;&quot;https://hnaoufal.de&quot;&gt;Hicham Naoufal&lt;/a&gt;. The source code is
+      licensed &lt;a href&#x3D;&quot;http://opensource.org/licenses/mit-license.php&quot;&gt;MIT&lt;/a&gt;.
+      The website content is licensed
+      &lt;a href&#x3D;&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;
+        &gt;CC BY NC SA 4.0&lt;/a
+      &gt;.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.divider {
+  margin: 0 12px;
+}
+
+.menu-link {
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 12px;
+}
+
+.active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+}
+
+.container {
+  margin-bottom: 24px;
+}
+
+.error-box .red {
+  color: red;
+  font-weight: bold;
+}
+
+.error-box .green {
+  color: green;
+  font-weight: bold;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html Element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html Element mit directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p>  <mat-toolbar color="primary">    <button      mat-icon-button      class="example-icon"      aria-label="Example icon-button with menu icon"    >      <mat-icon>menu</mat-icon>    </button>    <span>Automaten-Simulator</span>    <span class="divider"> | </span>    <a      [routerLink]="[\'/\']"      [routerLinkActive]="[\'active\']"      [routerLinkActiveOptions]="{ exact: true }"      mat-button      class="menu-link"    >      Home    </a>    <a      [routerLink]="[\'/dea\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      DEA    </a>    <a      [routerLink]="[\'/grammar\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      Grammatik    </a>    <a      [routerLink]="[\'/keller\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      Kellerautomat    </a>    <a      [routerLink]="[\'/tm\']"      [routerLinkActive]="[\'active\']"      mat-button      href="/tm"      class="menu-link"    >      TM    </a>  </mat-toolbar></p><div class="container">  <div class="box">    <nav class="breadcrumb" aria-label="breadcrumbs">      <ul>        <li><a [routerLink]="[\'/\']">Automation-Simulator</a></li>        <li class="is-active"><a href="#">Home</a></li>      </ul>    </nav>    <router-outlet></router-outlet>  </div></div><footer class="footer">  <div class="content has-text-centered">    <p>      <strong>Automaten-Simulator</strong> by      <a href="https://hnaoufal.de">Hicham Naoufal</a>. The source code is      licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.      The website content is licensed      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"        >CC BY NC SA 4.0</a      >.    </p>  </div></footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">Kein passendes Ergebnis "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

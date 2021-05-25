@@ -1,0 +1,1671 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Technische Informatik - Dokumentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Technische Informatik - Dokumentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Eingeben zur Suche"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>GrammarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Datei</h3>
+</p>
+<p class="comment">
+    <code>src/app/grammar/grammar.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-grammar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./grammar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./grammar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#code">code</a>
+                            </li>
+                            <li>
+                                <a href="#cyConfig">cyConfig</a>
+                            </li>
+                            <li>
+                                <a href="#expressionGrammar">expressionGrammar</a>
+                            </li>
+                            <li>
+                                <a href="#listElement">listElement</a>
+                            </li>
+                            <li>
+                                <a href="#mode">mode</a>
+                            </li>
+                            <li>
+                                <a href="#modes">modes</a>
+                            </li>
+                            <li>
+                                <a href="#rules">rules</a>
+                            </li>
+                            <li>
+                                <a href="#speed">speed</a>
+                            </li>
+                            <li>
+                                <a href="#SPEED">SPEED</a>
+                            </li>
+                            <li>
+                                <a href="#state">state</a>
+                            </li>
+                            <li>
+                                <a href="#timer">timer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methoden</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#generateExpression">generateExpression</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnSpeedChange">ngOnSpeedChange</a>
+                            </li>
+                            <li>
+                                <a href="#onBegin">onBegin</a>
+                            </li>
+                            <li>
+                                <a href="#onEnd">onEnd</a>
+                            </li>
+                            <li>
+                                <a href="#onNext">onNext</a>
+                            </li>
+                            <li>
+                                <a href="#onPause">onPause</a>
+                            </li>
+                            <li>
+                                <a href="#onPlay">onPlay</a>
+                            </li>
+                            <li>
+                                <a href="#onPrevious">onPrevious</a>
+                            </li>
+                            <li>
+                                <a href="#onReset">onReset</a>
+                            </li>
+                            <li>
+                                <a href="#onStop">onStop</a>
+                            </li>
+                            <li>
+                                <a href="#startTour">startTour</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Konstruktor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(grammarGraphService: <a href="../injectables/GrammarGraphService.html">GrammarGraphService</a>, grammerService: <a href="../injectables/GrammarService.html">GrammarService</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameter :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>grammarGraphService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GrammarGraphService.html" target="_self" >GrammarGraphService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>grammerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GrammarService.html" target="_self" >GrammarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methoden
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateExpression"></a>
+                    <span class="name">
+                        <b>
+                            generateExpression
+                        </b>
+                        <a href="#generateExpression"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateExpression(isCorrect)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isCorrect</td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnSpeedChange"></a>
+                    <span class="name">
+                        <b>
+                            ngOnSpeedChange
+                        </b>
+                        <a href="#ngOnSpeedChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnSpeedChange(v: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>v</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBegin"></a>
+                    <span class="name">
+                        <b>
+                            onBegin
+                        </b>
+                        <a href="#onBegin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBegin()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEnd"></a>
+                    <span class="name">
+                        <b>
+                            onEnd
+                        </b>
+                        <a href="#onEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEnd()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNext"></a>
+                    <span class="name">
+                        <b>
+                            onNext
+                        </b>
+                        <a href="#onNext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNext(shouldNotStop)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shouldNotStop</td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPause"></a>
+                    <span class="name">
+                        <b>
+                            onPause
+                        </b>
+                        <a href="#onPause"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPause()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlay"></a>
+                    <span class="name">
+                        <b>
+                            onPlay
+                        </b>
+                        <a href="#onPlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPlay()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrevious"></a>
+                    <span class="name">
+                        <b>
+                            onPrevious
+                        </b>
+                        <a href="#onPrevious"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPrevious()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onReset"></a>
+                    <span class="name">
+                        <b>
+                            onReset
+                        </b>
+                        <a href="#onReset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onReset()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onStop"></a>
+                    <span class="name">
+                        <b>
+                            onStop
+                        </b>
+                        <a href="#onStop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onStop()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTour"></a>
+                    <span class="name">
+                        <b>
+                            startTour
+                        </b>
+                        <a href="#startTour"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startTour()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="code"></a>
+                        <span class="name">
+                            <b>
+                            code</b>
+                            <a href="#code"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>codeSttring</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cyConfig"></a>
+                        <span class="name">
+                            <b>
+                            cyConfig</b>
+                            <a href="#cyConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expressionGrammar"></a>
+                        <span class="name">
+                            <b>
+                            expressionGrammar</b>
+                            <a href="#expressionGrammar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new ExpressionGrammarModel(&#x27;&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listElement"></a>
+                        <span class="name">
+                            <b>
+                            listElement</b>
+                            <a href="#listElement"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ElementRef&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;listElement&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mode"></a>
+                        <span class="name">
+                            <b>
+                            mode</b>
+                            <a href="#mode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Ableitung&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modes"></a>
+                        <span class="name">
+                            <b>
+                            modes</b>
+                            <a href="#modes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;Ableitung&#x27;, &#x27;Ableitungsbaum (falls Zeit bleibt)&#x27;]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rules"></a>
+                        <span class="name">
+                            <b>
+                            rules</b>
+                            <a href="#rules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/RuleSetInterface.html" target="_self" >RuleSetInterface[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="speed"></a>
+                        <span class="name">
+                            <b>
+                            speed</b>
+                            <a href="#speed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>2</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SPEED"></a>
+                        <span class="name">
+                            <b>
+                            SPEED</b>
+                            <a href="#SPEED"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>SPEED</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state"></a>
+                        <span class="name">
+                            <b>
+                            state</b>
+                            <a href="#state"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;stop&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timer"></a>
+                        <span class="name">
+                            <b>
+                            timer</b>
+                            <a href="#timer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;number&gt;</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+    <div class="tab-pane fade " id="c-readme">
+        <p><p>#Hello World</p>
+</p>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h3 class&#x3D;&quot;title is-3 has-text-centered&quot;&gt;Grammatik (Mathematische Ausdrücke)&lt;/h3&gt;
+&lt;nav id&#x3D;&quot;tool0&quot; class&#x3D;&quot;level&quot;&gt;
+  &lt;div class&#x3D;&quot;level-left&quot;&gt;
+    Ausdruck erzeugen:
+    &lt;button
+      class&#x3D;&quot;action-button success&quot;
+      mat-raised-button
+      (click)&#x3D;&quot;generateExpression()&quot;
+    &gt;
+      &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+      &gt;repeat&lt;/mat-icon&gt;
+      Korrekt
+    &lt;/button&gt;
+    &lt;button
+      class&#x3D;&quot;action-button&quot;
+      mat-raised-button
+      color&#x3D;&quot;warn&quot;
+      (click)&#x3D;&quot;generateExpression(false)&quot;
+    &gt;
+      &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+      &gt;repeat&lt;/mat-icon&gt;
+      Falsch
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;level-right&quot;&gt;
+    &lt;a
+      href&#x3D;&quot;https://de.wikipedia.org/wiki/Deterministischer_endlicher_Automat&quot;
+      target&#x3D;&quot;_blank&quot;
+      class&#x3D;&quot;action-button&quot;
+      mat-button
+      color&#x3D;&quot;primary&quot;
+    &gt;Dokumentation&lt;/a
+    &gt;
+    &lt;button
+      class&#x3D;&quot;action-button&quot;
+      mat-button
+      color&#x3D;&quot;primary&quot;
+    &gt;
+      Tour starten!
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+&lt;section class&#x3D;&quot;main-content columns is-fullheight&quot;&gt;
+  &lt;aside class&#x3D;&quot;column is-5 is-narrow-mobile is-fullheight is-hidden-mobile&quot;&gt;
+    &lt;form id&#x3D;&quot;tool1&quot; class&#x3D;&quot;input-form&quot;&gt;
+      &lt;div class&#x3D;&quot;columns&quot;&gt;
+        &lt;div class&#x3D;&quot;column is-7&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+            &lt;mat-label&gt;Manuelle Eingabe des Ausdrucks&lt;/mat-label&gt;
+            &lt;input
+              matInput
+              placeholder&#x3D;&quot;Bsp. (1 * 2) + 3 - 5 + (6 * 3)&quot;
+              name&#x3D;&quot;reber-string&quot;
+              [(ngModel)]&#x3D;&quot;expressionGrammar.Expression&quot;
+            /&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; [ngClass]&#x3D;&quot;{correct: expressionGrammar.value !&#x3D;&#x3D; null }&quot; class&#x3D;&quot;column is-5 auswertung&quot;&gt;
+          &lt;span&gt;Auswertung:&lt;/span&gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+          &gt;{{expressionGrammar.value !&#x3D;&#x3D; null ? &#x27;check&#x27; : &#x27;warning&#x27;}}&lt;/mat-icon&gt; &lt;span class&#x3D;&quot;ellipsis&quot;&gt;( &#x3D; {{expressionGrammar.value !&#x3D;&#x3D; null ? expressionGrammar.value : &#x27;F&#x27; }}&lt;/span&gt;)
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;columns&quot;&gt;
+        &lt;div class&#x3D;&quot;column&quot;&gt;
+          &lt;label class&#x3D;&quot;radio-label&quot; id&#x3D;&quot;example-radio-group-label&quot;&gt;Animationsmodus:&lt;/label&gt;
+          &lt;mat-radio-group
+            name&#x3D;&quot;mode&quot;
+            aria-labelledby&#x3D;&quot;example-radio-group-label&quot;
+            class&#x3D;&quot;radio-button-group&quot;
+            [(ngModel)]&#x3D;&quot;mode&quot;&gt;
+            &lt;mat-radio-button class&#x3D;&quot;radio-button&quot; *ngFor&#x3D;&quot;let sMode of modes&quot; [value]&#x3D;&quot;sMode&quot; [disabled]&#x3D;&quot;sMode !&#x3D;&#x3D; &#x27;Ableitung&#x27;&quot;&gt;
+              {{sMode}}
+            &lt;/mat-radio-button&gt;
+          &lt;/mat-radio-group&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;div class&#x3D;&quot;columns&quot;&gt;
+      &lt;div class&#x3D;&quot;column&quot;&gt;
+        &lt;p&gt;Grammatik:&lt;/p&gt;
+        &lt;code class&#x3D;&quot;code code-black&quot; [innerHTML]&#x3D;&quot;code&quot;&gt;&lt;/code&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+  &lt;div id&#x3D;&quot;tool3&quot; class&#x3D;&quot;container column is-7&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; class&#x3D;&quot;columns&quot;&gt;
+      &lt;div class&#x3D;&quot;column is-4&quot;&gt;&lt;code&gt;R: {{ rules.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;A → A&#x27; : rules[rules.length -1].rule }} ({{ rules.length }}) &lt;/code&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;column is-8&quot;&gt;&lt;span class&#x3D;&quot;exp-int&quot;&gt;{{ rules.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;A&#x27; : rules[rules.length -1].prevExp}}&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;no-exp-containter&quot;&gt;
+      &lt;div&gt;
+        &lt;mat-icon class&#x3D;&quot;info-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+        &gt;info&lt;/mat-icon&gt;
+        &lt;h3&gt;Noch keine Ausdruck erzeugt. Bitte zuerst ein Ausdruck automatisch generieren (&lt;span&gt;
+    &lt;button
+      class&#x3D;&quot;action-button success basic&quot;
+      mat-button
+    &gt;
+      &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;&gt;
+        add
+      &lt;/mat-icon&gt;Korrekt&lt;/button&gt;&lt;/span&gt;,
+      &lt;span&gt;&lt;button class&#x3D;&quot;action-button&quot; mat-button color&#x3D;&quot;warn&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;&gt;
+        add
+      &lt;/mat-icon&gt;Falsch&lt;/button&gt;&lt;/span&gt;) oder eine manuelle Eingabe tätigen.&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0 &amp;&amp; mode &#x3D;&#x3D;&#x3D; &#x27;Ableitung&#x27;&quot; class&#x3D;&quot;ableitungsliste&quot;&gt;
+      &lt;div class&#x3D;&quot;table-container&quot; #listElement&gt;
+          &lt;div class&#x3D;&quot;col&quot;&gt;Start&lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-w&quot;&gt;Regel&lt;/div&gt;
+          &lt;div class&#x3D;&quot;col&quot;&gt;Resultat&lt;/div&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;rules.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+          &lt;div class&#x3D;&quot;col&quot;&gt;A&lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-w&quot;&gt;&lt;/div&gt;
+          &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let exp of rules; let i&#x3D;index&quot; class&#x3D;&quot;row&quot;&gt;
+          &lt;div [@onVisible]&#x3D;&quot;{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}&quot; class&#x3D;&quot;col&quot; [attr.data-scroll]&#x3D;&quot;i&quot;&gt;{{ exp.afterExp }}&lt;/div&gt;
+          &lt;div [@onVisible2]&#x3D;&quot;{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}&quot;  class&#x3D;&quot;col-w animate-step-2&quot;&gt;: {{ exp.rule }}&lt;/div&gt;
+          &lt;div [@onVisible3]&#x3D;&quot;{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}&quot;  class&#x3D;&quot;col animate-step-3&quot;&gt;⇒ {{exp.prevExp }}&lt;/div&gt;
+        &lt;/ng-container&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0 &amp;&amp; mode &#x3D;&#x3D;&#x3D; &#x27;Ableitungsbaum&#x27;&quot; class&#x3D;&quot;ableitungsbaum&quot;&gt;
+      &lt;app-cyto-graph [cyConfig]&#x3D;&quot;cyConfig&quot;&gt;&lt;/app-cyto-graph&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;div class&#x3D;&quot;columns is-centered&quot;&gt;
+  &lt;div class&#x3D;&quot;column control-wrapper is-5&quot;&gt;
+    &lt;div id&#x3D;&quot;tool5&quot; class&#x3D;&quot;button-group&quot;&gt;
+      &lt;mat-button-toggle-group name&#x3D;&quot;fontStyle&quot; aria-label&#x3D;&quot;Font Style&quot;&gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;anfang&quot;
+          value&#x3D;&quot;bold&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || state &#x3D;&#x3D;&#x3D; &#x27;start&#x27; || expressionGrammar.ruleSet.length &#x3D;&#x3D;&#x3D; 0&quot;
+          (click)&#x3D;&quot;onBegin()&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+        &gt;first_page&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;Zurueck&quot;
+          value&#x3D;&quot;bold&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || state &#x3D;&#x3D;&#x3D; &#x27;start&#x27; || expressionGrammar.ruleSet.length &#x3D;&#x3D;&#x3D; 0&quot;
+          (click)&#x3D;&quot;onPrevious()&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+        &gt;chevron_left&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;Abspielen&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || state &#x3D;&#x3D;&#x3D; &#x27;start&#x27; || rules.length &#x3D;&#x3D;&#x3D; expressionGrammar.ruleSet.length&quot;
+          (click)&#x3D;&quot;onPlay()&quot;
+          value&#x3D;&quot;bold&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+        &gt;play_circle_filled&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;Pause&quot;
+          value&#x3D;&quot;bold&quot;
+          (click)&#x3D;&quot;onPause()&quot;
+          [disabled]&#x3D;&quot;state &#x3D;&#x3D;&#x3D; &#x27;stop&#x27;&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+        &gt;pause_circle_filled&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;Vor&quot;
+          value&#x3D;&quot;underline&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || state &#x3D;&#x3D;&#x3D; &#x27;start&#x27;&quot;
+          (click)&#x3D;&quot;onNext()&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;
+        &gt;chevron_right&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          title&#x3D;&quot;Ende&quot;
+          value&#x3D;&quot;underline&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || state &#x3D;&#x3D;&#x3D; &#x27;start&#x27;&quot;
+          (click)&#x3D;&quot;onEnd()&quot;
+        &gt;&lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;
+        &gt;last_page&lt;/mat-icon
+        &gt;&lt;/mat-button-toggle
+        &gt;
+      &lt;/mat-button-toggle-group&gt;
+      &lt;div
+        title&#x3D;&quot;Geschwindigkeit der Animation&quot;
+        id&#x3D;&quot;tool6&quot;
+        class&#x3D;&quot;slider-wrapper&quot;
+      &gt;
+        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;&gt;speed&lt;/mat-icon&gt;
+        &lt;mat-slider
+          class&#x3D;&quot;example-margin&quot;
+          [max]&#x3D;&quot;5&quot;
+          [min]&#x3D;&quot;1&quot;
+          [step]&#x3D;&quot;1&quot;
+          thumbLabel&#x3D;&quot;Speed&quot;
+          [(ngModel)]&#x3D;&quot;speed&quot;
+          (ngModelChange)&#x3D;&quot;ngOnSpeedChange($event)&quot;
+        &gt;
+        &lt;/mat-slider&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./grammar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.main-content {
+  height: 480px;
+}
+
+.left-bar {
+  background-color: blue;
+  height: 100%;
+  width: 20%;
+}
+
+.container {
+  border-left: 2px solid lightgray;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
+
+tr.mat-row {
+  height: 0px !important;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(238, 240, 253, 0.84);
+}
+
+.headline {
+  margin-bottom: 5rem;
+}
+
+.slider-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.cy-wrapper {
+  display: none;
+  background: whitesmoke;
+  width: 700px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.overlay {
+  border: 1px solid #3f51b5;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  padding: 5px;
+}
+
+.action-button {
+  margin-left: 12px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+tr.active {
+  border: 2px dashed #ff4081;
+
+  &amp;:last-child {
+    border: 3px dashed green;
+  }
+}
+th,
+td {
+  padding: 0 !important;
+  width: 33%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  border-right: 1px solid lightgray;
+}
+
+tr.active::after {
+  content: attr(data-after-content);
+  background-color: #ff4081;
+  margin-left: -16px;
+  margin-top: 0.3px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  font-size: 12px;
+  color: white;
+}
+
+tr:last-child.active::after {
+  content: attr(data-after-content);
+  background-color: green;
+  margin-left: -16px;
+  margin-top: 0.3px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  font-size: 12px;
+  color: white;
+}
+
+.error-box {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  border: 1px solid red;
+  background-color: lightgoldenrodyellow;
+  padding: 7px;
+}
+
+.button-group {
+  display: flex;
+}
+
+.control-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button-icon {
+  transform: scale(0.8);
+}
+
+.success{
+  background-color: #00796B;
+  color: white;
+
+  &amp;.basic {
+    background-color: white;
+    color: #00796B;
+  }
+}
+
+.auswertung {
+  display: inline-flex;
+  align-items: center;
+  color: red;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-radio-button {
+  margin-left: 16px;
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  color: #3f51b5;
+}
+
+code.code-black {
+  color: black;
+}
+
+.e1 {
+  color: blue;
+}
+
+.no-exp-containter {
+  text-align: center;
+  color: rgba(128, 128, 128, 0.71);
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  .info-icon {
+    transform: scale(7);
+    margin-bottom: 100px;
+    color: rgba(251, 192, 45, 0.44);
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+}
+
+.exp-int {
+  text-align: center;
+  background-color: rgba(211, 211, 211, 0.22);
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.correct {
+  color: green;
+}
+
+.ableitungsliste {
+  overflow-y: scroll;
+  height: calc(100% - 100px);
+}
+
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3em 0;
+  padding: 0;
+}
+
+.table-container div:nth-last-child(-n+3) {
+  color: green;
+}
+
+.table-container div:nth-child(-n+3) {
+  color: black;
+}
+
+.col {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 0.8em 1.2em;
+  overflow: hidden; // Or flex might break
+  width: 33.33%;
+}
+
+.col-w {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 0.8em 1.2em;
+  overflow: hidden; // Or flex might break
+  width: 106px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html Element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html Element mit directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h3 class="title is-3 has-text-centered">Grammatik (Mathematische Ausdrücke)</h3><nav id="tool0" class="level">  <div class="level-left">    Ausdruck erzeugen:    <button      class="action-button success"      mat-raised-button      (click)="generateExpression()"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Korrekt    </button>    <button      class="action-button"      mat-raised-button      color="warn"      (click)="generateExpression(false)"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Falsch    </button>  </div>  <div class="level-right">    <a      href="https://de.wikipedia.org/wiki/Deterministischer_endlicher_Automat"      target="_blank"      class="action-button"      mat-button      color="primary"    >Dokumentation</a    >    <button      class="action-button"      mat-button      color="primary"    >      Tour starten!    </button>  </div></nav><section class="main-content columns is-fullheight">  <aside class="column is-5 is-narrow-mobile is-fullheight is-hidden-mobile">    <form id="tool1" class="input-form">      <div class="columns">        <div class="column is-7">          <mat-form-field class="example-full-width">            <mat-label>Manuelle Eingabe des Ausdrucks</mat-label>            <input              matInput              placeholder="Bsp. (1 * 2) + 3 - 5 + (6 * 3)"              name="reber-string"              [(ngModel)]="expressionGrammar.Expression"            />          </mat-form-field>        </div>        <div *ngIf="expressionGrammar.Expression.length > 0" [ngClass]="{correct: expressionGrammar.value !== null }" class="column is-5 auswertung">          <span>Auswertung:</span>          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >{{expressionGrammar.value !== null ? \'check\' : \'warning\'}}</mat-icon> <span class="ellipsis">( = {{expressionGrammar.value !== null ? expressionGrammar.value : \'F\' }}</span>)        </div>      </div>      <div class="columns">        <div class="column">          <label class="radio-label" id="example-radio-group-label">Animationsmodus:</label>          <mat-radio-group            name="mode"            aria-labelledby="example-radio-group-label"            class="radio-button-group"            [(ngModel)]="mode">            <mat-radio-button class="radio-button" *ngFor="let sMode of modes" [value]="sMode" [disabled]="sMode !== \'Ableitung\'">              {{sMode}}            </mat-radio-button>          </mat-radio-group>        </div>      </div>    </form>    <div class="columns">      <div class="column">        <p>Grammatik:</p>        <code class="code code-black" [innerHTML]="code"></code>      </div>    </div>  </aside>  <div id="tool3" class="container column is-7">    <div *ngIf="expressionGrammar.Expression.length > 0" class="columns">      <div class="column is-4"><code>R: {{ rules.length === 0 ? \'A → A\' : rules[rules.length -1].rule }} ({{ rules.length }}) </code></div>      <div class="column is-8"><span class="exp-int">{{ rules.length === 0 ? \'A\' : rules[rules.length -1].prevExp}}</span></div>    </div>    <div *ngIf="expressionGrammar.Expression.length === 0" class="no-exp-containter">      <div>        <mat-icon class="info-icon" aria-hidden="false" aria-label="chevron_left icon"        >info</mat-icon>        <h3>Noch keine Ausdruck erzeugt. Bitte zuerst ein Ausdruck automatisch generieren (<span>    <button      class="action-button success basic"      mat-button    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Korrekt</button></span>,      <span><button class="action-button" mat-button color="warn">      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Falsch</button></span>) oder eine manuelle Eingabe tätigen.</h3>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitung\'" class="ableitungsliste">      <div class="table-container" #listElement>          <div class="col">Start</div>          <div class="col-w">Regel</div>          <div class="col">Resultat</div>        <ng-container *ngIf="rules.length === 0">          <div class="col">A</div>          <div class="col-w"></div>          <div class="col"></div>        </ng-container>        <ng-container *ngFor="let exp of rules; let i=index" class="row">          <div [@onVisible]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}" class="col" [attr.data-scroll]="i">{{ exp.afterExp }}</div>          <div [@onVisible2]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col-w animate-step-2">: {{ exp.rule }}</div>          <div [@onVisible3]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col animate-step-3">⇒ {{exp.prevExp }}</div>        </ng-container>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitungsbaum\'" class="ableitungsbaum">      <app-cyto-graph [cyConfig]="cyConfig"></app-cyto-graph>    </div>  </div></section><div class="columns is-centered">  <div class="column control-wrapper is-5">    <div id="tool5" class="button-group">      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">        <mat-button-toggle          title="anfang"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onBegin()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >first_page</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Zurueck"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onPrevious()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >chevron_left</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Abspielen"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || rules.length === expressionGrammar.ruleSet.length"          (click)="onPlay()"          value="bold"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >play_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Pause"          value="bold"          (click)="onPause()"          [disabled]="state === \'stop\'"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >pause_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Vor"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onNext()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >chevron_right</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Ende"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onEnd()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >last_page</mat-icon        ></mat-button-toggle        >      </mat-button-toggle-group>      <div        title="Geschwindigkeit der Animation"        id="tool6"        class="slider-wrapper"      >        <mat-icon aria-hidden="false" aria-label="chevron_right icon">speed</mat-icon>        <mat-slider          class="example-margin"          [max]="5"          [min]="1"          [step]="1"          thumbLabel="Speed"          [(ngModel)]="speed"          (ngModelChange)="ngOnSpeedChange($event)"        >        </mat-slider>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GrammarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">Kein passendes Ergebnis "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GrammarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
