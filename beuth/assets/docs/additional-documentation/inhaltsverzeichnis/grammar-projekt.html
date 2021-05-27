@@ -56,14 +56,14 @@
 <li>Animation und Steuerung der Logik</li>
 </ul>
 <p>Um eine Diagramm zu sehen, w&auml;hlen Sie bitte rechts das Module (GrammarModule) aus.</p>
-<h2 id="komponenten">Komponenten</h2>
-<h3 id="grammarmodel-interface">GrammarModel Interface</h3>
+<h2 id="1-komponenten">1. Komponenten</h2>
+<h3 id="11-grammarmodel-interface">1.1 GrammarModel Interface</h3>
 <p>Das GrammarModel ist ein Interface, aus dem dann verschiedene Grammatiken erben k&ouml;nnen.</p>
-<h3 id="expressiongrammarmodel">ExpressionGrammarModel</h3>
+<h3 id="12-expressiongrammarmodel">1.2 ExpressionGrammarModel</h3>
 <p>Nach dem Prinzip von Fat-Model, Skinny Controllers befindet sich hier die meiste Business-Logik. 
 Die Hauptaufgabe des ExpressionGrammarModel, welcher von GrammarModel erbt, ist die Implementierung
 der Logik f&uuml;r die Ausdr&uuml;cke.</p>
-<p>Eine besonderheit ist hier, dass man die Regeln wie Start, Terminalzeichen, usw. im constructor angeben muss.
+<p>Eine Besonderheit ist hier, dass man die Regeln wie Start, Terminalzeichen, usw. im constructor angeben muss.
 Mit Hilfe dieser Regeln, kann die Klasse dann arbeiten.</p>
 <p>Die wichtigsten Attribute und Funktion:</p>
 <ul>
@@ -71,7 +71,7 @@ Mit Hilfe dieser Regeln, kann die Klasse dann arbeiten.</p>
 <li>generateWrongExpression -&gt; erzeugt einen falschen Ausdruck</li>
 <li>RuleSet -&gt; Ein Objekt, welches die Regel, vorherige Exp und upgedated Exp. enthaelt</li>
 </ul>
-<h3 id="grammarservice">GrammarService</h3>
+<h3 id="13-grammarservice">1.3 GrammarService</h3>
 <p>Die Hauptaufgabe des Grammar-Services ist die ganze Steuerung des Grammar-Modules. Hier werden bsp.</p>
 <ul>
 <li>Start der Animation</li>
@@ -81,16 +81,17 @@ Mit Hilfe dieser Regeln, kann die Klasse dann arbeiten.</p>
 <li>usw. 
 definiert. Der Grammar-Service bekommt hierzu sowohl die RuleSets, als auch die Speed vom Grammar Component.</li>
 </ul>
-<h3 id="grammar-component">Grammar Component</h3>
+<h3 id="14-grammar-component">1.4 Grammar Component</h3>
 <p>Die GrammarKomponente ist die Kommunikation zwischen dem Service, Model und die View. Hier werden:</p>
 <ul>
 <li>Das Model erzeugt und instanziert</li>
 <li>Der Service initialisiert und gesteuert</li>
 <li>Die View upgedated</li>
 </ul>
-<h3 id="algorithmus--datestrukturen">Algorithmus + Datestrukturen</h3>
+<h2 id="2-algorithmus--datestrukturen">2. Algorithmus + Datestrukturen</h2>
+<h3 id="21-die-erzeugung-eines-korrekten-ausdrucks">2.1 Die Erzeugung eines Korrekten Ausdrucks</h3>
 <p>Die Grundidee ist hier die Auslagerung der Business-Logik in dem Exp.Grammar Model. Dieser nimmt die
-Regeln bsp.:</p>
+Regel, auf der dann Ausdr&uuml;cke erzeugt werden, bsp.:</p>
 <div><pre class="line-numbers"><code class="language-none">interface FourTuple {
   V: string[];
   SIG: string[];
@@ -100,7 +101,7 @@ Regeln bsp.:</p>
     Z: string[];
   };
   start: string;
-}</code></pre></div><p>auf und kann dann mit String-Replace ein neuen Array erzeugen mit folgender Struktur:</p>
+}</code></pre></div><p>Mit der String-Replace Methode wird dann ein neuer Array erzeugt mit folgender Struktur:</p>
 <div><pre class="line-numbers"><code class="language-none">export class RuleSetInterface {
   expIndex: number | null;
   rule: string;
@@ -113,10 +114,68 @@ Regeln bsp.:</p>
     this.prevExp = props?.prevExp || &#39;&#39;;
     this.afterExp = props?.afterExp || &#39;&#39;;
   }
-}</code></pre></div><p>Jede Ersetzung entspricht dann ein RuleSetInterface. Dieser Prozess wird solange widerholt, bis
+}</code></pre></div><p>Jede Ersetzung entspricht dann ein RuleSet basierend auf dem o.g. Interface. Dieser Prozess wird solange widerholt, bis
 kein Nicht-Terminalzeichen mehr im String vorhanden ist.</p>
+<div><pre class="line-numbers"><code class="language-none">while (this._hasNonTerminalChar(exp)) {
+  ...
+}</code></pre></div><p>Mit der JS Funktion eval wird das Ergebnis des Ausdrucks dann bei <code>Auswertung:</code> angezeigt.
+Der Grammar-Service fungiert als Observable f&uuml;r die Grammar-Komponente und &uuml;bergibt somit diesen Array zur Animation.</p>
+<h3 id="22-die-erzeugung-eines-falschen-ausdrucks">2.2 Die Erzeugung eines Falschen Ausdrucks</h3>
+<p>Es wird wie in 2.1 ein richtiger Ausdruck erzeugt. Danach wird nach einem Random Algorithmus ein Zeichen ausgetauscht.</p>
+<h3 id="23-die-validierung-des-ausdrucks">2.3 Die Validierung des Ausdrucks</h3>
+<p>Hier wird der Ausdruck mit zwei Verfahren validiert:</p>
+<h4 id="validierung-mit-eval">Validierung mit Eval</h4>
+<p>Der Ausdruck wird mit eval validiert. Zudem werden negative Zahlen und Zahlendopplungen ausgeschlossen (Diese wuerden durch Eval ein False-Positive ergeben)</p>
+<div><pre class="line-numbers"><code class="language-none">  public isExpressionValid(exp: string): number {
+    let result;
+
+    if (matchDoubleD || _isNegNumber(exp)) {
+      this._valid = false;
+    } else {
+      try {
+        result = eval(exp);
+        this.value = Number.parseFloat(result);
+        this._valid = true;
+      } catch {
+        this._valid = false;
+      }
+    }
+
+    return result;
+  }</code></pre></div><h4 id="validierung-mit-reverser-logik">Validierung mit Reverser Logik</h4>
+<p>Hierzu wird der String-Replace Algorithmus umgekehrt angewendet, bis dann nur noch A steht (rictig) oder exp !== &#39;A&#39; (falsch).
+Diese Methode wird auch animiert.</p>
+<h3 id="24-animation">2.4 Animation</h3>
+<p>Da Animation in diesem Projekt haeufig angewendet werden, wurde ein spezielle Animations-Logik implementiert. Das Schema sieht so aus:</p>
+<div><pre class="line-numbers"><code class="language-none">export const grammarAnimation = [&#39;&#39;, &#39;2&#39;, &#39;3&#39;].map((v) =&gt;
+  trigger(`onVisible${v}`, [
+    transition(&#39;:enter&#39;, [
+      animate(
+        &#39;{{speed1}}s 0s ease-in-out&#39;,
+        keyframes([
+          style({ transform: &#39;translateY(-30%)&#39;, color: &#39;black&#39;, opacity: 0 }),
+          style({ transform: &#39;translateY(0%)&#39;, color: &#39;black&#39;, opacity: 1 }),
+        ])
+      ),
+      animate(
+        &#39;{{speed2}}s 0s ease-in-out&#39;,
+        keyframes([style({ color: &#39;blue&#39;, &#39;font-weight&#39;: &#39;bold&#39; }), style({ color: &#39;black&#39;, &#39;font-weight&#39;: &#39;normal&#39; })])
+      ),
+    ]),
+    transition(&#39;:leave&#39;, [
+      animate(
+        &#39;0.2s 0s ease-out&#39;,
+        keyframes([
+          style({ transform: &#39;translateY(0%)&#39;, opacity: 1 }),
+          style({ transform: &#39;translateY(-30%)&#39;, opacity: 0 }),
+        ])
+      ),
+    ]),
+  ])
+);</code></pre></div><h3 id="25-manuelle-eingabe">2.5 Manuelle Eingabe</h3>
+<p>Laeuft wie das generieren der Ausdrucke uber den Validator, der den Ausdruck validiert.</p>
 <h3 id="weitere-details">Weitere Details</h3>
-<p>Bitte in der Navigation weiter schauen.</p>
+<p>Fuer weitere Details bitte in der Navigation schauen.</p>
 
                    </div><div class="search-results">
     <div class="has-results">

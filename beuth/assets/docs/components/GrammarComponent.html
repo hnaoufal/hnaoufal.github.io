@@ -194,6 +194,9 @@
                                 <a href="#onEnd">onEnd</a>
                             </li>
                             <li>
+                                <a href="#onManualExpressionChange">onManualExpressionChange</a>
+                            </li>
+                            <li>
                                 <a href="#onNext">onNext</a>
                             </li>
                             <li>
@@ -546,6 +549,70 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onManualExpressionChange"></a>
+                    <span class="name">
+                        <b>
+                            onManualExpressionChange
+                        </b>
+                        <a href="#onManualExpressionChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onManualExpressionChange(exp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>exp</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -1104,8 +1171,8 @@
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;h3 class&#x3D;&quot;title is-3 has-text-centered&quot;&gt;Grammatik (Mathematische Ausdrücke)&lt;/h3&gt;
-&lt;nav id&#x3D;&quot;tool0&quot; class&#x3D;&quot;level&quot;&gt;
-  &lt;div class&#x3D;&quot;level-left&quot;&gt;
+&lt;nav class&#x3D;&quot;level&quot;&gt;
+  &lt;div id&#x3D;&quot;tool1&quot; class&#x3D;&quot;level-left&quot;&gt;
     Ausdruck erzeugen:
     &lt;button
       class&#x3D;&quot;action-button success&quot;
@@ -1127,9 +1194,9 @@
       Falsch
     &lt;/button&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;level-right&quot;&gt;
+  &lt;div id&#x3D;&quot;tool0&quot; class&#x3D;&quot;level-right&quot;&gt;
     &lt;a
-      href&#x3D;&quot;https://de.wikipedia.org/wiki/Deterministischer_endlicher_Automat&quot;
+      href&#x3D;&quot;https://hnaoufal.github.io/beuth/assets/docs/index.html&quot;
       target&#x3D;&quot;_blank&quot;
       class&#x3D;&quot;action-button&quot;
       mat-button
@@ -1140,6 +1207,7 @@
       class&#x3D;&quot;action-button&quot;
       mat-button
       color&#x3D;&quot;primary&quot;
+      (click)&#x3D;&quot;startTour()&quot;
     &gt;
       Tour starten!
     &lt;/button&gt;
@@ -1147,7 +1215,7 @@
 &lt;/nav&gt;
 &lt;section class&#x3D;&quot;main-content columns is-fullheight&quot;&gt;
   &lt;aside class&#x3D;&quot;column is-5 is-narrow-mobile is-fullheight is-hidden-mobile&quot;&gt;
-    &lt;form id&#x3D;&quot;tool1&quot; class&#x3D;&quot;input-form&quot;&gt;
+    &lt;form id&#x3D;&quot;tool2&quot; class&#x3D;&quot;input-form&quot;&gt;
       &lt;div class&#x3D;&quot;columns&quot;&gt;
         &lt;div class&#x3D;&quot;column is-7&quot;&gt;
           &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
@@ -1157,13 +1225,14 @@
               placeholder&#x3D;&quot;Bsp. (1 * 2) + 3 - 5 + (6 * 3)&quot;
               name&#x3D;&quot;reber-string&quot;
               [(ngModel)]&#x3D;&quot;expressionGrammar.Expression&quot;
+              (ngModelChange)&#x3D;&quot;onManualExpressionChange($event)&quot;
             /&gt;
           &lt;/mat-form-field&gt;
         &lt;/div&gt;
-        &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; [ngClass]&#x3D;&quot;{correct: expressionGrammar.value !&#x3D;&#x3D; null }&quot; class&#x3D;&quot;column is-5 auswertung&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; [ngClass]&#x3D;&quot;{correct: expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D; 0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27; }&quot; class&#x3D;&quot;column is-5 auswertung&quot;&gt;
           &lt;span&gt;Auswertung:&lt;/span&gt;
           &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
-          &gt;{{expressionGrammar.value !&#x3D;&#x3D; null ? &#x27;check&#x27; : &#x27;warning&#x27;}}&lt;/mat-icon&gt; &lt;span class&#x3D;&quot;ellipsis&quot;&gt;( &#x3D; {{expressionGrammar.value !&#x3D;&#x3D; null ? expressionGrammar.value : &#x27;F&#x27; }}&lt;/span&gt;)
+          &gt;{{(expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D; 0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27;) ? &#x27;check&#x27; : &#x27;warning&#x27;}}&lt;/mat-icon&gt; &lt;span class&#x3D;&quot;ellipsis&quot;&gt;( &#x3D; {{(expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D;0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27;) ? expressionGrammar.value : &#x27;Falsch&#x27; }}&lt;/span&gt;)
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;columns&quot;&gt;
@@ -1181,17 +1250,22 @@
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/form&gt;
-    &lt;div class&#x3D;&quot;columns&quot;&gt;
+    &lt;div id&#x3D;&quot;tool3&quot; class&#x3D;&quot;columns&quot;&gt;
       &lt;div class&#x3D;&quot;column&quot;&gt;
         &lt;p&gt;Grammatik:&lt;/p&gt;
         &lt;code class&#x3D;&quot;code code-black&quot; [innerHTML]&#x3D;&quot;code&quot;&gt;&lt;/code&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/aside&gt;
-  &lt;div id&#x3D;&quot;tool3&quot; class&#x3D;&quot;container column is-7&quot;&gt;
+  &lt;div id&#x3D;&quot;tool4&quot; class&#x3D;&quot;container column is-7&quot; [ngClass]&#x3D;&quot;{error: !(expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D; 0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27;) &amp;&amp; expressionGrammar.Expression.length &gt; 0}&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;(!(expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D; 0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27;) &amp;&amp; expressionGrammar.Expression.length &gt; 0)&quot; class&#x3D;&quot;columns&quot;&gt;
+      &lt;div class&#x3D;&quot;column error-exp-help&quot;&gt;
+        Reverser Modus:
+      &lt;/div&gt;
+    &lt;/div&gt;
     &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; class&#x3D;&quot;columns&quot;&gt;
-      &lt;div class&#x3D;&quot;column is-4&quot;&gt;&lt;code&gt;R: {{ rules.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;A → A&#x27; : rules[rules.length -1].rule }} ({{ rules.length }}) &lt;/code&gt;&lt;/div&gt;
-      &lt;div class&#x3D;&quot;column is-8&quot;&gt;&lt;span class&#x3D;&quot;exp-int&quot;&gt;{{ rules.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;A&#x27; : rules[rules.length -1].prevExp}}&lt;/span&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;column is-4&quot;&gt;&lt;code&gt;R: {{ rules.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;Start&#x27; : rules[rules.length -1].rule }} ({{ rules.length }}) &lt;/code&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;column is-8&quot;&gt;&lt;span class&#x3D;&quot;exp-int&quot;&gt;{{ rules.length &#x3D;&#x3D;&#x3D; 0 ? expressionGrammar.Valid ? &#x27;A&#x27; : expressionGrammar.Expression : rules[rules.length -1].prevExp}}&lt;/span&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;no-exp-containter&quot;&gt;
       &lt;div&gt;
@@ -1201,11 +1275,12 @@
     &lt;button
       class&#x3D;&quot;action-button success basic&quot;
       mat-button
+      (click)&#x3D;&quot;generateExpression()&quot;
     &gt;
       &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;&gt;
         add
       &lt;/mat-icon&gt;Korrekt&lt;/button&gt;&lt;/span&gt;,
-      &lt;span&gt;&lt;button class&#x3D;&quot;action-button&quot; mat-button color&#x3D;&quot;warn&quot;&gt;
+      &lt;span&gt;&lt;button class&#x3D;&quot;action-button&quot; mat-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;generateExpression(false)&quot;&gt;
       &lt;mat-icon class&#x3D;&quot;button-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;&gt;
         add
       &lt;/mat-icon&gt;Falsch&lt;/button&gt;&lt;/span&gt;) oder eine manuelle Eingabe tätigen.&lt;/h3&gt;
@@ -1217,7 +1292,7 @@
           &lt;div class&#x3D;&quot;col-w&quot;&gt;Regel&lt;/div&gt;
           &lt;div class&#x3D;&quot;col&quot;&gt;Resultat&lt;/div&gt;
         &lt;ng-container *ngIf&#x3D;&quot;rules.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
-          &lt;div class&#x3D;&quot;col&quot;&gt;A&lt;/div&gt;
+          &lt;div class&#x3D;&quot;col&quot;&gt; {{ expressionGrammar.value || expressionGrammar.value &#x3D;&#x3D;&#x3D; 0 || expressionGrammar.value &#x3D;&#x3D;&#x3D; &#x27;infinity&#x27; ? &#x27;A&#x27; : expressionGrammar.ruleSet.length &#x3D;&#x3D;&#x3D; 0 ? &#x27;Keine Regel anwendbar: &quot; &#x27; +  expressionGrammar.Expression + &#x27; &quot; kann nicht weiter reduziert werden&#x27; : &#x27;Falscher Ausdruck! Reverse Herleitung animieren&#x27; }}&lt;/div&gt;
           &lt;div class&#x3D;&quot;col-w&quot;&gt;&lt;/div&gt;
           &lt;div class&#x3D;&quot;col&quot;&gt;&lt;/div&gt;
         &lt;/ng-container&gt;
@@ -1235,8 +1310,8 @@
 &lt;/section&gt;
 &lt;div class&#x3D;&quot;columns is-centered&quot;&gt;
   &lt;div class&#x3D;&quot;column control-wrapper is-5&quot;&gt;
-    &lt;div id&#x3D;&quot;tool5&quot; class&#x3D;&quot;button-group&quot;&gt;
-      &lt;mat-button-toggle-group name&#x3D;&quot;fontStyle&quot; aria-label&#x3D;&quot;Font Style&quot;&gt;
+    &lt;div class&#x3D;&quot;button-group&quot;&gt;
+      &lt;mat-button-toggle-group id&#x3D;&quot;tool5&quot; name&#x3D;&quot;fontStyle&quot; aria-label&#x3D;&quot;Font Style&quot;&gt;
         &lt;mat-button-toggle
           title&#x3D;&quot;anfang&quot;
           value&#x3D;&quot;bold&quot;
@@ -1551,6 +1626,10 @@ code.code-black {
   color: green;
 }
 
+.error .table-container div:nth-last-child(-n+3) {
+  color: red;
+}
+
 .table-container div:nth-child(-n+3) {
   color: black;
 }
@@ -1569,6 +1648,14 @@ code.code-black {
   padding: 0.8em 1.2em;
   overflow: hidden; // Or flex might break
   width: 106px;
+}
+
+.error-exp-help {
+  transform: translate(11px);
+  border: 2px solid red;
+  background-color: wheat;
+  padding: 8px;
+  max-width: 130px;
 }
 </code></pre>
     </div>
@@ -1598,7 +1685,7 @@ code.code-black {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h3 class="title is-3 has-text-centered">Grammatik (Mathematische Ausdrücke)</h3><nav id="tool0" class="level">  <div class="level-left">    Ausdruck erzeugen:    <button      class="action-button success"      mat-raised-button      (click)="generateExpression()"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Korrekt    </button>    <button      class="action-button"      mat-raised-button      color="warn"      (click)="generateExpression(false)"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Falsch    </button>  </div>  <div class="level-right">    <a      href="https://de.wikipedia.org/wiki/Deterministischer_endlicher_Automat"      target="_blank"      class="action-button"      mat-button      color="primary"    >Dokumentation</a    >    <button      class="action-button"      mat-button      color="primary"    >      Tour starten!    </button>  </div></nav><section class="main-content columns is-fullheight">  <aside class="column is-5 is-narrow-mobile is-fullheight is-hidden-mobile">    <form id="tool1" class="input-form">      <div class="columns">        <div class="column is-7">          <mat-form-field class="example-full-width">            <mat-label>Manuelle Eingabe des Ausdrucks</mat-label>            <input              matInput              placeholder="Bsp. (1 * 2) + 3 - 5 + (6 * 3)"              name="reber-string"              [(ngModel)]="expressionGrammar.Expression"            />          </mat-form-field>        </div>        <div *ngIf="expressionGrammar.Expression.length > 0" [ngClass]="{correct: expressionGrammar.value !== null }" class="column is-5 auswertung">          <span>Auswertung:</span>          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >{{expressionGrammar.value !== null ? \'check\' : \'warning\'}}</mat-icon> <span class="ellipsis">( = {{expressionGrammar.value !== null ? expressionGrammar.value : \'F\' }}</span>)        </div>      </div>      <div class="columns">        <div class="column">          <label class="radio-label" id="example-radio-group-label">Animationsmodus:</label>          <mat-radio-group            name="mode"            aria-labelledby="example-radio-group-label"            class="radio-button-group"            [(ngModel)]="mode">            <mat-radio-button class="radio-button" *ngFor="let sMode of modes" [value]="sMode" [disabled]="sMode !== \'Ableitung\'">              {{sMode}}            </mat-radio-button>          </mat-radio-group>        </div>      </div>    </form>    <div class="columns">      <div class="column">        <p>Grammatik:</p>        <code class="code code-black" [innerHTML]="code"></code>      </div>    </div>  </aside>  <div id="tool3" class="container column is-7">    <div *ngIf="expressionGrammar.Expression.length > 0" class="columns">      <div class="column is-4"><code>R: {{ rules.length === 0 ? \'A → A\' : rules[rules.length -1].rule }} ({{ rules.length }}) </code></div>      <div class="column is-8"><span class="exp-int">{{ rules.length === 0 ? \'A\' : rules[rules.length -1].prevExp}}</span></div>    </div>    <div *ngIf="expressionGrammar.Expression.length === 0" class="no-exp-containter">      <div>        <mat-icon class="info-icon" aria-hidden="false" aria-label="chevron_left icon"        >info</mat-icon>        <h3>Noch keine Ausdruck erzeugt. Bitte zuerst ein Ausdruck automatisch generieren (<span>    <button      class="action-button success basic"      mat-button    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Korrekt</button></span>,      <span><button class="action-button" mat-button color="warn">      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Falsch</button></span>) oder eine manuelle Eingabe tätigen.</h3>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitung\'" class="ableitungsliste">      <div class="table-container" #listElement>          <div class="col">Start</div>          <div class="col-w">Regel</div>          <div class="col">Resultat</div>        <ng-container *ngIf="rules.length === 0">          <div class="col">A</div>          <div class="col-w"></div>          <div class="col"></div>        </ng-container>        <ng-container *ngFor="let exp of rules; let i=index" class="row">          <div [@onVisible]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}" class="col" [attr.data-scroll]="i">{{ exp.afterExp }}</div>          <div [@onVisible2]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col-w animate-step-2">: {{ exp.rule }}</div>          <div [@onVisible3]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col animate-step-3">⇒ {{exp.prevExp }}</div>        </ng-container>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitungsbaum\'" class="ableitungsbaum">      <app-cyto-graph [cyConfig]="cyConfig"></app-cyto-graph>    </div>  </div></section><div class="columns is-centered">  <div class="column control-wrapper is-5">    <div id="tool5" class="button-group">      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">        <mat-button-toggle          title="anfang"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onBegin()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >first_page</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Zurueck"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onPrevious()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >chevron_left</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Abspielen"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || rules.length === expressionGrammar.ruleSet.length"          (click)="onPlay()"          value="bold"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >play_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Pause"          value="bold"          (click)="onPause()"          [disabled]="state === \'stop\'"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >pause_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Vor"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onNext()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >chevron_right</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Ende"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onEnd()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >last_page</mat-icon        ></mat-button-toggle        >      </mat-button-toggle-group>      <div        title="Geschwindigkeit der Animation"        id="tool6"        class="slider-wrapper"      >        <mat-icon aria-hidden="false" aria-label="chevron_right icon">speed</mat-icon>        <mat-slider          class="example-margin"          [max]="5"          [min]="1"          [step]="1"          thumbLabel="Speed"          [(ngModel)]="speed"          (ngModelChange)="ngOnSpeedChange($event)"        >        </mat-slider>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><h3 class="title is-3 has-text-centered">Grammatik (Mathematische Ausdrücke)</h3><nav class="level">  <div id="tool1" class="level-left">    Ausdruck erzeugen:    <button      class="action-button success"      mat-raised-button      (click)="generateExpression()"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Korrekt    </button>    <button      class="action-button"      mat-raised-button      color="warn"      (click)="generateExpression(false)"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon"      >repeat</mat-icon>      Falsch    </button>  </div>  <div id="tool0" class="level-right">    <a      href="https://hnaoufal.github.io/beuth/assets/docs/index.html"      target="_blank"      class="action-button"      mat-button      color="primary"    >Dokumentation</a    >    <button      class="action-button"      mat-button      color="primary"      (click)="startTour()"    >      Tour starten!    </button>  </div></nav><section class="main-content columns is-fullheight">  <aside class="column is-5 is-narrow-mobile is-fullheight is-hidden-mobile">    <form id="tool2" class="input-form">      <div class="columns">        <div class="column is-7">          <mat-form-field class="example-full-width">            <mat-label>Manuelle Eingabe des Ausdrucks</mat-label>            <input              matInput              placeholder="Bsp. (1 * 2) + 3 - 5 + (6 * 3)"              name="reber-string"              [(ngModel)]="expressionGrammar.Expression"              (ngModelChange)="onManualExpressionChange($event)"            />          </mat-form-field>        </div>        <div *ngIf="expressionGrammar.Expression.length > 0" [ngClass]="{correct: expressionGrammar.value || expressionGrammar.value === 0 || expressionGrammar.value === \'infinity\' }" class="column is-5 auswertung">          <span>Auswertung:</span>          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >{{(expressionGrammar.value || expressionGrammar.value === 0 || expressionGrammar.value === \'infinity\') ? \'check\' : \'warning\'}}</mat-icon> <span class="ellipsis">( = {{(expressionGrammar.value || expressionGrammar.value ===0 || expressionGrammar.value === \'infinity\') ? expressionGrammar.value : \'Falsch\' }}</span>)        </div>      </div>      <div class="columns">        <div class="column">          <label class="radio-label" id="example-radio-group-label">Animationsmodus:</label>          <mat-radio-group            name="mode"            aria-labelledby="example-radio-group-label"            class="radio-button-group"            [(ngModel)]="mode">            <mat-radio-button class="radio-button" *ngFor="let sMode of modes" [value]="sMode" [disabled]="sMode !== \'Ableitung\'">              {{sMode}}            </mat-radio-button>          </mat-radio-group>        </div>      </div>    </form>    <div id="tool3" class="columns">      <div class="column">        <p>Grammatik:</p>        <code class="code code-black" [innerHTML]="code"></code>      </div>    </div>  </aside>  <div id="tool4" class="container column is-7" [ngClass]="{error: !(expressionGrammar.value || expressionGrammar.value === 0 || expressionGrammar.value === \'infinity\') && expressionGrammar.Expression.length > 0}">    <div *ngIf="(!(expressionGrammar.value || expressionGrammar.value === 0 || expressionGrammar.value === \'infinity\') && expressionGrammar.Expression.length > 0)" class="columns">      <div class="column error-exp-help">        Reverser Modus:      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0" class="columns">      <div class="column is-4"><code>R: {{ rules.length === 0 ? \'Start\' : rules[rules.length -1].rule }} ({{ rules.length }}) </code></div>      <div class="column is-8"><span class="exp-int">{{ rules.length === 0 ? expressionGrammar.Valid ? \'A\' : expressionGrammar.Expression : rules[rules.length -1].prevExp}}</span></div>    </div>    <div *ngIf="expressionGrammar.Expression.length === 0" class="no-exp-containter">      <div>        <mat-icon class="info-icon" aria-hidden="false" aria-label="chevron_left icon"        >info</mat-icon>        <h3>Noch keine Ausdruck erzeugt. Bitte zuerst ein Ausdruck automatisch generieren (<span>    <button      class="action-button success basic"      mat-button      (click)="generateExpression()"    >      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Korrekt</button></span>,      <span><button class="action-button" mat-button color="warn" (click)="generateExpression(false)">      <mat-icon class="button-icon" aria-hidden="false" aria-label="chevron_left icon">        add      </mat-icon>Falsch</button></span>) oder eine manuelle Eingabe tätigen.</h3>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitung\'" class="ableitungsliste">      <div class="table-container" #listElement>          <div class="col">Start</div>          <div class="col-w">Regel</div>          <div class="col">Resultat</div>        <ng-container *ngIf="rules.length === 0">          <div class="col"> {{ expressionGrammar.value || expressionGrammar.value === 0 || expressionGrammar.value === \'infinity\' ? \'A\' : expressionGrammar.ruleSet.length === 0 ? \'Keine Regel anwendbar: " \' +  expressionGrammar.Expression + \' " kann nicht weiter reduziert werden\' : \'Falscher Ausdruck! Reverse Herleitung animieren\' }}</div>          <div class="col-w"></div>          <div class="col"></div>        </ng-container>        <ng-container *ngFor="let exp of rules; let i=index" class="row">          <div [@onVisible]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}" class="col" [attr.data-scroll]="i">{{ exp.afterExp }}</div>          <div [@onVisible2]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col-w animate-step-2">: {{ exp.rule }}</div>          <div [@onVisible3]="{ value: true, params: { speed1: 0.2, speed2: speed / 2 }}"  class="col animate-step-3">⇒ {{exp.prevExp }}</div>        </ng-container>      </div>    </div>    <div *ngIf="expressionGrammar.Expression.length > 0 && mode === \'Ableitungsbaum\'" class="ableitungsbaum">      <app-cyto-graph [cyConfig]="cyConfig"></app-cyto-graph>    </div>  </div></section><div class="columns is-centered">  <div class="column control-wrapper is-5">    <div class="button-group">      <mat-button-toggle-group id="tool5" name="fontStyle" aria-label="Font Style">        <mat-button-toggle          title="anfang"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onBegin()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >first_page</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Zurueck"          value="bold"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || expressionGrammar.ruleSet.length === 0"          (click)="onPrevious()"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >chevron_left</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Abspielen"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\' || rules.length === expressionGrammar.ruleSet.length"          (click)="onPlay()"          value="bold"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >play_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Pause"          value="bold"          (click)="onPause()"          [disabled]="state === \'stop\'"        ><mat-icon aria-hidden="false" aria-label="chevron_left icon"        >pause_circle_filled</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Vor"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onNext()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >chevron_right</mat-icon        ></mat-button-toggle        >        <mat-button-toggle          title="Ende"          value="underline"          [disabled]="expressionGrammar.Expression.length < 1 || state === \'start\'"          (click)="onEnd()"        ><mat-icon aria-hidden="false" aria-label="chevron_right icon"        >last_page</mat-icon        ></mat-button-toggle        >      </mat-button-toggle-group>      <div        title="Geschwindigkeit der Animation"        id="tool6"        class="slider-wrapper"      >        <mat-icon aria-hidden="false" aria-label="chevron_right icon">speed</mat-icon>        <mat-slider          class="example-margin"          [max]="5"          [min]="1"          [step]="1"          thumbLabel="Speed"          [(ngModel)]="speed"          (ngModelChange)="ngOnSpeedChange($event)"        >        </mat-slider>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'GrammarComponent'};
