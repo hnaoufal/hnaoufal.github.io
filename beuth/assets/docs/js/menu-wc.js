@@ -95,13 +95,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-c48fff5c2474d13a38e5c514497369ce"' : 'data-target="#xs-components-links-module-AppModule-c48fff5c2474d13a38e5c514497369ce"' }>
+                                            'data-target="#components-links-module-AppModule-b1be5f40fbfe50127b47c167f31047c9"' : 'data-target="#xs-components-links-module-AppModule-b1be5f40fbfe50127b47c167f31047c9"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-c48fff5c2474d13a38e5c514497369ce"' :
-                                            'id="xs-components-links-module-AppModule-c48fff5c2474d13a38e5c514497369ce"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-b1be5f40fbfe50127b47c167f31047c9"' :
+                                            'id="xs-components-links-module-AppModule-b1be5f40fbfe50127b47c167f31047c9"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -198,19 +198,38 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/KellerModule.html" data-type="entity-link">KellerModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-KellerModule-8392cb160620c80528232c50650f2f07"' : 'data-target="#xs-components-links-module-KellerModule-8392cb160620c80528232c50650f2f07"' }>
+                                            'data-target="#components-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' : 'data-target="#xs-components-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-KellerModule-8392cb160620c80528232c50650f2f07"' :
-                                            'id="xs-components-links-module-KellerModule-8392cb160620c80528232c50650f2f07"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' :
+                                            'id="xs-components-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' }>
                                             <li class="link">
                                                 <a href="components/KellerComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">KellerComponent</a>
                                             </li>
+                                            <li class="link">
+                                                <a href="components/KellerGraphComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">KellerGraphComponent</a>
+                                            </li>
                                         </ul>
                                     </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' : 'data-target="#xs-injectables-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' :
+                                        'id="xs-injectables-links-module-KellerModule-03c5a27862fa06f8d18c79a96d2a4e45"' }>
+                                        <li class="link">
+                                            <a href="injectables/KellerService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>KellerService</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </li>
                             <li class="link">
                                 <a href="modules/MainModule.html" data-type="entity-link">MainModule</a>
@@ -279,6 +298,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/CytoGraphService.html" data-type="entity-link">CytoGraphService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/KellerGraphService.html" data-type="entity-link">KellerGraphService</a>
                                 </li>
                             </ul>
                         </li>

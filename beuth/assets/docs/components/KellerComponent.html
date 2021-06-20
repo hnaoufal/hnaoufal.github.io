@@ -118,6 +118,69 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#animationObject">animationObject</a>
+                            </li>
+                            <li>
+                                <a href="#cyConfig">cyConfig</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#endState">endState</a>
+                            </li>
+                            <li>
+                                <a href="#errorState">errorState</a>
+                            </li>
+                            <li>
+                                <a href="#exprConstruct">exprConstruct</a>
+                            </li>
+                            <li>
+                                <a href="#expressionGrammar">expressionGrammar</a>
+                            </li>
+                            <li>
+                                <a href="#kellerMachine">kellerMachine</a>
+                            </li>
+                            <li>
+                                <a href="#kellerRules">kellerRules</a>
+                            </li>
+                            <li>
+                                <a href="#matRows">matRows</a>
+                            </li>
+                            <li>
+                                <a href="#speed">speed</a>
+                            </li>
+                            <li>
+                                <a href="#stack">stack</a>
+                            </li>
+                            <li>
+                                <a href="#tableMain">tableMain</a>
+                            </li>
+                            <li>
+                                <a href="#timer">timer</a>
+                            </li>
+                            <li>
+                                <a href="#toggleService">toggleService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -128,12 +191,75 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_resetAnimationObject">_resetAnimationObject</a>
+                            </li>
+                            <li>
+                                <a href="#animateStep">animateStep</a>
+                            </li>
+                            <li>
+                                <a href="#evaluateString">evaluateString</a>
+                            </li>
+                            <li>
+                                <a href="#generateExpression">generateExpression</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnSpeedChange">ngOnSpeedChange</a>
+                            </li>
+                            <li>
+                                <a href="#onEnd">onEnd</a>
+                            </li>
+                            <li>
+                                <a href="#onNext">onNext</a>
+                            </li>
+                            <li>
+                                <a href="#onPause">onPause</a>
+                            </li>
+                            <li>
+                                <a href="#onPlay">onPlay</a>
+                            </li>
+                            <li>
+                                <a href="#onPrevious">onPrevious</a>
+                            </li>
+                            <li>
+                                <a href="#onStart">onStart</a>
+                            </li>
+                            <li>
+                                <a href="#onStop">onStop</a>
+                            </li>
+                            <li>
+                                <a href="#openDialog">openDialog</a>
+                            </li>
+                            <li>
+                                <a href="#renderTableRows">renderTableRows</a>
+                            </li>
+                            <li>
+                                <a href="#startTour">startTour</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ausgabeString">ausgabeString</a>
+                            </li>
+                            <li>
+                                <a href="#reberString">reberString</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -148,15 +274,113 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(dialog: MatDialog, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, kellerService: <a href="../injectables/KellerService.html">KellerService</a>, kellerGraphService: <a href="../injectables/KellerGraphService.html">KellerGraphService</a>)</code>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameter :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>kellerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/KellerService.html" target="_self" >KellerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>kellerGraphService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/KellerGraphService.html" target="_self" >KellerGraphService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Nein
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
-
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ausgabeString"></a>
+                        <b>ausgabeString</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reberString"></a>
+                        <b>reberString</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -165,6 +389,214 @@
     <h3 id="methods">
         Methoden
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_resetAnimationObject"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            _resetAnimationObject
+                        </b>
+                        <a href="#_resetAnimationObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>_resetAnimationObject()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="animateStep"></a>
+                    <span class="name">
+                        <b>
+                            animateStep
+                        </b>
+                        <a href="#animateStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>animateStep()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="evaluateString"></a>
+                    <span class="name">
+                        <b>
+                            evaluateString
+                        </b>
+                        <a href="#evaluateString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>evaluateString(str: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, initialAusgabeString?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>str</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>initialAusgabeString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Ja
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateExpression"></a>
+                    <span class="name">
+                        <b>
+                            generateExpression
+                        </b>
+                        <a href="#generateExpression"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateExpression(isCorrect)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isCorrect</td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -198,6 +630,844 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnSpeedChange"></a>
+                    <span class="name">
+                        <b>
+                            ngOnSpeedChange
+                        </b>
+                        <a href="#ngOnSpeedChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnSpeedChange($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEnd"></a>
+                    <span class="name">
+                        <b>
+                            onEnd
+                        </b>
+                        <a href="#onEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEnd()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNext"></a>
+                    <span class="name">
+                        <b>
+                            onNext
+                        </b>
+                        <a href="#onNext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNext(shouldNotStop)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameter :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shouldNotStop</td>
+
+                                    <td>
+                                        Nein
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPause"></a>
+                    <span class="name">
+                        <b>
+                            onPause
+                        </b>
+                        <a href="#onPause"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPause()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlay"></a>
+                    <span class="name">
+                        <b>
+                            onPlay
+                        </b>
+                        <a href="#onPlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPlay()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrevious"></a>
+                    <span class="name">
+                        <b>
+                            onPrevious
+                        </b>
+                        <a href="#onPrevious"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPrevious()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onStart"></a>
+                    <span class="name">
+                        <b>
+                            onStart
+                        </b>
+                        <a href="#onStart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onStart()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onStop"></a>
+                    <span class="name">
+                        <b>
+                            onStop
+                        </b>
+                        <a href="#onStop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onStop()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDialog"></a>
+                    <span class="name">
+                        <b>
+                            openDialog
+                        </b>
+                        <a href="#openDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDialog()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="renderTableRows"></a>
+                    <span class="name">
+                        <b>
+                            renderTableRows
+                        </b>
+                        <a href="#renderTableRows"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>renderTableRows()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTour"></a>
+                    <span class="name">
+                        <b>
+                            startTour
+                        </b>
+                        <a href="#startTour"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startTour()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="animationObject"></a>
+                        <span class="name">
+                            <b>
+                            animationObject</b>
+                            <a href="#animationObject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{ current: -1 }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cyConfig"></a>
+                        <span class="name">
+                            <b>
+                            cyConfig</b>
+                            <a href="#cyConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>cytoscapeKellerConfig</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ELEMENT_DATA</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;q&#x27;, &#x27;e&#x27;, &#x27;s&#x27;, &#x27;p&#x27;]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="endState"></a>
+                        <span class="name">
+                            <b>
+                            endState</b>
+                            <a href="#endState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject(&#x27;stop&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errorState"></a>
+                        <span class="name">
+                            <b>
+                            errorState</b>
+                            <a href="#errorState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="exprConstruct"></a>
+                        <span class="name">
+                            <b>
+                            exprConstruct</b>
+                            <a href="#exprConstruct"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expressionGrammar"></a>
+                        <span class="name">
+                            <b>
+                            expressionGrammar</b>
+                            <a href="#expressionGrammar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new ExpressionGrammarModel(&#x27;&#x27;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="kellerMachine"></a>
+                        <span class="name">
+                            <b>
+                            kellerMachine</b>
+                            <a href="#kellerMachine"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>StateMachine&lt;any | any | any | literal type&gt;</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="kellerRules"></a>
+                        <span class="name">
+                            <b>
+                            kellerRules</b>
+                            <a href="#kellerRules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>kellerRules</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="matRows"></a>
+                        <span class="name">
+                            <b>
+                            matRows</b>
+                            <a href="#matRows"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;ElementRef&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(&#x27;matRows&#x27;, {read: ElementRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="speed"></a>
+                        <span class="name">
+                            <b>
+                            speed</b>
+                            <a href="#speed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CSPEED</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stack"></a>
+                        <span class="name">
+                            <b>
+                            stack</b>
+                            <a href="#stack"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tableMain"></a>
+                        <span class="name">
+                            <b>
+                            tableMain</b>
+                            <a href="#tableMain"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;tableMain&#x27;, {read: ElementRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timer"></a>
+                        <span class="name">
+                            <b>
+                            timer</b>
+                            <a href="#timer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;number&gt;</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleService"></a>
+                        <span class="name">
+                            <b>
+                            toggleService</b>
+                            <a href="#toggleService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Interpreter&lt;any | any | any | literal type&gt;</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
 </div>
@@ -205,7 +1475,265 @@
 
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;keller works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h3 class&#x3D;&quot;title is-3 has-text-centered&quot;&gt;Keller-Automat (Mathematischer Ausdruck)&lt;/h3&gt;
+&lt;nav class&#x3D;&quot;level&quot;&gt;
+  &lt;div class&#x3D;&quot;level-left&quot; id&#x3D;&quot;tool0&quot;&gt;
+    Ausdruck erzeugen:
+    &lt;button
+      (click)&#x3D;&quot;generateExpression(true)&quot;
+      class&#x3D;&quot;action-button success&quot;
+      mat-raised-button
+    &gt;
+      &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot; class&#x3D;&quot;button-icon&quot;
+      &gt;repeat
+      &lt;/mat-icon&gt;
+      Korrekt
+    &lt;/button&gt;
+    &lt;button
+      (click)&#x3D;&quot;generateExpression(false)&quot;
+      class&#x3D;&quot;action-button success&quot;
+      class&#x3D;&quot;action-button&quot;
+      color&#x3D;&quot;warn&quot;
+      mat-raised-button
+    &gt;
+      &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot; class&#x3D;&quot;button-icon&quot;
+      &gt;repeat
+      &lt;/mat-icon&gt;
+      Falsch
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;level-right&quot;&gt;
+    &lt;a
+      class&#x3D;&quot;action-button&quot;
+      color&#x3D;&quot;primary&quot;
+      href&#x3D;&quot;https://hnaoufal.github.io/beuth/assets/docs/index.html&quot;
+      mat-button
+      target&#x3D;&quot;_blank&quot;
+    &gt;Dokumentation&lt;/a
+    &gt;
+    &lt;button
+      (click)&#x3D;&quot;startTour()&quot;
+      class&#x3D;&quot;action-button&quot;
+      color&#x3D;&quot;primary&quot;
+      mat-button
+    &gt;
+      Tour starten!
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+&lt;section class&#x3D;&quot;main-content columns is-fullheight&quot;&gt;
+  &lt;aside class&#x3D;&quot;column is-3 is-narrow-mobile is-fullheight is-hidden-mobile&quot;&gt;
+    &lt;div class&#x3D;&quot;columns&quot;&gt;
+      &lt;div class&#x3D;&quot;column is-9&quot;&gt;
+        &lt;form class&#x3D;&quot;example-form&quot; id&#x3D;&quot;tool1&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+            &lt;mat-label&gt;Manuelle Eingabe&lt;/mat-label&gt;
+            &lt;input
+              [(ngModel)]&#x3D;&quot;expressionGrammar.Expression&quot;
+              matInput
+              name&#x3D;&quot;expression-string&quot;
+              placeholder&#x3D;&quot;z.B. 4 + 3&quot;
+            /&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+      &lt;div *ngIf&#x3D;&quot;expressionGrammar.Expression.length &gt; 0&quot; [ngClass]&#x3D;&quot;{ correct: expressionGrammar.Valid }&quot;
+           class&#x3D;&quot;column auswertung&quot;&gt;
+        {{ expressionGrammar.Valid ? &#x27;OK&#x27; : &#x27;Falsch&#x27; }}
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;table
+      #tableMain
+      [dataSource]&#x3D;&quot;dataSource&quot;
+      class&#x3D;&quot;mat-elevation-z8&quot;
+      id&#x3D;&quot;tool2&quot;
+      mat-table
+    &gt;
+      &lt;caption&gt;
+        &lt;p class&#x3D;&quot;menu-label has-text-left&quot;&gt;
+          &amp;Uuml;bertragungsfunktionen:
+        &lt;/p&gt;
+      &lt;/caption&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;q&quot;&gt;
+        &lt;th *matHeaderCellDef mat-header-cell&gt;Q&lt;/th&gt;
+        &lt;td *matCellDef&#x3D;&quot;let element&quot; [ngSwitch]&#x3D;&quot;element.q&quot; mat-cell&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;q0&#x27;&quot;&gt;
+            {{ &quot;&amp;#8594; q0&quot; }}
+          &lt;/ng-container&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;q7&#x27;&quot;&gt;
+            {{ &quot;* q7&quot; }}
+          &lt;/ng-container&gt;
+          &lt;ng-container *ngSwitchDefault&gt;
+            {{ element.q }}
+          &lt;/ng-container&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;e&quot;&gt;
+        &lt;th *matHeaderCellDef mat-header-cell&gt;Σe&lt;/th&gt;
+        &lt;td *matCellDef&#x3D;&quot;let element&quot; mat-cell&gt;{{ element.e }}&lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;s&quot;&gt;
+        &lt;th *matHeaderCellDef mat-header-cell&gt;Γe&lt;/th&gt;
+        &lt;td *matCellDef&#x3D;&quot;let element&quot; mat-cell&gt;
+          {{ element.s }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;p&quot;&gt;
+        &lt;th *matHeaderCellDef mat-header-cell&gt;P(Q × Γe)&lt;/th&gt;
+        &lt;td *matCellDef&#x3D;&quot;let element&quot; [ngSwitch]&#x3D;&quot;element.p&quot; mat-cell&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;{(q7, Ɛ)}&#x27;&quot;&gt;
+            {{ &quot;{(* q7, Ɛ)}&quot; }}
+          &lt;/ng-container&gt;
+          &lt;ng-container *ngSwitchDefault&gt;
+            {{ element.p }}
+          &lt;/ng-container&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+      &lt;tr *matHeaderRowDef&#x3D;&quot;displayedColumns&quot; mat-header-row&gt;&lt;/tr&gt;
+      &lt;tr
+        #matRows
+        *matRowDef&#x3D;&quot;let row; columns: displayedColumns&quot;
+        [attr.data-after-content]&#x3D;&quot;this.animationObject.current + 1&quot;
+        [attr.data-test]&#x3D;&quot;exprConstruct[animationObject.current]?.source+ &#x27;_&#x27; + exprConstruct[animationObject.current]?.target + &#x27; - &#x27; + row.id&quot;
+        [id]&#x3D;&quot;row.q + row.e + row.p&quot;
+        [ngClass]&#x3D;&quot;{
+          active: row.id &#x3D;&#x3D;&#x3D; (exprConstruct[animationObject.current]?.source+ &#x27;_&#x27; + exprConstruct[animationObject.current]?.target),
+          error: exprConstruct[animationObject.current]?.error ? row.id &#x3D;&#x3D;&#x3D; (exprConstruct[animationObject.current -1]?.source+ &#x27;_&#x27; + exprConstruct[animationObject.current -1]?.target) : false
+        }&quot;
+        mat-row
+      &gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/aside&gt;
+  &lt;div class&#x3D;&quot;container column is-8&quot; id&#x3D;&quot;tool3&quot;&gt;
+    &lt;div class&#x3D;&quot;overlay&quot; id&#x3D;&quot;tool4&quot;&gt;
+      &lt;code [innerHTML]&#x3D;&quot;kellerRules&quot;&gt;
+      &lt;/code&gt;
+    &lt;/div&gt;
+    &lt;app-cyto-graph [cyConfig]&#x3D;&quot;cyConfig&quot;&gt;&lt;/app-cyto-graph&gt;
+    &lt;div *ngIf&#x3D;&quot;errorState.state &#x3D;&#x3D;&#x3D; true&quot; [innerHTML]&#x3D;&quot;errorState.hm&quot; class&#x3D;&quot;error-box&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;column is-1&quot;&gt;
+    &lt;div class&#x3D;&quot;stack&quot;&gt;
+      &lt;ul class&#x3D;&quot;stack-container&quot;&gt;
+        &lt;li class&#x3D;&quot;stack-text&quot;&gt;Stack&lt;/li&gt;
+        &lt;li *ngFor&#x3D;&quot;let a of stack&quot; class&#x3D;&quot;stack-list&quot;&gt;{{ a }}&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;div class&#x3D;&quot;columns is-centered bott&quot;&gt;
+  &lt;div class&#x3D;&quot;column control-wrapper is-5&quot;&gt;
+    &lt;div class&#x3D;&quot;button-group&quot;&gt;
+      &lt;mat-button-toggle-group aria-label&#x3D;&quot;Font Style&quot; id&#x3D;&quot;tool5&quot; name&#x3D;&quot;fontStyle&quot;&gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onStart()&quot;
+          [disabled]&#x3D;&quot;
+            expressionGrammar.Expression.length &lt; 1 ||
+            endState.getValue() !&#x3D;&#x3D; &#x27;stop&#x27; ||
+            this.animationObject.current &lt; 0
+          &quot;
+          title&#x3D;&quot;anfang&quot;
+          value&#x3D;&quot;bold&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+          &gt;first_page
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onPrevious()&quot;
+          [disabled]&#x3D;&quot;
+            expressionGrammar.Expression.length &lt; 1 ||
+            endState.getValue() !&#x3D;&#x3D; &#x27;stop&#x27; ||
+            this.animationObject.current &lt; 0
+          &quot;
+          title&#x3D;&quot;Zurueck&quot;
+          value&#x3D;&quot;bold&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+          &gt;chevron_left
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onPlay()&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1&quot;
+          title&#x3D;&quot;Abspielen&quot;
+          value&#x3D;&quot;bold&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+          &gt;play_circle_filled
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onPause()&quot;
+          [disabled]&#x3D;&quot;expressionGrammar.Expression.length &lt; 1 || endState.getValue() &#x3D;&#x3D;&#x3D; &#x27;stop&#x27;&quot;
+          title&#x3D;&quot;Pause&quot;
+          value&#x3D;&quot;bold&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_left icon&quot;
+          &gt;pause_circle_filled
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onNext()&quot;
+          [disabled]&#x3D;&quot;
+            expressionGrammar.Expression.length &lt; 1 ||
+            endState.getValue() !&#x3D;&#x3D; &#x27;stop&#x27; ||
+            this.animationObject.current &#x3D;&#x3D;&#x3D; this.exprConstruct.length - 1
+          &quot;
+          title&#x3D;&quot;Vor&quot;
+          value&#x3D;&quot;underline&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;
+          &gt;chevron_right
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+        &lt;mat-button-toggle
+          (click)&#x3D;&quot;onEnd()&quot;
+          [disabled]&#x3D;&quot;
+            expressionGrammar.Expression.length &lt; 1 ||
+            endState.getValue() !&#x3D;&#x3D; &#x27;stop&#x27; ||
+            this.animationObject.current &#x3D;&#x3D;&#x3D; this.exprConstruct.length - 1
+          &quot;
+          title&#x3D;&quot;Ende&quot;
+          value&#x3D;&quot;underline&quot;
+        &gt;
+          &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;
+          &gt;last_page
+          &lt;/mat-icon
+          &gt;
+        &lt;/mat-button-toggle
+        &gt;
+      &lt;/mat-button-toggle-group&gt;
+      &lt;div
+        class&#x3D;&quot;slider-wrapper&quot;
+        id&#x3D;&quot;tool6&quot;
+        title&#x3D;&quot;Geschwindigkeit der Animation&quot;
+      &gt;
+        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;chevron_right icon&quot;&gt;speed&lt;/mat-icon&gt;
+        &lt;mat-slider
+          (ngModelChange)&#x3D;&quot;ngOnSpeedChange($event)&quot;
+          [(ngModel)]&#x3D;&quot;speed&quot;
+          [max]&#x3D;&quot;5&quot;
+          [min]&#x3D;&quot;1&quot;
+          [step]&#x3D;&quot;1&quot;
+          class&#x3D;&quot;example-margin&quot;
+          thumbLabel&#x3D;&quot;Speed&quot;
+        &gt;
+        &lt;/mat-slider&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -213,7 +1741,216 @@
                 <p class="comment">
                     <code>./keller.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.main-content {
+  height: 640px;
+}
+
+.left-bar {
+  background-color: blue;
+  height: 100%;
+  width: 20%;
+}
+
+.container {
+  border: 2px solid lightgray;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  height: calc(100% - 0.75rem);
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
+
+tr.mat-row {
+  height: 0px !important;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(238, 240, 253, 0.84);
+}
+
+.headline {
+  margin-bottom: 5rem;
+}
+
+.cy-wrapper {
+  display: none;
+  background: whitesmoke;
+  width: 700px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.overlay {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.action-button {
+  margin-left: 12px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+tr.active {
+  border: 2px dashed green;
+
+  &amp;:last-child {
+    border: 3px dashed green;
+  }
+
+}
+
+tr.error {
+  border: 2px dashed red;
+}
+
+
+th,
+td {
+  padding: 5px 0 !important;
+  width: 25%;
+}
+//
+//th:nth-child(2),
+//td:nth-child(2) {
+//  border-right: 1px solid lightgray;
+//}
+
+tr.active::after {
+  content: attr(data-after-content);
+  background-color: green;
+  margin-top: 6px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  left: 11px;
+}
+
+//tr:last-child.active::after {
+//  content: attr(data-after-content);
+//  background-color: green;
+//  margin-left: -16px;
+//  margin-top: 0.3px;
+//  width: 19px;
+//  height: 19px;
+//  position: absolute;
+//  font-size: 12px;
+//  color: white;
+//}
+
+.error-box {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  border: 1px solid red;
+  background-color: lightgoldenrodyellow;
+  padding: 7px;
+}
+
+.success{
+  background-color: #00796B;
+  color: white;
+
+  &amp;.basic {
+    background-color: white;
+    color: #00796B;
+  }
+}
+.button-group {
+  display: flex;
+}
+
+.control-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.auswertung {
+  display: inline-flex;
+  align-items: center;
+  color: red;
+
+  &amp;.correct {
+    color: green;
+  }
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  color: #3f51b5;
+}
+
+code.code-black {
+  color: black;
+}
+
+.stack-container {
+  border-left: 1px solid #3f51b5;
+  border-bottom: 1px solid #3f51b5;
+  border-right: 1px solid #3f51b5;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+
+  &amp; li {
+    text-align: center;
+    padding: 5px 0;
+    border-top: 1px solid lightgray;
+  }
+}
+
+.stack-text {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.stack {
+  height: 100%;
+}
+
+aside {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.bott {
+  margin-top: 40px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -241,8 +1978,8 @@
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>keller works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
+        var COMPONENT_TEMPLATE = '<div><h3 class="title is-3 has-text-centered">Keller-Automat (Mathematischer Ausdruck)</h3><nav class="level">  <div class="level-left" id="tool0">    Ausdruck erzeugen:    <button      (click)="generateExpression(true)"      class="action-button success"      mat-raised-button    >      <mat-icon aria-hidden="false" aria-label="chevron_left icon" class="button-icon"      >repeat      </mat-icon>      Korrekt    </button>    <button      (click)="generateExpression(false)"      class="action-button success"      class="action-button"      color="warn"      mat-raised-button    >      <mat-icon aria-hidden="false" aria-label="chevron_left icon" class="button-icon"      >repeat      </mat-icon>      Falsch    </button>  </div>  <div class="level-right">    <a      class="action-button"      color="primary"      href="https://hnaoufal.github.io/beuth/assets/docs/index.html"      mat-button      target="_blank"    >Dokumentation</a    >    <button      (click)="startTour()"      class="action-button"      color="primary"      mat-button    >      Tour starten!    </button>  </div></nav><section class="main-content columns is-fullheight">  <aside class="column is-3 is-narrow-mobile is-fullheight is-hidden-mobile">    <div class="columns">      <div class="column is-9">        <form class="example-form" id="tool1">          <mat-form-field class="example-full-width">            <mat-label>Manuelle Eingabe</mat-label>            <input              [(ngModel)]="expressionGrammar.Expression"              matInput              name="expression-string"              placeholder="z.B. 4 + 3"            />          </mat-form-field>        </form>      </div>      <div *ngIf="expressionGrammar.Expression.length > 0" [ngClass]="{ correct: expressionGrammar.Valid }"           class="column auswertung">        {{ expressionGrammar.Valid ? \'OK\' : \'Falsch\' }}      </div>    </div>    <table      #tableMain      [dataSource]="dataSource"      class="mat-elevation-z8"      id="tool2"      mat-table    >      <caption>        <p class="menu-label has-text-left">          &Uuml;bertragungsfunktionen:        </p>      </caption>      <ng-container matColumnDef="q">        <th *matHeaderCellDef mat-header-cell>Q</th>        <td *matCellDef="let element" [ngSwitch]="element.q" mat-cell>          <ng-container *ngSwitchCase="\'q0\'">            {{ "&#8594; q0" }}          </ng-container>          <ng-container *ngSwitchCase="\'q7\'">            {{ "* q7" }}          </ng-container>          <ng-container *ngSwitchDefault>            {{ element.q }}          </ng-container>        </td>      </ng-container>      <ng-container matColumnDef="e">        <th *matHeaderCellDef mat-header-cell>Σe</th>        <td *matCellDef="let element" mat-cell>{{ element.e }}</td>      </ng-container>      <ng-container matColumnDef="s">        <th *matHeaderCellDef mat-header-cell>Γe</th>        <td *matCellDef="let element" mat-cell>          {{ element.s }}        </td>      </ng-container>      <ng-container matColumnDef="p">        <th *matHeaderCellDef mat-header-cell>P(Q × Γe)</th>        <td *matCellDef="let element" [ngSwitch]="element.p" mat-cell>          <ng-container *ngSwitchCase="\'{(q7, Ɛ)}\'">            {{ "{(* q7, Ɛ)}" }}          </ng-container>          <ng-container *ngSwitchDefault>            {{ element.p }}          </ng-container>        </td>      </ng-container>      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>      <tr        #matRows        *matRowDef="let row; columns: displayedColumns"        [attr.data-after-content]="this.animationObject.current + 1"        [attr.data-test]="exprConstruct[animationObject.current]?.source+ \'_\' + exprConstruct[animationObject.current]?.target + \' - \' + row.id"        [id]="row.q + row.e + row.p"        [ngClass]="{          active: row.id === (exprConstruct[animationObject.current]?.source+ \'_\' + exprConstruct[animationObject.current]?.target),          error: exprConstruct[animationObject.current]?.error ? row.id === (exprConstruct[animationObject.current -1]?.source+ \'_\' + exprConstruct[animationObject.current -1]?.target) : false        }"        mat-row      ></tr>    </table>  </aside>  <div class="container column is-8" id="tool3">    <div class="overlay" id="tool4">      <code [innerHTML]="kellerRules">      </code>    </div>    <app-cyto-graph [cyConfig]="cyConfig"></app-cyto-graph>    <div *ngIf="errorState.state === true" [innerHTML]="errorState.hm" class="error-box"></div>  </div>  <div class="column is-1">    <div class="stack">      <ul class="stack-container">        <li class="stack-text">Stack</li>        <li *ngFor="let a of stack" class="stack-list">{{ a }}</li>      </ul>    </div>  </div></section><div class="columns is-centered bott">  <div class="column control-wrapper is-5">    <div class="button-group">      <mat-button-toggle-group aria-label="Font Style" id="tool5" name="fontStyle">        <mat-button-toggle          (click)="onStart()"          [disabled]="            expressionGrammar.Expression.length < 1 ||            endState.getValue() !== \'stop\' ||            this.animationObject.current < 0          "          title="anfang"          value="bold"        >          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >first_page          </mat-icon          >        </mat-button-toggle        >        <mat-button-toggle          (click)="onPrevious()"          [disabled]="            expressionGrammar.Expression.length < 1 ||            endState.getValue() !== \'stop\' ||            this.animationObject.current < 0          "          title="Zurueck"          value="bold"        >          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >chevron_left          </mat-icon          >        </mat-button-toggle        >        <mat-button-toggle          (click)="onPlay()"          [disabled]="expressionGrammar.Expression.length < 1"          title="Abspielen"          value="bold"        >          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >play_circle_filled          </mat-icon          >        </mat-button-toggle        >        <mat-button-toggle          (click)="onPause()"          [disabled]="expressionGrammar.Expression.length < 1 || endState.getValue() === \'stop\'"          title="Pause"          value="bold"        >          <mat-icon aria-hidden="false" aria-label="chevron_left icon"          >pause_circle_filled          </mat-icon          >        </mat-button-toggle        >        <mat-button-toggle          (click)="onNext()"          [disabled]="            expressionGrammar.Expression.length < 1 ||            endState.getValue() !== \'stop\' ||            this.animationObject.current === this.exprConstruct.length - 1          "          title="Vor"          value="underline"        >          <mat-icon aria-hidden="false" aria-label="chevron_right icon"          >chevron_right          </mat-icon          >        </mat-button-toggle        >        <mat-button-toggle          (click)="onEnd()"          [disabled]="            expressionGrammar.Expression.length < 1 ||            endState.getValue() !== \'stop\' ||            this.animationObject.current === this.exprConstruct.length - 1          "          title="Ende"          value="underline"        >          <mat-icon aria-hidden="false" aria-label="chevron_right icon"          >last_page          </mat-icon          >        </mat-button-toggle        >      </mat-button-toggle-group>      <div        class="slider-wrapper"        id="tool6"        title="Geschwindigkeit der Animation"      >        <mat-icon aria-hidden="false" aria-label="chevron_right icon">speed</mat-icon>        <mat-slider          (ngModelChange)="ngOnSpeedChange($event)"          [(ngModel)]="speed"          [max]="5"          [min]="1"          [step]="1"          class="example-margin"          thumbLabel="Speed"        >        </mat-slider>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'KellerGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'KellerComponent'};
 </script>

@@ -289,10 +289,6 @@
   background-color: white;
 }
 
-.container {
-  margin-bottom: 24px;
-}
-
 .error-box .red {
   color: red;
   font-weight: bold;
@@ -331,7 +327,7 @@
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p>  <mat-toolbar color="primary">    <button      mat-icon-button      class="example-icon"      aria-label="Example icon-button with menu icon"    >      <mat-icon>menu</mat-icon>    </button>    <span>Automaten-Simulator</span>    <span class="divider"> | </span>    <a      [routerLink]="[\'/\']"      [routerLinkActive]="[\'active\']"      [routerLinkActiveOptions]="{ exact: true }"      mat-button      class="menu-link"    >      Home    </a>    <a      [routerLink]="[\'/dea\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      DEA    </a>    <a      [routerLink]="[\'/grammar\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      Grammatik    </a>    <a      [routerLink]="[\'/keller\']"      [routerLinkActive]="[\'active\']"      mat-button      class="menu-link"    >      Kellerautomat    </a>    <a      [routerLink]="[\'/tm\']"      [routerLinkActive]="[\'active\']"      mat-button      href="/tm"      class="menu-link"    >      TM    </a>  </mat-toolbar></p><div class="container">  <div class="box">    <nav class="breadcrumb" aria-label="breadcrumbs">      <ul>        <li><a [routerLink]="[\'/\']">Automation-Simulator</a></li>        <li class="is-active"><a href="#">Home</a></li>      </ul>    </nav>    <router-outlet></router-outlet>  </div></div><footer class="footer">  <div class="content has-text-centered">    <p>      <strong>Automaten-Simulator</strong> by      <a href="https://hnaoufal.de">Hicham Naoufal</a>. The source code is      licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.      The website content is licensed      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"        >CC BY NC SA 4.0</a      >.    </p>  </div></footer></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CytoGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'DeaComponent', 'selector': 'app-dea'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'GrammarComponent', 'selector': 'app-grammar'},{'name': 'GrammarGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'KellerComponent', 'selector': 'app-keller'},{'name': 'KellerGraphComponent', 'selector': 'app-cyto-graph'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'TmComponent', 'selector': 'app-tm'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
