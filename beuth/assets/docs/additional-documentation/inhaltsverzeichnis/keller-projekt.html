@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Technische Informatik - Dokumentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">Technische Informatik - Dokumentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Eingeben zur Suche"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+<h1 id="keller-projekt">Keller Projekt</h1>
+<h2 id="0-aufgabenstellung">0. Aufgabenstellung</h2>
+<p>Erzeugen Sie mit Hilfe der Grammatik aus Aufgabe P2 einen zufälligen arithmetische Ausdruck. Die Grammar in P2 hat die Vorgaben:
+einstelligen natürlichen Zahlen mit den Operanden &quot;+,-,<em>,/&quot; und beliebig geschachtelten runden Klammeren, z.B.: 2</em>(3*(4+7)-9) oder 9+2 oder (3) oder nur 7 sind gültig, ungültig sind 12 oder () oder (+3) oder -1.</p>
+<p>Die Kernfeatures sind hier:</p>
+<ul>
+<li>Auswertung eines richtigen Ausdrucks mit dem Kellerautomat</li>
+<li>Auswertung eines falschen Ausdrucks mit dem Kellerautomat</li>
+<li>Animation und Steuerung der Logik</li>
+</ul>
+<h2 id="1-komponenten">1. Komponenten</h2>
+<h3 id="11-grammarmodel-interface">1.1 GrammarModel Interface</h3>
+<p>Das GrammarModel ist ein Interface, aus dem dann verschiedene Grammatiken erben k&ouml;nnen.</p>
+<h3 id="12-expressiongrammarmodel">1.2 ExpressionGrammarModel</h3>
+<p>Nach dem Prinzip von Fat-Model, Skinny Controllers befindet sich hier die meiste Business-Logik. 
+Die Hauptaufgabe des ExpressionGrammarModel, welcher von GrammarModel erbt, ist die Implementierung
+der Logik f&uuml;r die Ausdr&uuml;cke.</p>
+<p>Eine Besonderheit ist hier, dass man die Regeln wie Start, Terminalzeichen, usw. im constructor angeben muss.
+Mit Hilfe dieser Regeln, kann die Klasse dann arbeiten.</p>
+<p>Die wichtigsten Attribute und Funktion:</p>
+<ul>
+<li>generateCorrectExpression -&gt; erzeugt einen richtigen Ausdruck</li>
+<li>generateWrongExpression -&gt; erzeugt einen falschen Ausdruck</li>
+<li>RuleSet -&gt; Ein Objekt, welches die Regel, vorherige Exp und upgedated Exp. enthaelt</li>
+</ul>
+<h3 id="13-kellerservice">1.3 KellerService</h3>
+<p>Die Hauptaufgabe des Keller-Services ist die ganze Steuerung des Keller-Graphen.</p>
+<ul>
+<li>Start der Animation</li>
+<li>Speed</li>
+<li>Stop</li>
+<li>Pause </li>
+<li>usw. 
+definiert. Der Grammar-Service bekommt hierzu sowohl die RuleSets, als auch die Speed vom Grammar Component.</li>
+</ul>
+<h3 id="14-keller-component">1.4 Keller Component</h3>
+<p>Die Keller Komponente ist die Kommunikation zwischen dem Service, Model und die View. Hier werden:</p>
+<ul>
+<li>Das Model erzeugt und instanziert</li>
+<li>Der Service initialisiert und gesteuert</li>
+<li>Die View upgedated</li>
+</ul>
+<h2 id="2-algorithmus--datestrukturen">2. Algorithmus + Datestrukturen</h2>
+<h3 id="21-die-erzeugung-eines-korrekten-ausdrucks">2.1 Die Erzeugung eines Korrekten Ausdrucks</h3>
+<p>Die Finite State Machine wird mit folgender Datestruktur initialisiert:</p>
+<div><pre class="line-numbers"><code class="language-none">    nodes: [
+      { data: { id: &#39;start&#39; }, position: { x: -670, y: 50 }, classes: &#39;inv&#39; },
+      { data: { id: &#39;q0&#39; }, position: { x: -600, y: 50 } },
+      { data: { id: &#39;q1&#39; }, position: { x: -470, y: 50 } },
+      { data: { id: &#39;q2&#39; }, position: { x: -350, y: 200 } },
+      { data: { id: &#39;q3&#39; }, position: { x: -350, y: -100 } },
+      { data: { id: &#39;q4&#39; }, position: { x: -100, y: 200 } },
+      { data: { id: &#39;q5&#39; }, position: { x: -100, y: -100 } },
+      { data: { id: &#39;q6&#39; }, position: { x: 50, y: 50 }, classes: &#39;double&#39; },
+    ],
+    edges: [
+      { data: { id: &#39;q0_q1&#39;, source: &#39;q0&#39;, target: &#39;q1&#39;, label: &#39;Ɛ, Ɛ → $&#39; } },
+      { data: { id: &#39;q1_q2&#39;, source: &#39;q1&#39;, target: &#39;q2&#39;, label: &#39;(, Ɛ → X&#39; } },
+      { data: { id: &#39;q1_q3&#39;, source: &#39;q1&#39;, target: &#39;q3&#39;, label: &#39;Ɛ, Ɛ → Ɛ&#39; } },
+      { data: { id: &#39;q2_q4&#39;, source: &#39;q2&#39;, target: &#39;q4&#39;, label: &#39;Z, Ɛ → Ɛ&#39; } },
+      { data: { id: &#39;q4_q3&#39;, source: &#39;q4&#39;, target: &#39;q3&#39;, label: &#39;O, Ɛ → Ɛ&#39; } },
+      { data: { id: &#39;q5_q3&#39;, source: &#39;q5&#39;, target: &#39;q3&#39;, label: &#39;O, Ɛ → Ɛ&#39; } },
+      { data: { id: &#39;q5_q4&#39;, source: &#39;q5&#39;, target: &#39;q4&#39;, label: &#39;), X → Ɛ&#39; } },
+      { data: { id: &#39;q3_q5&#39;, source: &#39;q3&#39;, target: &#39;q5&#39;, label: &#39;Z, Ɛ → Ɛ&#39; } },
+      { data: { id: &#39;q3_q2&#39;, source: &#39;q3&#39;, target: &#39;q2&#39;, label: &#39;(, Ɛ → X&#39; } },
+      { data: { id: &#39;q4_q6&#39;, source: &#39;q4&#39;, target: &#39;q6&#39;, label: &#39;Ɛ, $ → Ɛ&#39; } },
+      { data: { id: &#39;q5_q6&#39;, source: &#39;q5&#39;, target: &#39;q6&#39;, label: &#39;Ɛ, $ → Ɛ&#39; } },
+      { data: { id: &#39;start_q0&#39;, source: &#39;start&#39;, target: &#39;q0&#39;, label: &#39;&#39; } },
+      {
+        data: {
+          id: &#39;q4_q4&#39;,
+          source: &#39;q4&#39;,
+          target: &#39;q4&#39;,
+          type: &#39;loop&#39;,
+          flipLabel: true,
+          label: &#39;), X → Ɛ&#39;,
+        },
+        classes: &#39;loop2&#39;,
+      },
+      {
+        data: {
+          id: &#39;q2_q2&#39;,
+          source: &#39;q2&#39;,
+          target: &#39;q2&#39;,
+          type: &#39;loop&#39;,
+          flipLabel: true,
+          label: &#39;(, Ɛ → X&#39;,
+        },
+        classes: &#39;loop&#39;,
+      },
+    ],</code></pre></div><p>Es wird dann ein iteribares Element erzeugt fuer die Animation</p>
+<div><pre class="line-numbers"><code class="language-none">    construct.push({
+      source: previousState.toString(),
+      trans: nextState.event.type,
+      target: nextState.value,
+      stack: prevConst,
+    });</code></pre></div><h3 id="22-die-erzeugung-eines-falschen-ausdrucks">2.2 Die Erzeugung eines Falschen Ausdrucks</h3>
+<p>Es wird wie in 2.1 ein richtiger Ausdruck erzeugt. Danach wird nach einem Random Algorithmus ein Zeichen ausgetauscht.</p>
+<h3 id="24-animation">2.4 Animation</h3>
+<p>Da Animation in diesem Projekt haeufig angewendet werden, wurde ein spezielle Animations-Logik implementiert. Das Schema sieht so aus:</p>
+<div><pre class="line-numbers"><code class="language-none">  sourceNode.animate(
+    {
+      style: {
+        lineColor: &#39;#3f51b5&#39;,
+        color: &#39;#3f51b5&#39;,
+        &#39;border-color&#39;: &#39;#3f51b5&#39;,
+      },
+    },
+    { duration: speed / 3 }
+  );</code></pre></div><h3 id="weitere-details">Weitere Details</h3>
+<p>Fuer weitere Details bitte in der Navigation schauen.</p>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">Kein passendes Ergebnis "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'keller-projekt.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
