@@ -30,7 +30,7 @@ require(["dojo", "dojo/parser", "dojo/domReady!"], function (dojo) {
       ["texture", "cog1/texture"],
       ["animation", "cog1/animation"],
       ["data", "cog1/data"],
-      ["glMatrix", "cog1/ext/glMatrix.js"]
+      ["glMatrix", "ext/glMatrix.js"]
     ]
   });
 
