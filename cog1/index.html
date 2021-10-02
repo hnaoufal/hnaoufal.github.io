@@ -1,13 +1,443 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>CG1  Rendering Pipeline</title>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.10.1/dijit/themes/claro/claro.css" media="screen">
-	<link rel="stylesheet" href="css/cog1.css" media="screen">
-	<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js" data-dojo-config="async:true"></script>
+    <meta charset="UTF-8">
+    <title>Cheatsheet Concept</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.9.0-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="../css/prism.css">
+    <link rel="stylesheet" href="../css/cheatsheet.css">
+
+    <style>
+        code[class*='language-'],
+        pre[class*='language-'] {
+            color: rgb(215, 236, 255);
+            background: none;
+            font-family: 'Operator Mono', 'Roboto Mono', Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+            monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            font-size: 1rem;
+            -webkit-overflow-scrolling: touch;
+            margin: 0;
+
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+        }
+
+        pre[class*='language-']::-moz-selection,
+        pre[class*='language-'] ::-moz-selection,
+        code[class*='language-']::-moz-selection,
+        code[class*='language-'] ::-moz-selection {
+            text-shadow: none;
+            background: #131824;
+        }
+
+        pre[class*='language-']::selection,
+        pre[class*='language-'] ::selection,
+        code[class*='language-']::selection,
+        code[class*='language-'] ::selection {
+            text-shadow: none;
+            background: #131824;
+        }
+
+        @media print {
+            code[class*='language-'],
+            pre[class*='language-'] {
+                text-shadow: none;
+            }
+        }
+
+        /* Code blocks */
+        pre[class*='language-'] {
+            overflow: auto;
+            padding: 0.75rem 1.25rem;
+        }
+
+        pre.is-option {
+            margin: 0;
+            padding: 0;
+        }
+
+        :not(pre) > code[class*='language-'],
+        pre[class*='language-'] {
+            background: linear-gradient(-30deg, #273149, #1c273f);
+            border-radius: 0.25rem;
+        }
+
+        /* Inline code */
+        :not(pre) > code[class*='language-'] {
+            padding: 0.1em;
+            border-radius: 0.3em;
+            white-space: normal;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: #8ca2d3;
+        }
+
+        .token.selector,
+        .token.attr-name {
+            color: #c7f683;
+        }
+
+        .token.punctuation {
+            color: #5ac8e3;
+        }
+
+        .namespace {
+            opacity: 0.7;
+        }
+
+        .token.tag {
+            color: #2cefd8;
+        }
+
+        .token.property,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+            color: #85b4ff;
+        }
+
+        .token.string,
+        .language-css .token.string,
+        .token.url,
+        .token.attr-value,
+        .token.char,
+        .token.builtin,
+        .token.inserted {
+            color: #ffd694;
+        }
+
+        .token.operator,
+        .token.entity,
+        .style .token.string {
+            color: #ff9bbe;
+        }
+
+        .token.important,
+        .token.atrule,
+        .token.keyword {
+            color: #b7adff;
+        }
+
+        .token.function {
+            color: #25d0e5;
+        }
+
+        .token.regex,
+        .token.variable {
+            color: #00a8d4;
+        }
+
+        .token.bold {
+            font-weight: bold;
+        }
+
+        .token.italic {
+            font-style: italic;
+        }
+
+        .token.entity {
+            cursor: help;
+        }
+    </style>
+
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
 </head>
-<body class="claro">
-<script src="cog1/start.js"></script>
+<body>
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <h1 class="title">Computergrafik 1</h1>
+                    <h3 class="subtitle">
+                        Prof. Dr. Gers
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3">
+                <aside class="is-medium menu">
+                    <p class="menu-label">
+                        Aufgaben
+                    </p>
+                    <ul class="menu-list">
+                        <li><span class="tag is-white is-medium">Aufgabe 1</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 2</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 3</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 4</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 5</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 6</span></li>
+                        <li><span class="tag is-white is-medium">Aufgabe 7</span></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column is-9">
+                <h1 class="title">Hicham Naoufal</h1>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 1 - PolyCount
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Lassen Sie die Anzahl der dargestellten Polygone (Dreiecke oder Vierecke) in der Szene
+                        automatisch zählen, so dass der "Polycount" korrekt angezeigt wird.
+                        <br/>
+                        Dazu gibt es keine Aufgaben-Marker im Source-Code. Sie müssen den Befehl "polycount++;" an der
+                        richtigen Stelle im Code einfügen.
+                        <br/>
+                        Sie können den Polycount testen in dem Sie die Triangulation in der Anwendung ein und aus
+                        schalten. Vergleichen die Anzahl der dargestellten Dreiecke mit Ihrem Polycount (links oben auf
+                        dem Canvas).
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 2 - MyModel
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Erstellen Sie ein eigenes 3D-Modell, z.B. das Haus von Nikolaus in 3D als minimales Modell
+                        (oder etwas komplexeres, eine Kirche, einen Flughafen, oder etwas kleines wie einen
+                        Schlüssel, etc). Das Modell sollte aus wenigstens 30 Vertices bestehen.
+                        <br/>
+                        Schauen Sie in das Verzeichnis cog1/modelData. Dort legen Sie eine neue Datei myModel.js
+                        nach dem Vorbild von empty.js und cube.js (oder eines anderen Models) an. Ihr "myModel"
+                        binden Sie in der Datei cog1/createScene.js ein.
+                        <br/>
+                        Sie sollten diese Aufgabe nicht mit der Projektaufgabe "Modellimporter" kombinieren, siehe
+                        Aufgabe M5 (diese wird separat gewertet).
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 3 - Bresenham-Geraden-Algorithmus
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Implementieren Sie den Bresenham-Geraden-Algorithmus wie im Modul beschrieben.
+                        <br/>
+                        Im Kurs unter "Links und Literatur" finden Sie weitere Implementierungshilfen, aber gehen Sie
+                        kritisch damit um. Vergleichen Sie die vorgestellten Algorithmen mit dem im Modul. Ihre
+                        Implementierung soll wie im Modul nur mit ganzen Zahlen (Integers) rechnen.
+                        <br/>
+                        Hinweise (und likely Bugs):
+                        <br/>
+                        Zum setzten eines Pixels/Fragments nutzen Sie die framebuffer.set() Methode.
+                        <br/>
+                        In function drawLineBresenham() use dXAbs und dYAbs to calculate dz: dz = (endZ - startZ) /
+                        dXAbs; und dz = (endZ - startZ) / dYAbs;
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 4 - Scanline-Algorithmus
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Erweitern Sie ihr Grafikprogramm um die Darstellung von gefüllten Polygonen. Nutzen Sie dazu den
+                        Scanline-Algorithmen, wie im Video erklärt.
+                        <br/>
+                        Abgabe: Zeigen Sie als Modell das gefüllte "insideOutPoly".
+                        <br/>
+                        Hinweise:
+                        <br/>
+                        Clipping ist nicht Teil der Aufgabe, dazu gibt es die Aufgabe W2. Beobachten Sie was passiert
+                        wenn Sie das InsideOutPolygon über Rand aus dem Bild schieben.
+                        <br/>
+                        Tipps:
+                        <br/>
+                        Um nicht immer per Button von Wireframe auf Fill umschalten zu müssen, können Sie In scene.js
+                        die Variable "fill" auf true setzen.
+                        <br/>
+                        Zum Testen der Spezialfälle können Sie in createScene "insideOutPoly" als Modell einstellen.
+                        Damit es nicht in Dreiecke zerlegt wird, setzen Sie in scene.js triangulateDataOnInit = false.
+                        In createScene.js wählen Sie das InsideOutPoly visible und interactive.
+                        <br/>
+                        Der Z-Wert ist für den Scanline Algorithmus unwichtig. Er wird erst für den Z-Buffer gebraucht.
+                        Sie können ihn daher ignorieren oder auf 0 setzen.
+                        Vorgehen:
+                        1. Horizontale Linien auslassen
+                        2. Die Linien ohne Startpunkt bis einschließlich Endpunkt zeichnen (also Endpunkt immer
+                        mitnehmen)
+                        wobei: Auf Treppen nur den ersten Punkt links mitnehmen, außer auf der letzten Stufe
+                        3. Startpunkt dazu nehmen, falls an der Ecke ein Vorzeichenwechsel in der Ableitung (derivative)
+                        vorliegt
+                        <br/>
+                        Im Bresenham ist startX immer kleiner als EndX, also wird an jedem linken Punkt eines
+                        horizontalen Liniensegments ein Intersection gesetzt, außer er ist Start- oder Endpunkt der
+                        Linie (bezüglich y).
+                        Also nur: if(y != endY) { addIntersection(... ); } Das ist mit Endpunkt gemeint, auch wenn x
+                        treibend ist. Für den Startpunkt gilt das entsprechend.
+                        <br/>
+                        Warum funktioniert der Scanline Algo so wie beschrieben, wenn beim Bresenham die Start- und
+                        Endpunkte vertauscht werden ( so dass immer xStart<=xEnd)? ( Der Grund dafür sind Rundungs- und
+                        dadurch Pixelfehler bei komplexeren Modellen an aneinanderliegenden Kanten.)
+                        Die Antwort ist: die erste Stufe und die letzte Stufe jedes Linie Segmentes werden nicht als
+                        Intersections für den Scanline mit aufgenommen (kein Pixel davon). Start- und Endpunkte werden
+                        separat behandelt in der Funktion "assembleIntersectionForScanline". Dabei werden die Endpunkte
+                        immer hinzugefügt und die Start-Punkte nur wenn die Ableitung (derivative) passt (siehe Video).
+                        Bei der Ableitung ist zu berücksichtigen, dass man für das erste Linien-Segment die letzte davor
+                        liegende Ableitung ungleich Null zuerst vor-berechnen muss.
+                        <br/>
+                        Beim Scanline ist es egal, ob man im Uhrzeigersinn oder andersrum die Kanten prüft. Es ist auch
+                        egal, ob die Scanline von links oder rechts kommt, weil man immer eine gerade Anzahl von
+                        Intersections hat (siehe Bild) Bei der Implementierung im Modul gehen die Linien auf denen x
+                        treibend ist immer von links nach rechts, damit sind die beiden Bilder identisch.
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 5 - Z-Buffer-Algorithmus
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Berücksichtigen Sie jetzt Verdeckungen indem Sie den Z-Buffer-Algorithmus umsetzen.
+                        <br/>
+                        Implementieren Sie dazu die Funtionen getz(x,y) und calcPlaneEquation(vertices, polygon) in
+                        raster.js und den Z-Buffer-Test in der framebuffer Methode set().
+                        <br/>
+                        Im Source-Code sind zwei Varianten vorgesehen um die Z-Wert zu gegebenen X-,Y-Werten auf einem
+                        Dreieck zur bestimmen: Interpolation und Ebenengleichung. Sie müssen sich für eine entscheiden.
+                        Schauen Sie sich dazu das Video zur Aufgabe an.
+                        <br/>
+                        Im Zweifelsfall starten Sie mir der Ebenengleichung, suchen Sie dazu nach den Stellen BEGIN/END
+                        exercise Z-Buffer in:
+                        function calcPlaneEquation(..) (in der Datei raster.js)
+                        dann
+                        function zBufferTest(x, y, z, color) (in der Datei framebuffer.js)
+                        <br/>
+                        Hinweise:
+                        - An den Kanten können Sie machmal noch Überlappungen sehen "Nähte". Diese entstehen durch so
+                        genanntes "Z-Fighting": https://en.wikipedia.org/wiki/Z-fighting.
+                        Wir nehmen das hier in kauf.
+                        - Achten Sie darauf, dass der Z-Buffer-Test nicht zweimal aufgerufen wird (debuggen mittels
+                        Breakpoint). Nach dem Ausführen des Tests in der Funktion scanlineFillPolygon() wird er durch
+                        den Aufruf von framebuffer.set() automatisch durchgeführt. Durch das Setzen des Parameters
+                        "doZBufferTest" auf false beim Aufruf von framebuffer.set() kann man das verhindern, und den
+                        Test explizit ausführen lassen. Vergisst man das, entstehen oft merkwürdige Muster, wenn
+                        Pixel/Fragments nur in den Z-Buffer eingetragen, aber nicht gezeichnet werden.
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 6 - Scherung
+                        </h4>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>
+                        Implementieren Sie die Scherung (shear) analog zu den anderen Transformationen.
+                    </p>
+                </div>
+                <br/>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 7 - TBD
+                        </h4>
+                    </span>
+                </div>
+                <div>
+                    <span class="tag is-white is-medium">
+                        <h4 class="title is-4">
+                            Aufgabe 8 - TBD
+                        </h4>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="columns is-mobile is-centered">
+        <div class="field is-grouped is-grouped-multiline">
+            <div class="control">
+                <div class="tags has-addons"><a class="tag is-link"
+                                                href="https://github.com/BulmaTemplates/bulma-templates">Bulma
+                    Templates</a>
+                    <span class="tag is-info">MIT license</span>
+                </div>
+            </div>
+            <div class="control">
+                <div class="tags has-addons">
+                    <span class="tag is-dark">based on a pen</span>
+                    <span class="tag has-addons is-warning"><a href="https://codepen.io/melanieseltzer/pen/odOXWM"><i
+                            class="fab fa-lg fa-codepen"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+<script>
+  window.addEventListener('resize', () => {
+    const divs = document.querySelectorAll(".menu-list");
+    if (window.innerWidth < 768) {
+      divs.forEach(div => div.classList.add("tags"));
+    } else {
+      divs.forEach(div => div.classList.remove("tags"));
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    //The first argument are the elements to which the plugin shall be initialized
+    //The second argument has to be at least a empty object or a object with your desired options
+    OverlayScrollbars(document.querySelectorAll("body"), {});
+  });
+
+</script>
 </body>
 </html>
