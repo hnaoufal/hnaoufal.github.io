@@ -13,7 +13,7 @@ require(["dojo", "dojo/parser", "dojo/domReady!"], function (dojo) {
     cacheBust: new Date(),
     waitSeconds: 5,
     paths: {
-      "cog1": "/cog1/1"
+      "cog1": "/cog1/2"
     },
     aliases: [
       ["app", "cog1/app"],
