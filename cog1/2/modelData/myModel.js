@@ -19,20 +19,20 @@ define(["exports", "data"], function (exports, data) {
   exports.create = function (parameter = {}) {
     const instance = {};
     const scale = parameter.scale || 200;
-    const color = parameter.color || 8;
 
     instance.vertices = vertices;
     instance.polygonVertices = faces;
+    instance.polygonColors = faces.map(() => (Math.random() * 10) | 0);
+    console.log(instance.polygonColors)
 
     data.applyScale.call(instance, scale);
-    data.setColorForAllPolygons.call(instance, color);
 
     return instance;
   };
 });
 
 
-const vertices =[
+const vertices = [
   [-0.741042, 22.047741, 20.600935],
   [7.996342, 21.296429, -19.567974],
   [9.332225, 60.432396, -19.567968],
@@ -377,4 +377,4 @@ const faces = [
   [45, 49, 64, 67],
   [65, 64, 49, 48],
   [37, 60, 65, 48],
-].map(a => a.map(b => b -1 ));
+].map(a => a.map(b => b - 1));
