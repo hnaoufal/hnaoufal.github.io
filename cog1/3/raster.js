@@ -141,13 +141,21 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
 
       // Fehler bestimmen (kompakte Variante: https://de.wikipedia.org/wiki/Bresenham-Algorithmus#Kompakte_Variante)
       // Somit kann man sich die if Bedienungen in dem "Driving-Ast" und das staende neu setzen des Fehlers sparen
+      /*
+      Das Fehlerglied wird dabei sowohl für die langsame als auch die schnelle Richtung als Schritterkennung verwendet.
+      Die vier Quadranten werden über das Vorzeicheninkrement (sx, sy) abgedeckt. Die Akkumulation des Fehlerglieds löst
+      bei Überschreitung des Schwellwertes den bedingten Schritt aus, im Unterschied zur ursprünglichen Variante simultan
+      in beide Richtungen: positive Fehlerwerte für x und negative für die y-Achse. Das Beispiel zeigt damit auch elegant
+      die xy-Symmetrie des Bresenham-Algorithmus.
+       */
       let err = dXAbs - dYAbs;
 
-      // End-Punkt korrekt setzen
-      framebuffer.set(startX, startY, getZ(startX, startY), color);
-
       // Haupt-Schleife
-      while (!(startX === endX && startY === endY)) {
+      while (true) {
+        framebuffer.set(startX, startY, getZ(startX, startY), color);
+
+        if (startX === endX && startY === endY) break;
+
         // Equivalent wie * 2
         const e2 = err << 1;
 
@@ -171,8 +179,6 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
             addIntersection(x, y, z, interpolationWeight, edgeStartVertexIndex, edgeEndVertexIndex, edgeStartTextureCoord, edgeEndTextureCoord);
           }
         }
-
-        framebuffer.set(startX, startY, getZ(startX, startY), color);
       }
 
       // END exercise Bresenham
