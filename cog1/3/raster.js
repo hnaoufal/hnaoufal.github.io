@@ -128,9 +128,6 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
       var deltaInterpolationWeight;
 
       // BEGIN exercise Bresenham
-      // Z bestimmen
-      dz = (endZ - startZ) / dXAbs;
-      dz = (endZ - startZ) / dYAbs;
 
       // Skip it, if the line is just a point.
       if (startX === endX && startY === endY) return;
@@ -182,6 +179,91 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
       }
 
       // END exercise Bresenham
+
+      // Bresenham mit x, y, z
+      // Bresenham mit x,y,z Fallunterscheidung
+      // const point = [];
+      // point.push(startX);
+      // point.push(startY);
+      // point.push(startZ);
+      //
+      // const dx = endX - startX;
+      // const dy = endY - startY;
+      // const dz = endZ - startZ;
+      //
+      // const x_inc = (dx < 0) ? -1 : 1;
+      // const l = Math.abs(dx);
+      //
+      // const y_inc = (dy < 0) ? -1 : 1;
+      // const m = Math.abs(dy);
+      //
+      // const z_inc = (dz < 0) ? -1 : 1;
+      // const n = Math.abs(dz);
+      //
+      // const dx2 = l << 1;
+      // const dy2 = m << 1;
+      // const dz2 = n << 1;
+      //
+      // if ((l >= m) && (l >= n)) {
+      //   let err_1 = dy2 - l;
+      //   let err_2 = dz2 - l;
+      //   for (let i = 0; i < l; i++) {
+      //     framebuffer.set(point[0], point[1], point[2], color);
+      //     if (err_1 > 0) {
+      //       point[1] += y_inc;
+      //       err_1 -= dx2;
+      //     }
+      //
+      //     if (err_2 > 0) {
+      //       point[2] += z_inc;
+      //       err_2 -= dx2;
+      //     }
+      //
+      //     err_1 += dy2;
+      //     err_2 += dz2;
+      //
+      //     point[0] += x_inc;
+      //   }
+      // } else if ((m >= l) && (m >= n)) {
+      //   let err_1 = dx2 - m;
+      //   let err_2 = dz2 - m;
+      //
+      //   for (let i = 0; i < m; i++) {
+      //     framebuffer.set(point[0], point[1], point[2], color);
+      //     if (err_1 > 0) {
+      //       point[0] += x_inc;
+      //       err_1 -= dy2;
+      //     }
+      //
+      //     if (err_2 > 0) {
+      //       point[2] += z_inc;
+      //       err_2 -= dy2;
+      //     }
+      //
+      //     err_1 += dx2;
+      //     err_2 += dz2;
+      //
+      //     point[1] += y_inc;
+      //   }
+      // } else {
+      //   let err_1 = dy2 - n;
+      //   let err_2 = dx2 - n;
+      //   for (let i = 0; i < n; i++) {
+      //     framebuffer.set(point[0], point[1], point[2], color);
+      //     if (err_1 > 0) {
+      //       point[1] += y_inc;
+      //       err_1 -= dz2;
+      //     }
+      //     if (err_2 > 0) {
+      //       point[0] += x_inc;
+      //       err_2 -= dz2;
+      //     }
+      //     err_1 += dy2;
+      //     err_2 += dx2;
+      //     point[2] += z_inc;
+      //   }
+      // }
+      // framebuffer.set(point[0], point[1], point[2], color);
     }
 
 
