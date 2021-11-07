@@ -13,3 +13,11 @@ I
 cog1/1/modelData/empty.js,e/5/e567c7e4b9912970dcd76296e380a622425eb80d
 I
 cog1/1/modelData/plain.js,4/8/48b2a999826d673a67351e4a4287f2b82e72c9ef
+I
+cog1/1/modelData/torus.js,a/a/aada5c5d915c6ba484cdd1616c5ecd1f43f92ed6
+J
+cog1/1/modelData/sphere.js,c/a/ca509f7b695cf0a627561b814af3332b73b733d5
+J
+cog1/1/modelData/teapot.js,d/1/d1bee633f0a869abf14cdf50a539a71c079ffa18
+K
+cog1/1/modelData/diamond.js,a/c/ac4e9fec160c504552647a851ccc1c24bb10ce18
