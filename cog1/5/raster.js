@@ -126,34 +126,47 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
       var deltaInterpolationWeight;
 
       // BEGIN exercise Bresenham
-      if (startX === endX && startY === endY) {
-        framebuffer.set(startX, startY, startZ, color);
-        return;
+      if (x === endX &&  y === endY) {
+        return framebuffer.set(x, y, z, color);
       }
 
-      framebuffer.set(x, y, getZ(x, y), color);
+      framebuffer.set(x, y, z, color);
 
       if (dXAbs >= dYAbs) {
-        let previousY = y - dYSign;
+        dz = (endZ - startZ) / Math.abs(endX - startX);
+
+        let prevY = y - dYSign;
         e = dXAbs - dYAbs2;
+
         while (x !== endX) {
           x += dXSign;
+          z += dz;
+
           if (e > 0) {
             e = e - dYAbs2;
           } else {
             y += dYSign;
             e += dXdYdiff2;
           }
-          if (startY !== endY && x !== endX && y !== previousY && y !== startY && y !== endY) {
-            addIntersection(x, y, getZ(x, y), interpolationWeight, edgeStartVertexIndex, edgeEndVertexIndex, edgeStartTextureCoord, edgeEndTextureCoord);
+
+          if (storeIntersectionForScanlineFill && startY !== endY && x !== endX && y !== prevY && y !== startY && y !== endY) {
+            addIntersection(x, y, z, interpolationWeight, edgeStartVertexIndex, edgeEndVertexIndex, edgeStartTextureCoord, edgeEndTextureCoord);
           }
-          framebuffer.set(x, y, getZ(x, y), color);
-          previousY = y;
+
+          if (framebuffer.zBufferTest(x, y, z, color)) {
+            framebuffer.set(x, y, z, color, false);
+          }
+
+          prevY = y;
         }
       } else {
+        dz = (endZ - startZ) / Math.abs(endY - startY);
+
         e = dYAbs - dXAbs2;
         while (y !== endY) {
           y += dYSign;
+          z += dz;
+
           if (e > 0) {
             e = e - dXAbs2;
           } else {
@@ -161,10 +174,12 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
             e += dYdXdiff2;
           }
 
-          framebuffer.set(x, y, getZ(x, y), color);
+          if (storeIntersectionForScanlineFill && y !== endY) {
+            addIntersection(x, y, z, interpolationWeight, edgeStartVertexIndex, edgeEndVertexIndex, edgeStartTextureCoord, edgeEndTextureCoord);
+          }
 
-          if (y !== endY) {
-            addIntersection(x, y, getZ(x, y), interpolationWeight, edgeStartVertexIndex, edgeEndVertexIndex, edgeStartTextureCoord, edgeEndTextureCoord);
+          if (framebuffer.zBufferTest(x, y, z, color)) {
+            framebuffer.set(x, y, z, color, false);
           }
         }
       }
@@ -238,6 +253,10 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
 
         endPoint = vertices[polygon[nVert]];
         lastDerivative = calcDerivative(startPoint[1], endPoint[1]);
+
+        if (derivative + lastDerivative === 0 && derivative !== 0) {
+          addIntersection(currX, currY, currZ);
+        }
         currPolCount--;
       }
 
@@ -251,6 +270,9 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
         const nextVertexIndex = i < polygon.length - 1 ? i + 1 : 0;
         endPoint = vertices[polygon[nextVertexIndex]];
 
+        // Convert parameters to integer values.
+        // Use Math.floor() for integer cast and rounding of X-Y values.
+        // Leave Z as floating point for comparisons in z-buffer.
         currX = Math.floor(startPoint[0]);
         currY = Math.floor(startPoint[1]);
         currZ = startPoint[2];
@@ -258,25 +280,33 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
         nextY = Math.floor(endPoint[1]);
         nextZ = endPoint[2];
 
+        // Set texture coordinate uv-vector/array of the current edge for later interpolation.
+
+        // console.log(`Edge ${i + 1}: startPoint: ${currX},${currY},${currZ} - endPoint: ${nextX},${nextY},${nextZ}`);
         drawLineBresenham(currX, currY, currZ, nextX, nextY, nextZ, color, true);
 
+        // Calculate current derivative
         derivative = calcDerivative(currY, nextY);
+        // console.log(`derivative: ${derivative}, lastDerivative: ${lastDerivative}`);
 
+        // Skip horizontal edges.
         if (derivative === 0) {
           continue;
         }
 
+        // Add end point of non horizontal edges.
         if (derivative !== 0) {
           addIntersection(nextX, nextY, nextZ);
-
-          if (derivative + lastDerivative === 0) {
-            addIntersection(currX, currY, currZ);
-          }
         }
 
+        if (derivative + lastDerivative === 0 && derivative !== 0) {
+          // Add start point if edges are non monotonous, Peek point.
+          addIntersection(currX, currY, currZ);
+        }
+
+        // If current derivative ==0 then keep the last one.
         lastDerivative = derivative;
       }
-
       // END exercise Scanline
       // END exercise Texture
     }
@@ -305,6 +335,7 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
       // BEGIN exercise Z-Buffer (for interpolation of z)
 
       // Calculate dz for linear interpolation along a scanline.
+      // var dz = (zEndFill - zStartFill) / deltaX;
 
       // END exercise Z-Buffer
 
@@ -366,7 +397,7 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
      * @parameter texture: if not null do interpolate UV.
      */
     function interpolationStepOnScanline(texture) {
-
+      //TODO
       // BEGIN exercise Z-Buffer (for interpolation of z or plane equ)
 
       // Calculate z for next pixel, i.e. apply dz step.
@@ -416,6 +447,8 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
     function scanlineFillPolygon(vertices, polygon, color, textureCoord, polygonTextureCoord, texture) {
       var horizontalClippingTest;
       var zTest;
+      var dz;
+      var z;
 
       // Raster the edges.
       assembleIntersectionForScanline(vertices, polygon, color, textureCoord, polygonTextureCoord, texture);
@@ -430,18 +463,27 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
       interpolationData.shaderStepOnScanline = shader.getInterpolationStepOnScanlineFunction();
 
       // BEGIN exercise Scanline
-      for (let y = 0; y < height; y++) {
-        if (!scanlineIntersection[y]) {
-          continue;
-        }
-        scanlineIntersection[y].sort((a, b) => a.x - b.x);
 
-        for (let i = 0; i < scanlineIntersection[y].length - 1; i += 2) {
-          const x1 = scanlineIntersection[y][i];
-          const x2 = scanlineIntersection[y][i + 1];
+      for (let y = 0; y < scanlineIntersection.length; y++) {
+        const line = scanlineIntersection[y];
+        if (line) {
+          if (line.length < 2 || line.length % 2) {
+            continue;
+          }
 
-          for (let x = x1.x; x <= x2.x; x++) {
-            framebuffer.set(x, y, getZ(x, y), color);
+          line.sort((a, b) => a.x > b.x && 1 || -1);
+
+          for (let i = 0; i < line.length; i+=2) {
+            z = line[i].z;
+            dz = (line[i + 1].z - line[i].z) / (line[i + 1].x - line[i].x);
+
+            for (let x = line[i].x; x < line[i + 1].x; x++) {
+              if (framebuffer.zBufferTest(x, y, z, color)) {
+                framebuffer.set(x, y, z, color, false);
+              }
+              z += dz;
+              interpolationStepOnScanline(texture);
+            }
           }
         }
       }
@@ -496,6 +538,7 @@ define(["exports", "shader", "framebuffer", "data", "glMatrix"], //
         return false;
       }
 
+      //TODO
       // START exercise Z-Buffer
 
       // Project first vertex (could be any) on normal.

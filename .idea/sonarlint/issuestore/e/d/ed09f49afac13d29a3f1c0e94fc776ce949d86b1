@@ -1,0 +1,59 @@
+
+Rjavascript:S1481"6Remove the declaration of the unused 'AdivC' variable.(ş´Õó
+pjavascript:S107Q"PFunction 'drawLineBresenham' has too many parameters (12). Maximum allowed is 7.(âóÄüÿÿÿÿ
+€javascript:S2234W"dArguments 'endY' and 'startY' have the same names but not the same order as the function parameters.(¾©¯½
+Sjavascript:S1481g"7Remove the declaration of the unused 'dXSign' variable.(Íæ «
+Pjavascript:S1854g"4Remove this useless assignment to variable "dXSign".(Íæ «
+Xjavascript:S1481h"7Remove the declaration of the unused 'dYSign' variable.(·Ÿùùÿÿÿÿ
+Ujavascript:S1854h"4Remove this useless assignment to variable "dYSign".(·Ÿùùÿÿÿÿ
+Xjavascript:S1481k"7Remove the declaration of the unused 'dXAbs2' variable.(­Âü“ıÿÿÿÿ
+Ujavascript:S1854k"4Remove this useless assignment to variable "dXAbs2".(­Âü“ıÿÿÿÿ
+Xjavascript:S1481l"7Remove the declaration of the unused 'dYAbs2' variable.(ˆ‡ÛŸşÿÿÿÿ
+Ujavascript:S1854l"4Remove this useless assignment to variable "dYAbs2".(ˆ‡ÛŸşÿÿÿÿ
+[javascript:S1481m":Remove the declaration of the unused 'dXdYdiff2' variable.(Áõ·«øÿÿÿÿ
+Xjavascript:S1854m"7Remove this useless assignment to variable "dXdYdiff2".(Áõ·«øÿÿÿÿ
+Vjavascript:S1481n":Remove the declaration of the unused 'dYdXdiff2' variable.(ğÌ§‰
+Sjavascript:S1854n"7Remove this useless assignment to variable "dYdXdiff2".(ğÌ§‰
+Mjavascript:S1481q"2Remove the declaration of the unused 'e' variable.(Œö;
+Njavascript:S1481s"2Remove the declaration of the unused 'x' variable.(äúÚŒ
+Kjavascript:S1854s"/Remove this useless assignment to variable "x".(äúÚŒ
+Njavascript:S1481t"2Remove the declaration of the unused 'y' variable.(— ğö
+Kjavascript:S1854t"/Remove this useless assignment to variable "y".(— ğö
+Njavascript:S1481u"2Remove the declaration of the unused 'z' variable.(ƒíş¥
+Kjavascript:S1854u"/Remove this useless assignment to variable "z".(ƒíş¥
+Tjavascript:S1481x"3Remove the declaration of the unused 'dz' variable.(»ÀÌüûÿÿÿÿ
+`javascript:S1481"DRemove the declaration of the unused 'interpolationWeight' variable.(¸·½ä
+kjavascript:S1481€"IRemove the declaration of the unused 'deltaInterpolationWeight' variable.(ÑÙ§©úÿÿÿÿ
+8javascript:S3626…"Remove this redundant jump.(ûÁİ…
+@javascript:S125—"Remove this commented out code.(Šœ— ÿÿÿÿÿ
+@javascript:S125"Remove this commented out code.(Šœ— ÿÿÿÿÿ
+8javascript:S1116¡"Unnecessary semicolon.(ôŸìúÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'currX' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'currY' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'currZ' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'nextX' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'nextY' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Â"6Remove the declaration of the unused 'nextZ' variable.(ö¯êÒşÿÿÿÿ
+Xjavascript:S1481Ã";Remove the declaration of the unused 'startPoint' variable.(âş¦ğ
+Vjavascript:S1481Ã"9Remove the declaration of the unused 'endPoint' variable.(âş¦ğ
+Wjavascript:S1481Ã":Remove the declaration of the unused 'lastIndex' variable.(âş¦ğ
+:javascript:S125Í"Remove this commented out code.(œé
+Xjavascript:S1481Ò";Remove the declaration of the unused 'derivative' variable.(—İ×¢
+ajavascript:S1481Ó"?Remove the declaration of the unused 'lastDerivative' variable.(Õ¬Ïÿÿÿÿÿ
+;javascript:S125î"Remove this commented out code.(õÇœû
+Rjavascript:S1481"6Remove unused function 'interpolationPrepareScanline'.(ä½…e
+[javascript:S1481–"9Remove the declaration of the unused 'zEndFill' variable.(®½Ó’üÿÿÿÿ
+Xjavascript:S1854–"6Remove this useless assignment to variable "zEndFill".(®½Ó’üÿÿÿÿ
+@javascript:S125ö"Remove this commented out code.(ĞáÇöüÿÿÿÿ
+djavascript:S1481"GRemove the declaration of the unused 'horizontalClippingTest' variable.(Šµûº
+Xjavascript:S1481"6Remove the declaration of the unused 'zTest' variable.(Á±áÿÿÿÿÿ
+]javascript:S1481—"@Remove the declaration of the unused 'shadingFunction' variable.(–ãÿï
+Zjavascript:S1854—"=Remove this useless assignment to variable "shadingFunction".(–ãÿï
+;javascript:S125£"Remove this commented out code.(¾ÂÔ·
+Ejavascript:S1481â"(Remove unused function 'calcDerivative'.(Ûö„Ù
+;javascript:S125“"Remove this commented out code.(á­ù´
+njavascript:S107´"MFunction 'addIntersection' has too many parameters (8). Maximum allowed is 7.(¦ÌëÙıÿÿÿÿ
+Kjavascript:S1481´")Remove unused function 'addIntersection'.(¦ÌëÙıÿÿÿÿ
+@javascript:S1481İ"Remove unused function 'getZ'.(î¶º©ùÿÿÿÿ
+{javascript:S1488à"YImmediately return this expression instead of assigning it to the temporary variable "z".(„š½äüÿÿÿÿ
+@javascript:S125õ"Remove this commented out code.(•«ºèúÿÿÿÿ
