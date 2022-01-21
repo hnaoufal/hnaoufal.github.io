@@ -1,0 +1,26 @@
+
+Yjavascript:S1481"6Remove the declaration of the unused 'AdivC' variable.(ş´Õó8†öšİ/
+wjavascript:S107P"PFunction 'drawLineBresenham' has too many parameters (12). Maximum allowed is 7.(âóÄüÿÿÿÿ8†öšİ/
+|javascript:S3776P"TRefactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.(âóÄüÿÿÿÿ8‡öšİ/
+‡javascript:S2234U"dArguments 'endY' and 'startY' have the same names but not the same order as the function parameters.(¾©¯½8‡öšİ/
+Ujavascript:S1481s"2Remove the declaration of the unused 'z' variable.(ƒíş¥8‡öšİ/
+Rjavascript:S1854s"/Remove this useless assignment to variable "z".(ƒíş¥8ˆöšİ/
+[javascript:S1481v"3Remove the declaration of the unused 'dz' variable.(»ÀÌüûÿÿÿÿ8ˆöšİ/
+qjavascript:S1481~"IRemove the declaration of the unused 'deltaInterpolationWeight' variable.(ÑÙ§©úÿÿÿÿ8ˆöšİ/
+wjavascript:S3776È"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(›Ş×y8ˆöšİ/
+^javascript:S1481Í":Remove the declaration of the unused 'lastIndex' variable.(âş¦ğ8‰öšİ/
+Ajavascript:S125Ø"Remove this commented out code.(œé8‰öšİ/
+Yjavascript:S1481¢"6Remove unused function 'interpolationPrepareScanline'.(ä½…e8‰öšİ/
+bjavascript:S1481ª"9Remove the declaration of the unused 'zEndFill' variable.(®½Ó’üÿÿÿÿ8‰öšİ/
+_javascript:S1854ª"6Remove this useless assignment to variable "zEndFill".(®½Ó’üÿÿÿÿ8‰öšİ/
+^javascript:S1481ğ"5Remove unused function 'interpolationStepOnScanline'.(Ã°â‘øÿÿÿÿ8Šöšİ/
+Gjavascript:S125Š"Remove this commented out code.(ĞáÇöüÿÿÿÿ8Šöšİ/
+kjavascript:S1481¡"GRemove the declaration of the unused 'horizontalClippingTest' variable.(Šµûº8Šöšİ/
+_javascript:S1481¢"6Remove the declaration of the unused 'zTest' variable.(Á±áÿÿÿÿÿ8Šöšİ/
+djavascript:S1481ª"@Remove the declaration of the unused 'shadingFunction' variable.(–ãÿï8Šöšİ/
+ajavascript:S1854ª"=Remove this useless assignment to variable "shadingFunction".(–ãÿï8‹öšİ/
+Bjavascript:S125ø"Remove this commented out code.(á­ù´8‹öšİ/
+ujavascript:S107™"MFunction 'addIntersection' has too many parameters (8). Maximum allowed is 7.(¦ÌëÙıÿÿÿÿ8‹öšİ/
+‚javascript:S1488Ä"YImmediately return this expression instead of assigning it to the temporary variable "z".(„š½äüÿÿÿÿ8‹öšİ/
+Kjavascript:S1481Ò""Remove unused function 'drawLine'.(¦©¯Ÿûÿÿÿÿ8‹öšİ/
+Gjavascript:S125Ù"Remove this commented out code.(•«ºèúÿÿÿÿ8Œöšİ/
