@@ -70,30 +70,33 @@ define(["exports", "data", "glMatrix"], function (exports, data) {
     // Starting with octahedron vertices
     // octahedron triangles
 
+    const details = 1;
+
     instance.vertices = [
-      [1.0, 0.0, 0.0],
-      [-1.0, 0.0, 0.0],
-      [0.0, 1.0, 0.0],
-      [0.0, -1.0, 0.0],
-      [0.0, 0.0, 1.0],
-      [0.0, 0.0, -1.0],
+      [0, 1, 0],
+      [1, 0, 0],
+      [0, 0, -1],
+      [-1, 0, 0],
+      [0, 0, 1],
+      [0, -1, 0],
     ];
 
     instance.polygonVertices = [
-      [0, 4, 2],
-      [2, 4, 1],
-      [1, 4, 3],
-      [3, 4, 0],
-      [0, 2, 5],
-      [2, 1, 5],
-      [1, 3, 5],
-      [3, 0, 5],
+      [0, 4, 1],
+      [0, 1, 2],
+      [0, 2, 3],
+      [0, 3, 4],
+
+      [5, 4, 1],
+      [5, 1, 2],
+      [5, 2, 3],
+      [5, 3, 4],
     ];
-
-
-    devide_all.call(instance, recursionDepth);
-
     // END exercise Sphere
+
+    const centerOfTwoVertices = (a, b) => {
+
+    }
 
     devide_all.call(instance, recursionDepth);
 
@@ -188,13 +191,9 @@ define(["exports", "data", "glMatrix"], function (exports, data) {
       const v2 = this.vertices[p2];
 
       //create new vectors
-      const aAdd = v0.map((v, index) => v + v2[index]);
-      const bAdd = v0.map((v, index) => v + v1[index]);
-      const cAdd = v1.map((v, index) => v + v2[index]);
-
-      const aMul = aAdd.map(a => a * 0.5);
-      const bMul = bAdd.map(b => b * 0.5);
-      const cMul = cAdd.map(c => c * 0.5);
+      const aMul = v0.map((v, index) => (v + v2[index])/2);
+      const bMul = v0.map((v, index) => (v + v1[index])/2);
+      const cMul = v1.map((v, index) => (v + v2[index])/2);
 
       // normalize
       const vecNorm = (v) => v.map(el => el / Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]));
@@ -210,7 +209,6 @@ define(["exports", "data", "glMatrix"], function (exports, data) {
       // construct new Polygon (triangle)
       newPolygon.push([p0, i + 1, i], [i + 1, p1, i + 2], [i, i + 1, i + 2], [i, i + 2, p2]);
     }
-    // Swap result.
     this.polygonVertices = newPolygon;
     // Recursion.
     devide_all.call(this, recursionDepth, nbRecusions + 1);
