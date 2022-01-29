@@ -11,9 +11,9 @@ function(exports, dojo, domStyle, app, scenegraph, createScene, animation, raste
 	// Variables with initialization parameters.
 	//
 	// Fill or stroke polygon.
-	var fill = true;
+	var fill = false;
 	// Display normals for debug.
-	var displayNormals = false;
+	var displayNormals = true;
 	var defaultNormalLength = 50;
 	// Display edges together with normals as default.
 	var displayEdges = false;
@@ -38,7 +38,7 @@ function(exports, dojo, domStyle, app, scenegraph, createScene, animation, raste
 	// Set when triangulation is toggled.
 	var dataIsTriangulated = triangulateDataOnInit;
 	// Use textures defined in model data.
-	var texturing = true;
+	var texturing = false;
 
 	// Font for info on canvas (not in GUI) .
 	var fontsizeInPt = 10;

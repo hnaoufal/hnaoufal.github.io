@@ -84,7 +84,7 @@ function(exports, scenegraph, animation) {
         cubeNode1.setVisible(false);
         cubeNode2.setVisible(false);
         cubeNode3.setVisible(false);
-        cubeNode4.setVisible(true);
+        cubeNode4.setVisible(false);
         cubeNode5.setVisible(false);
         cubeNode6.setVisible(false);
         insideOutPolyNode.setVisible(false);
@@ -92,7 +92,7 @@ function(exports, scenegraph, animation) {
         torusNode.setVisible(false);
         torusNode1.setVisible(false);
         teapotNode.setVisible(false);
-        dirtyTeapotNode.setVisible(false);
+        dirtyTeapotNode.setVisible(true);
         waltheadNode.setVisible(false);
         plainNode1.setVisible(false);
         emptyNode1.setVisible(false);
