@@ -81,3 +81,9 @@ E
 cog1/1/raster.js,0/0/00d85926a3a3faaaf3a4c1c3b71a15b9256d34f4
 @
 cog1/4/raster.js,b/1/b120156fbd206eadc6fa06d77bbf7d4a25af2849
+E
+cog1/5/framebuffer.js,3/d/3d5c67ad401ec73ed55f046981e5095708443329
+8
+test.sql,0/1/01eb742dd37fd37173125b676f03c7641ab3a0c3
+C
+cog1/6/css/cog1.css,c/f/cf1779c7bfa58eb60cf3abb8a5efb6a4ea30190c
