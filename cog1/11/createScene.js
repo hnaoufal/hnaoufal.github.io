@@ -25,6 +25,10 @@ function(exports, scenegraph, animation) {
 		// END exercise myModel
 		
 		// return;
+		const modelName = 'myModel';
+		const myModel = scenegraph.createNodeWithModel(modelName, modelName, { scale: 200 });
+		// myModel.rotateTo([3, -1.5, 0]);
+		myModel.translate([0, -580, 0]);
 
 		//var cubeNode = scenegraph.createNodeWithModel("cube", "cube", {scale:100, textureURL:"brickWall.jpg"});		
 		var cubeNode1 = scenegraph.createNodeWithModel("cube 1", "cube", {scale:70, textureURL:"stoneWall.jpg"});
@@ -84,8 +88,9 @@ function(exports, scenegraph, animation) {
         cubeNode1.setVisible(false);
         cubeNode2.setVisible(false);
         cubeNode3.setVisible(false);
-        cubeNode4.setVisible(true);
-        cubeNode5.setVisible(false);
+        cubeNode4.setVisible(false);
+				myModel.setVisible(true);
+				cubeNode5.setVisible(false);
         cubeNode6.setVisible(false);
         insideOutPolyNode.setVisible(false);
         diamondNode.setVisible(false);

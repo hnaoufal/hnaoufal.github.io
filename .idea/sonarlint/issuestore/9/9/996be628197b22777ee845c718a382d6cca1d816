@@ -1,0 +1,14 @@
+
+javascript:S2392o"WConsider moving declaration of 'i' as it is referenced outside current binding context.(Ïßâğşÿÿÿÿ8ºğÜ«ê/
+?javascript:S2814s"'i' is already defined.(£æ€ûÿÿÿÿ8·ùšİ/
+bjavascript:S1481":Remove the declaration of the unused 'indexZBuf' variable.(š«„¡ûÿÿÿÿ8·ùšİ/
+_javascript:S1854"7Remove this useless assignment to variable "indexZBuf".(š«„¡ûÿÿÿÿ8·ùšİ/
+Ajavascript:S125§"Remove this commented out code.(½ÿ98·ùšİ/
+Pjavascript:S1125«"'Remove the unnecessary boolean literal.(ëšÜÿÿÿÿÿ8¸ùšİ/
+Kjavascript:S1125²"'Remove the unnecessary boolean literal.(íÊúŠ8¸ùšİ/
+Wjavascript:S1854¿"3Remove this useless assignment to variable "index".(¦ÊÌâ8¸ùšİ/
+^javascript:S1481ú":Remove the declaration of the unused 'clearrect' variable.(ĞıÕ§8¸ùšİ/
+ƒjavascript:S2392¢"_Consider moving declaration of 'clearRect' as it is referenced outside current binding context.(²÷8½ğÜ«ê/
+Ajavascript:S125Ä"Remove this commented out code.(êø”f8¸ùšİ/
+€javascript:S2392Ñ"WConsider moving declaration of 'i' as it is referenced outside current binding context.(£æ€ûÿÿÿÿ8¾ğÜ«ê/
+@javascript:S2814ß"'i' is already defined.(£æ€ûÿÿÿÿ8¹ùšİ/

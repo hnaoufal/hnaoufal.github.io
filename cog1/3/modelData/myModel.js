@@ -23,7 +23,6 @@ define(["exports", "data"], function (exports, data) {
     instance.vertices = vertices;
     instance.polygonVertices = faces;
     instance.polygonColors = faces.map(() => (Math.random() * 10) | 0);
-    console.log(instance.polygonColors)
 
     data.applyScale.call(instance, scale);
 
