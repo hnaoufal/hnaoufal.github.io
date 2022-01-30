@@ -56,6 +56,7 @@ define(["exports", "data", "glMatrix"], function(data, exports) {
 		{gold : [83, 75, 44, 255]},
 		{bluegrey : [64, 64, 128, 255]},
 		{white : [255, 255, 255, 255]},
+		{brown: [101, 67, 63, 255]},
 	];
 
 	// 2D-array of texture coordinates. Indices used by polygonTextureCoord.
