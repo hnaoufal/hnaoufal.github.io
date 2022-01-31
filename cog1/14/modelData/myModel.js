@@ -2,22 +2,22 @@
  * 3D Data Store for a model.
  * Missing properties/arrays (commented out)
  * are mixed in from data module.
- *
+ *  
  * @namespace cog1.data
- * @module cube
+ * @module myModel
  */
 define(["exports", "data"], function(exports, data) {
 	"use strict";
 
 	/**
 	 * Create an instance of the model defined in this module.
-	 *
+	 * 
 	 * @parameter object with fields:
 	 * @parameter scale is the edge length of the cube.
 	 * @returns instance of this model.
 	 */
 	exports.create = function(parameter) {
-
+		
 		if(parameter) {
 			var scale = parameter.scale;
 			var textureURL = parameter.textureURL;
@@ -37,25 +37,32 @@ define(["exports", "data"], function(exports, data) {
 
 		// Instance of the model to be returned.
 		var instance = {};
-
-		// Vertex indices:							
-		//   7----6
-		//	/|   /|
-		// 4----5 |
-		// | 3--|-2
-		// |/   |/
-		// 0----1
+		
 		instance.vertices = [
-			// bottom (y=-1)
+			// cube bottom (y=-1)
+			//x, y, z
 			[-1,-1, 1],
 			[ 1,-1, 1],
 			[ 1,-1,-1],
 			[-1,-1,-1],
-			// top (y=+1)		
+			// cube top (y=+1)		
 			[-1,1, 1],
 			[ 1,1, 1],
 			[ 1,1,-1],
 			[-1,1,-1],
+			// roof top (y=+2)
+			[ 0,2, 1],
+			[ 0,2,-1],
+			// chimney bottom	
+			[-0.7,1.3,0.7],
+			[-0.3,1.7,0.7],
+			[-0.3,1.7,0.1],
+			[-0.7,1.3,0.1],
+			// chimney top (y=2)	
+			[-0.7,2,0.7],
+			[-0.3,2,0.7],
+			[-0.3,2,0.1],
+			[-0.7,2,0.1]
 		];
 		// Use default colors, implicitly.
 		// instance.colors = data.colors;
@@ -63,21 +70,31 @@ define(["exports", "data"], function(exports, data) {
 		// Corners of the faces have to fit the texture coordinates.			
 		// Faces: bottom/down, top/up, front, right, back, left. 
 		instance.polygonVertices = [
+			// cube
 			[3,2,1,0],
 			[4,5,6,7],
 			[4,0,1,5],
 			[1,2,6,5],
 			[6,2,3,7],
-			[3,0,4,7]
-		];
+			[3,0,4,7],
+			// roof
+			[4,5,8],
+			[7,6,9],
+			[4,8,9,7],
+			[5,8,9,6],
+			// chimney
+			[10,11,12,13],
+			[14,15,16,17],
+			[10,11,15,14],
+			[11,12,16,15],
+			[12,13,17,16],
+			[13,10,14,17]
+		];	
 
-		instance.polygonColors = [0,1,2,3,4,5];
-
-		//instance.vertexNormals = [];
-		//instance.polygonNormals = [];
+		instance.polygonColors = [0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1];
 
 		if( ! sixFacesTexture){
-			// Use default texture coordinates.
+	        // Use default texture coordinates.
 			// instance.textureCoord = [];	
 			// For order of corners of faces, see polygonVertices.
 			instance.polygonTextureCoord = [
@@ -86,47 +103,16 @@ define(["exports", "data"], function(exports, data) {
 				[1,0,3,2],
 				[3,0,1,2],
 				[3,0,1,2],
-				[3,0,1,2],
+				[3,0,1,2]
 			];
 		} else {
-			// BEGIN exercise Cube-Dice-Texture
-
-			// Order 0 to 16 form bottom-left to top-right
-			// line by line, indices in spatial order:
-			// 12,13,14,15
-			// 8,9,10,11,
-			// 4,5,6,7,
-			// 0,1,2,3,
 			instance.textureCoord = [];
-			var index = 0;
-			for(var i=0;i<=3;i++){
-				var v = i/3;
-				for(var j=0;j<=3;j++){
-					var u = j/3;
-					instance.textureCoord[index++] = [u,v];
-				}
-			}
-			// Use textureCoord in order given for textureCoord.
-			// The order of corners of faces must fit the one given in polygonVertices.
-			// Match orientation of face given for polygonVertices.
-			// D=bottom/down, U=top/up, F=front, R=right, B=back, L=left
-			// The mapping is explained on the texture image.
-			instance.polygonTextureCoord = [
-				[1,2,6,5],
-				[9,10,14,13],
-				[9,5,6,10],
-				[6,7,11,10],
-				[6,2,3,7],
-				[4,5,9,8]
-			];
-
-			// END exercise Cube-Dice-Texture			
 		}
-
+		
 		instance.textureURL = textureURL;
 
 		data.applyScale.call(instance, scale);
 
-		return instance;
-	}
+		return instance;		
+	};
 });

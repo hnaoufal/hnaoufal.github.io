@@ -114,11 +114,11 @@ define(["exports"], function(exports) {
 		// If parameters are undefined leave values as they are.
 		ambientLightIntensity = ambientLI != undefined ? ambientLI : ambientLightIntensity;
 		pointLightIntensity = pointLI != undefined ? pointLI : pointLightIntensity;
-		// console.log("SambientLightIntensity: "+ambientLightIntensity+"  pointLightIntensity: "+ pointLightIntensity);
+		//console.log("SambientLightIntensity: "+ambientLightIntensity+"  pointLightIntensity: "+ pointLightIntensity);
 		specularLightIntensity = specularLI != undefined ? specularLI : specularLightIntensity;
 		specularLightExponent = specularLIExpo != undefined ? specularLIExpo : specularLightExponent;
 		sumOfAllLightTypesIntensity = ambientLightIntensity + pointLightIntensity + specularLightIntensity;
-		// console.log("setLights sumOfAllLightTypesIntensity: "+sumOfAllLightTypesIntensity);
+		//console.log("setLights sumOfAllLightTypesIntensity: "+sumOfAllLightTypesIntensity);
 
 		// Check change in position.
 		if(pointPos) {
@@ -227,22 +227,6 @@ define(["exports"], function(exports) {
 		var ambientDiffuse = 0;
 		// Direction vector from light to point on surface.
 		var lightDirection = [];
-		const l = [];
-		vec3.subtract(pointLightPosition, point, l);
-		vec3.normalize(l);
-
-		if (l[2] < 0) {
-			return {
-				diffuse : 0,
-				ambientDiffuse: 0,
-				specular : 0,
-				total : 0
-			};
-		}
-
-		const cosAlpha = vec3.dot(normal, l);
-		diffuse = cosAlpha < 0 ? 0 : pointLightIntensity * cosAlpha;
-		ambientDiffuse = ambientLightIntensity + diffuse;
 
 		// BEGIN exercise Flat-Shading
 
@@ -259,13 +243,13 @@ define(["exports"], function(exports) {
 		// Otherwise it is the normalized negative eye/camera vector,
 		// which in turn is the negative point-vector when the camera is in the origin
 		// (not implemented).
-		const specular = 0;
+		//var specular = Math.max(0.0, vec3.dot(reflect, [0, 0, 1]));
 
 		// Check calculation
 		// if(specular > 0.9 || specular < 0) {
-		// 	var lenNormal = vec3.length(normal);
-		// 	var lenLightDir = vec3.length(lightDirection);
-		// 	var lenReflect = vec3.length(reflect);
+		// var lenNormal = vec3.length(normal);
+		// var lenLightDir = vec3.length(lightDirection);
+		// var lenReflect = vec3.length(reflect);
 		// }
 		// Do some cutoff for specular for speed.
 		// At least cutoff negative specular.
@@ -321,7 +305,7 @@ define(["exports"], function(exports) {
 	 * See function none.
 	 */
 	function flat(color) {
-		vec3.scale(color.rgba, polygonLightIntensity, color.rgbaShaded);
+		vec3.scale(color.rgba, ambientLightIntensity, color.rgbaShaded);
 	}
 
 	/**
@@ -329,15 +313,13 @@ define(["exports"], function(exports) {
 	 */
 	function flatInit() {
 		// Calculate the center point of the polygon.
-		const polygonCenter = [0, 0, 0];
-		for (let pol of polygon) {
-			vec3.add(polygonCenter, vertices[pol]);
-		}
-		vec3.scale(polygonCenter, 1 / polygon.length)
 
-		const intensity = calcLightIntensity(polygonCenter, polygonNormals[polygonIndex]);
-		// polygonLightIntensity = intensity["ambientDiffuse"] +  255 * intensity["specular"];
-		polygonLightIntensity = intensity["ambientDiffuse"];
+		// Calculate light intensity at polygon center.
+		// Use ambient and diffuse light.
+
+		// Use ambient, diffuse and specular light.
+		//var intensity = calcLightIntensity(polygonCenter, polygonNormal);
+		//polygonLightIntensity = intensity["ambientDiffuse"] +  255 * intensity["specular"];
 	}
 
 

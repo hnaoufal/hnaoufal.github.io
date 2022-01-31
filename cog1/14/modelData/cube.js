@@ -2,7 +2,7 @@
  * 3D Data Store for a model.
  * Missing properties/arrays (commented out)
  * are mixed in from data module.
- *
+ *  
  * @namespace cog1.data
  * @module cube
  */
@@ -11,13 +11,13 @@ define(["exports", "data"], function(exports, data) {
 
 	/**
 	 * Create an instance of the model defined in this module.
-	 *
+	 * 
 	 * @parameter object with fields:
 	 * @parameter scale is the edge length of the cube.
 	 * @returns instance of this model.
 	 */
 	exports.create = function(parameter) {
-
+		
 		if(parameter) {
 			var scale = parameter.scale;
 			var textureURL = parameter.textureURL;
@@ -69,15 +69,15 @@ define(["exports", "data"], function(exports, data) {
 			[1,2,6,5],
 			[6,2,3,7],
 			[3,0,4,7]
-		];
+		];	
 
 		instance.polygonColors = [0,1,2,3,4,5];
-
+		
 		//instance.vertexNormals = [];
 		//instance.polygonNormals = [];
 
 		if( ! sixFacesTexture){
-			// Use default texture coordinates.
+	        // Use default texture coordinates.
 			// instance.textureCoord = [];	
 			// For order of corners of faces, see polygonVertices.
 			instance.polygonTextureCoord = [
@@ -90,7 +90,7 @@ define(["exports", "data"], function(exports, data) {
 			];
 		} else {
 			// BEGIN exercise Cube-Dice-Texture
-
+			
 			// Order 0 to 16 form bottom-left to top-right
 			// line by line, indices in spatial order:
 			// 12,13,14,15
@@ -113,20 +113,20 @@ define(["exports", "data"], function(exports, data) {
 			// The mapping is explained on the texture image.
 			instance.polygonTextureCoord = [
 				[1,2,6,5],
-				[9,10,14,13],
-				[9,5,6,10],
-				[6,7,11,10],
+				[9,10,14,13],			
+				[9,5,6,10],			
+				[6,7,11,10],			
 				[6,2,3,7],
-				[4,5,9,8]
+				[4,5,9,8]			
 			];
 
 			// END exercise Cube-Dice-Texture			
 		}
-
+		
 		instance.textureURL = textureURL;
 
 		data.applyScale.call(instance, scale);
 
-		return instance;
-	}
+		return instance;		
+	} 	
 });

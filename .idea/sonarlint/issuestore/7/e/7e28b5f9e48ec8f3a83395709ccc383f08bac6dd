@@ -1,0 +1,12 @@
+
+Zjavascript:S1481q"9Remove the declaration of the unused 'initDone' variable.(•ÀóÅùÿÿÿÿ
+:javascript:S125{"Remove this commented out code.(³Úüæ
+vjavascript:S3776ƒ"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(Æƒü¹üÿÿÿÿ
+Ijavascript:S1125„"'Remove the unnecessary boolean literal.(ªâÕéûÿÿÿÿ
+@javascript:S125’"Remove this commented out code.(²•‡šÿÿÿÿÿ
+Ijavascript:S1125£"'Remove the unnecessary boolean literal.(˜Ã¶ïşÿÿÿÿ
+;javascript:S125Ü"Remove this commented out code.(İôÍ¡
+njavascript:S4138¸"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(®šËäøÿÿÿÿ
+Pjavascript:S1854º"3Remove this useless assignment to variable "color".(ùßä
+njavascript:S4138Â"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(ğÿœúÿÿÿÿ
+[javascript:S1117«"2'vertices' is already declared in the upper scope.(°˜„şÿÿÿÿ8Ø¥ù³ê/

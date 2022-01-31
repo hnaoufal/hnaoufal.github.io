@@ -52,9 +52,6 @@ define(["exports", "dojo/dom-construct"], function(exports, domConstruct) {
 		// The uv-range [0,1] (including 1) has to be mapped on
 		// image pixel ranges [0,width-1] and [0,height-1].
 		// Short form: index = 4*~~(((this.width * ~~(this.height * v) + this.width * u)));
-		index = 4*~~(((this.width * ~~(this.height * v) + this.width * u)));
-
-		console.log('huhuhuh: ', color)
 
 		// Calculate horizontal texel index.
 		// Correct sample for u=1.
@@ -71,6 +68,7 @@ define(["exports", "dojo/dom-construct"], function(exports, domConstruct) {
 		// Cast to integer.
 
 		// Four bytes per Pixel.
+
 
 		// END exercise Texture
 	}
@@ -170,7 +168,6 @@ define(["exports", "dojo/dom-construct"], function(exports, domConstruct) {
 		}
 		// Assume texture are in the "textures" sub-directory.
 		texture.image.src = "textures/"+textureURL;
-		console.log('hicham: ', texture);
 		return texture;
 	}
 

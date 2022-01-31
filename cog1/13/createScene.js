@@ -21,12 +21,12 @@ function(exports, scenegraph, animation) {
 		// cubeNode.rotateTo([1.6, -3.87, 0]);
 
 		// BEGIN exercise myModel
-		
+
 		// END exercise myModel
-		
+
 		// return;
 
-		//var cubeNode = scenegraph.createNodeWithModel("cube", "cube", {scale:100, textureURL:"brickWall.jpg"});		
+		var cubeNode = scenegraph.createNodeWithModel("cube", "cube", {scale:100, textureURL:"brickWall.jpg"});
 		var cubeNode1 = scenegraph.createNodeWithModel("cube 1", "cube", {scale:70, textureURL:"stoneWall.jpg"});
 		cubeNode1.translate([50,200,0]);
 		//cubeNode1.rotate([1,1,1]);
@@ -80,11 +80,11 @@ function(exports, scenegraph, animation) {
 		 
 		// Set visibility of nodes (hide: set to false).
 		// Comment out what you want to see as the default is visible.
-        // cubeNode.setVisible(false);
+        cubeNode.setVisible(true);
         cubeNode1.setVisible(false);
         cubeNode2.setVisible(false);
         cubeNode3.setVisible(false);
-        cubeNode4.setVisible(true);
+        cubeNode4.setVisible(false);
         cubeNode5.setVisible(false);
         cubeNode6.setVisible(false);
         insideOutPolyNode.setVisible(false);
@@ -105,7 +105,7 @@ function(exports, scenegraph, animation) {
 
 		// Create a node for the light, which is not visible by default.
 		var lightnode = scenegraph.createPointLightNode("light", "diamond");
-				
+
 		// Set light parameter.
 		// ambientLI, pointLI, pointPos, specularLI, specularLIExpo
 		scenegraph.setLights(0.5, 0.6, [200, 200, 300], 4.0, 10);

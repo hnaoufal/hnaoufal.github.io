@@ -1,0 +1,35 @@
+
+`javascript:S1481"?Remove the declaration of the unused 'shadingFuncton' variable.(•‘Õ²úÿÿÿÿ
+>javascript:S2814/""'polygonIndex' is already defined.(†ìô
+Xjavascript:S14815"<Remove the declaration of the unused 'intensities' variable.(ªùÿş
+bjavascript:S14818"FRemove the declaration of the unused 'polygonLightIntensity' variable.(Úç‰
+mjavascript:S1481;"LRemove the declaration of the unused 'polygonVertexLightIntensity' variable.(—¡Œòüÿÿÿÿ
+rjavascript:S1481L"VRemove the declaration of the unused 'scanlineInterpolationLightIntensities' variable.(Ì•û“
+ujavascript:S1481N"TRemove the declaration of the unused 'scanlineInterpolationLightIntensity' variable.(©†ñ½şÿÿÿÿ
+zjavascript:S1481O"YRemove the declaration of the unused 'scanlineInterpolationLightIntensityDelta' variable.(‰’ÆÒÿÿÿÿÿ
+ijavascript:S1481S"MRemove the declaration of the unused 'scanlineInterpolationNormals' variable.(÷÷Ïû
+hjavascript:S1481U"LRemove the declaration of the unused 'scanlineInterpolationNormal' variable.(èô‘™
+rjavascript:S1481V"QRemove the declaration of the unused 'scanlineInterpolationNormalDelta' variable.(Î©Œ±ùÿÿÿÿ
+ojavascript:S1481Y"NRemove the declaration of the unused 'scanlineInterpolationVertices' variable.(ÃŒ¢ñûÿÿÿÿ
+hjavascript:S1481["LRemove the declaration of the unused 'scanlineInterpolationVertex' variable.(Ïè£±
+rjavascript:S1481\"QRemove the declaration of the unused 'scanlineInterpolationVertexDelta' variable.(¨æ›‚ıÿÿÿÿ
+:javascript:S125u"Remove this commented out code.(¬¸ûõ
+ejavascript:S1854x"IRemove this useless assignment to variable "sumOfAllLightTypesIntensity".(­µ…•
+?javascript:S125y"Remove this commented out code.(„Íªòÿÿÿÿÿ
+7javascript:S1116"Unnecessary semicolon.(ôŸìúÿÿÿÿ
+;javascript:S125"Remove this commented out code.(èöĞÜ
+Ejavascript:S2814³"('getShadingFunction' is already defined.(¢ôşÔ
+Xjavascript:S1854¾"6Remove this useless assignment to variable "vertices".(ß¯©úÿÿÿÿ
+Xjavascript:S1854À";Remove this useless assignment to variable "vertexNormals".(ä»×˜
+Qjavascript:S1854Ï"5Remove this useless assignment to variable "polygon".(ßıív
+Wjavascript:S1854Ğ";Remove this useless assignment to variable "polygonNormal".(£´ƒY
+Ijavascript:S1481İ",Remove unused function 'calcLightIntensity'.(ó…¦
+[javascript:S1481å"?Remove the declaration of the unused 'lightDirection' variable.(ÎµË
+Bjavascript:S1186"%Unexpected empty function 'noneInit'.(ãöµ¾
+_javascript:S1186¤"=Unexpected empty function 'noneInterpolationPrepareScanline'.(Ò±ñØûÿÿÿÿ
+^javascript:S1186«"<Unexpected empty function 'noneInterpolationStepOnScanline'.(’î¥¦ùÿÿÿÿ
+Cjavascript:S1186³"!Unexpected empty function 'flat'.(ïŞûÿÿÿÿ
+Zjavascript:S1186Ë"=Unexpected empty function 'flatInterpolationPrepareScanline'.(œó‚
+^javascript:S1186Ñ"<Unexpected empty function 'flatInterpolationStepOnScanline'.(´‚í€úÿÿÿÿ
+Cjavascript:S1186¨"&Unexpected empty function 'phongInit'.(şØ«Í
+Ejavascript:S1481ÿ"(Remove unused function 'isEverytingSet'.(ùØ­ø
