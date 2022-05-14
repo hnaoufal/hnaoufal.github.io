@@ -171,21 +171,21 @@
             {
               userId: 124,
               updateState: false,
-              time: '11:10',
+              time: '',
               messages: {
-                done: 'I worked on the graph algorithm and finished the first iteration',
-                doing: 'I will continue working on the Validation part of the iteration',
-                blocker: 'No Blockers as such...'
+                done: null,
+                doing: null,
+                blocker: null
               }
             },
             {
               userId: 12,
               updateState: false,
-              time: '11:10',
+              time: '',
               messages: {
-                done: 'I worked on the message parser for the new protocol.',
-                doing: 'I will add error handling for the parser.',
-                blocker: 'No Blockers as such...'
+                done: null,
+                doing: null,
+                blocker: null
               }
             },
             {
@@ -227,11 +227,11 @@
             {
               userId: 12,
               updateState: false,
-              time: '11:10',
+              time: '',
               messages: {
-                done: 'I finished the message parser.',
-                doing: 'I will write test cases for the new parser.',
-                blocker: 'Waiting for real HW for end-2-end tests.'
+                done: null,
+                doing: null,
+                blocker: null
               }
             },
             {
@@ -303,21 +303,21 @@
             {
               userId: 125,
               updateState: false,
-              time: '11:10',
+              time: '',
               messages: {
-                done: 'I tested the new FW',
-                doing: 'I will be part in the end-2-end tests',
-                blocker: 'No Blockers as such...'
+                done: null,
+                doing: null,
+                blocker: null
               }
             },
             {
               userId: 128,
               updateState: false,
-              time: '11:10',
+              time: '',
               messages: {
-                done: 'I finished the new design',
-                doing: 'I will write some UI tests',
-                blocker: 'No Blockers as such...'
+                done: null,
+                doing: null,
+                blocker: null
               }
             },
             {
@@ -394,7 +394,7 @@
           users: [
             {
               userId: 125,
-              updateState: false,
+              updateState: true,
               time: '11:10',
               messages: {
                 done: 'I finished the end-2-end tests of devices',
@@ -422,6 +422,7 @@
       onCreate(body) {
         this.items[this.items.length - 1].users.push({
           userId: this.currentUser,
+          time: 'vor wenigen Minuten',
           updateState: true,
           messages: {
             done: body[0],
