@@ -51,7 +51,7 @@
               <div class="weekly-body">
                 <template x-for="userItem in item.users">
                   <div class="user-item" x-data="{ user: userList[userItem.userId]}" :key="userItem.userId">
-                    <figure class="image avatar-image is-64x64">
+                    <figure class="image avatar-image is-64x64" :class="{'no-update': !user.updateState}">
                       <img class="is-rounded" :src="user.avatarSrc" alt="avatar">
                     </figure>
                     <div class="speech-box left">
