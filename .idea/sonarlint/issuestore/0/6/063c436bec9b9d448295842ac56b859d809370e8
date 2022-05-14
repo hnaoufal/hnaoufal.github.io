@@ -1,0 +1,56 @@
+
+ajavascript:S107	"AFunction 'ui' has too many parameters (16). Maximum allowed is 7.(ÂÄàğùÿÿÿÿ
+Djavascript:S1186D"#Unexpected empty function 'update'.(ò¤®ùÿÿÿÿ
+?javascript:S125U"Remove this commented out code.(³ôÈ•úÿÿÿÿ
+?javascript:S125o"Remove this commented out code.(Äğíèıÿÿÿÿ
+:javascript:S125}"Remove this commented out code.(†Æ°ã
+7javascript:S1116~"Unnecessary semicolon.(ôŸìúÿÿÿÿ
+Ljavascript:S1481‡"*Remove unused function 'initDebugButtons'.(Üø„ëùÿÿÿÿ
+wjavascript:S2392©"ZConsider moving declaration of 'sign' as it is referenced outside current binding context.(¬ÔÂ
+|javascript:S2392ª"_Consider moving declaration of 'labeltext' as it is referenced outside current binding context.(õÏßÿ
+€javascript:S2392«"^Consider moving declaration of 'callback' as it is referenced outside current binding context.(ç¦€Ôøÿÿÿÿ
+7javascript:S2814³"'sign' is already defined.(¬ÔÂ
+Rjavascript:S1481à"0Remove unused function 'initProjectionControls'.(’²üüÿÿÿÿ
+bjavascript:S1481å"FRemove the declaration of the unused 'currentProjectionType' variable.(¶‚ëb
+_javascript:S1854å"CRemove this useless assignment to variable "currentProjectionType".(¶‚ëb
+Ujavascript:S1481ò",Remove unused function 'initShaderControls'.(¶Óë„úÿÿÿÿ8õ’Ÿ‹ë/
+njavascript:S4138÷"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(ß…Ë’ûÿÿÿÿ
+?javascript:S2814§"'checked' is already defined.(×íä±ıÿÿÿÿ
+;javascript:S2814©"'callback' is already defined.(‘Ã‡Ò
+Tjavascript:S1481Ä"+Remove unused function 'initLightControls'.(½“¥¦üÿÿÿÿ8÷’Ÿ‹ë/
+8javascript:S1116÷"Unnecessary semicolon.(ôŸìúÿÿÿÿ
+€javascript:S1488‡"^Immediately return this expression instead of assigning it to the temporary variable "slider".(ì·ëøÿÿÿÿ
+Ijavascript:S1125‘"'Remove the unnecessary boolean literal.(ù§ïóøÿÿÿÿ
+;javascript:S125œ"Remove this commented out code.(í¹ÂÒ
+;javascript:S125¡"Remove this commented out code.(²ø×
+Qjavascript:S1117©"/'label' is already declared in the upper scope.(ˆÀâ°ÿÿÿÿÿ
+Ijavascript:S1125¿"'Remove the unnecessary boolean literal.(Ø‘Õˆÿÿÿÿÿ
+Ljavascript:S1117Ê"/'label' is already declared in the upper scope.(ËŠ€†
+;javascript:S125Ù"Remove this commented out code.(üıŠ
+Ijavascript:S1125Ü"'Remove the unnecessary boolean literal.(Ø‘Õˆÿÿÿÿÿ
+;javascript:S125÷"Remove this commented out code.(üıŠ
+Ijavascript:S1125ı"'Remove the unnecessary boolean literal.(Ø‘Õˆÿÿÿÿÿ
+Ijavascript:S1125¡"'Remove the unnecessary boolean literal.(Ø‘Õˆÿÿÿÿÿ
+Qjavascript:S1117º"/'label' is already declared in the upper scope.(‡×‡Áûÿÿÿÿ
+javascript:S1488º"]Immediately return this expression instead of assigning it to the temporary variable "label".(‡×‡Áûÿÿÿÿ
+Ljavascript:S1117ã"/'delta' is already declared in the upper scope.(Ÿ¯¤›
+…javascript:S4165†"cReview this redundant assignment: "key" already holds the assigned value along all execution paths.(ÛÄõ·øÿÿÿÿ
+;javascript:S125‰"Remove this commented out code.(è½õÊ
+Ijavascript:S1125Œ"'Remove the unnecessary boolean literal.(ÜÑ‚üÿÿÿÿ
+;javascript:S125‘"Remove this commented out code.(·ÇÄÿ
+:javascript:S125"Remove this commented out code.(ˆŸ’u
+;javascript:S125Ã"Remove this commented out code.(Ã°¯Î
+@javascript:S125Ë"Remove this commented out code.(»æ­Íüÿÿÿÿ
+;javascript:S125â"Remove this commented out code.(»¥Œ°
+Xjavascript:S1481ã";Remove the declaration of the unused 'scaledAxis' variable.(¸£äú
+Ujavascript:S1854ã"8Remove this useless assignment to variable "scaledAxis".(¸£äú
+6javascript:S2814æ"'sign' is already defined.(âÛ½5
+vjavascript:S2392æ"ZConsider moving declaration of 'sign' as it is referenced outside current binding context.(âÛ½5
+;javascript:S125í"Remove this commented out code.(ÉàÄ
+;javascript:S125ñ"Remove this commented out code.(òæ¸…
+;javascript:S125õ"Remove this commented out code.(ÉóöÅ
+;javascript:S125ù"Remove this commented out code.(òæ¸…
+@javascript:S125"Remove this commented out code.(¬ååıúÿÿÿÿ
+@javascript:S125¦"Remove this commented out code.(›¸ºùÿÿÿÿ
+@javascript:S125¯"Remove this commented out code.(›¸ºùÿÿÿÿ
+Fjavascript:S1481Ó")Remove unused function 'debugEventAlert'.(˜ÖÏ„

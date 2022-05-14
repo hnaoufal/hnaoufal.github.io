@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/steps.css">
+  <link rel="stylesheet" href="css/divider.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <meta name="theme-color" content="#fafafa">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+</head>
+
+<body>
+<section class="section m-auto" x-data="{ messages: [], editMode: 0 }">
+  <div class="columns is-centered" x-data="weeklyItems">
+    <div class="column is-two-thirds-desktop">
+      <div class="box-container">
+        <ul id="weekly-container" class="weekly-wrapper">
+          <template x-for="item in items" :key="item.id">
+            <li class="weekly-item" :class="{ 'collapsed': isCollapsed }" x-data="{ isCollapsed: false }"
+                x-init="isCollapsed = items[items.length - 1].id !== item.id">
+              <div class="weekly-header">
+              <span class="icon">
+                <i class="fas fa-clock"></i>
+              </span>
+                <span x-text="item.date"></span>
+                <i
+                  @click="isCollapsed = !isCollapsed"
+                  class="fa-solid caret"
+                  :class="{ 'fa-angles-down': isCollapsed, 'fa-angles-up': !isCollapsed }"></i>
+              </div>
+              <div class="weekly-body">
+                <template x-for="userItem in item.users">
+                  <div class="user-item" x-data="{ user: userList[userItem.userId]}" :key="userItem.userId">
+                    <figure class="image avatar-image is-64x64">
+                      <img class="is-rounded" :src="user.avatarSrc" alt="avatar">
+                    </figure>
+                    <div class="speech-box left">
+                      <div class="name"><span x-text="user.name"></span> um <span class="time" x-text="userItem.time">um 19:20Uhr</span></div>
+                      <p><i class="fa-solid fa-clock-rotate-left mr-1"></i><span x-text="userItem.messages.done"></span>
+                      </p>
+                      <div class="is-divider"></div>
+                      <p><i class="fa-solid fa-arrow-right-long mr-1"></i><span x-text="userItem.messages.doing"></span>
+                      </p>
+                      <div class="is-divider"></div>
+                      <p><i class="fa-solid fa-ban mr-1"></i><span x-text="userItem.messages.blocker"></span></p>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <div class="weekly-body-collapsed">
+                Update-Status:
+                <span>
+                  <template x-for="user in item.users">
+                    <figure class="image avatar-image is-32x32" :class="{'no-update': !user.updateState}"
+                            :key="user.userId">
+                      <img class="is-rounded" :src="userList[user.userId].avatarSrc" alt="avatar">
+                    </figure>
+                  </template>
+                </span>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <template x-if="editMode !== 0 || messages.length === 3">
+        <div>
+          Du hast bereits dein Update gegeben. Editiere dein aktuelles Update
+          <button class="button is-primary ml-1"><i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+      </template>
+      <template x-if="messages.length < 3 || editMode !== 0">
+        <div>
+          <div class="steps">
+            <!--        <div class="step-item is-completed is-success">-->
+            <div class="step-item"
+                 :class="{ 'is-active': messages.length === 0, 'is-completed': messages.length > 0, 'is-success': messages.length > 0}">
+              <div class="step-marker">
+              </div>
+              <div class="step-details">
+                <p>Was habe ich letzte Woche getan?</p>
+              </div>
+            </div>
+            <div class="step-item"
+                 :class="{ 'is-active': messages.length === 1, 'is-completed': messages.length > 1, 'is-success': messages.length > 1}">
+              <div class="step-marker"></div>
+              <div class="step-details">
+                <p>Was werde ich diese Woche tun?</p>
+              </div>
+            </div>
+            <div class="step-item"
+                 :class="{ 'is-active': messages.length === 2, 'is-completed': messages.length > 2, 'is-success': messages.length > 2}">
+              <div class="step-marker"></div>
+              <div class="step-details">
+                <p>Welche Blocker habe ich?</p>
+              </div>
+            </div>
+          </div>
+          <div class="weekly-input" x-data="{ msg: ''}">
+            <div class="input-wrapper">
+              <input class="input is-medium" type="text" placeholder="Bitte hier eingeben..." x-model="msg">
+              <div class="counter" x-text="100 - msg.length">100</div>
+            </div>
+            <button class="button is-primary is-medium mr-1"
+                    @click="messages.push(msg); msg = ''; messages.length === 3 && onCreate(messages)">Senden
+            </button>
+            <button class="button is-medium"
+                    @click="messages.push(null); msg = ''; messages.length === 3 && create(messages)">Skip
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+</div>
+<script src="js/main.js"></script>
+<script src="js/steps.js"></script>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('weeklyItems', () => ({
+      currentUser: 12,
+      recurrent: 'weekly',
+      userList: {
+        12: {
+          name: "Hicham Naoufal",
+          avatarSrc: '/img/hicham.png',
+        },
+        124: {
+          name: "Samuel Pliska",
+          avatarSrc: '/img/samuel.png',
+        },
+        125: {
+          name: "Julia Heydecke",
+          avatarSrc: '/img/julia.png',
+        },
+        128: {
+          name: "Ivo V.",
+          avatarSrc: '/img/ivo.png',
+        },
+        22: {
+          name: "Crisie K.",
+          avatarSrc: '/img/crisie.png',
+        },
+      },
+      items: [
+        {
+          id: 1,
+          date: '21.02.2022',
+          users: [
+            {
+              userId: 12,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 124,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 125,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 128,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 22,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+          ]
+        },
+        {
+          id: 2,
+          date: '22.02.2022',
+          users: [
+            {
+              userId: 12,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 124,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 125,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 128,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 22,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+          ]
+        },
+        {
+          id: 3,
+          date: '23.02.2022',
+          users: [
+            {
+              userId: 12,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 124,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 125,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 128,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 22,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+          ]
+        },
+        {
+          id: 4,
+          date: '24.02.2022',
+          users: [
+            {
+              userId: 12,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 124,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 125,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 128,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 22,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+          ]
+        },
+        {
+          id: 5,
+          date: 'Today',
+          users: [
+            {
+              userId: 125,
+              updateState: false,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+            {
+              userId: 124,
+              updateState: true,
+              time: '11:10',
+              messages: {
+                done: 'I worked on the graph algorithm and finished the first iteration',
+                doing: 'I will continue working on the Validation part of the iteration',
+                blocker: 'No Blockers as such...'
+              }
+            },
+          ]
+        },
+      ],
+      onCollapse: (e) => {
+        e.target.closest('.weekly-item').classList.toggle('collapsed');
+        console.log('HICHAM: ', e);
+      },
+      onCreate(body) {
+        this.items[this.items.length - 1].users.push({
+          userId: this.currentUser,
+          updateState: true,
+          messages: {
+            done: body[0],
+            doing: body[1],
+            blocker: body[2]
+          },
+        });
+        const element = document.getElementById('weekly-container');
+        element.scrollTo(0, element.scrollHeight);
+      },
+      edit(id) {
+        console.log('edit id: ', id);
+      },
+    }))
+  })
+
+  document.addEventListener('alpine:initialized', () => {
+    const element = document.getElementById('weekly-container');
+    element.scrollTo(0, element.scrollHeight);
+  })
+
+  document.addEventListener('alpine:updated', e => {
+    const element = document.getElementById('weekly-container');
+    element.scrollTo(0, element.scrollHeight);
+  })
+</script>
+</body>
+
+</html>

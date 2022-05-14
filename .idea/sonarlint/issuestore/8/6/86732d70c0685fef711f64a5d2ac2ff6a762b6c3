@@ -1,0 +1,23 @@
+
+\javascript:S107"<Function has too many parameters (11). Maximum allowed is 7.(¸¦¤ùÿÿÿÿ
+Ajavascript:S125_"Remove this commented out code.(éóÔ¿8ÏáðŒë/
+Fjavascript:S125~"Remove this commented out code.(¢ïÅ‹øÿÿÿÿ8ÏáðŒë/
+Gjavascript:S125È"Remove this commented out code.(ŒµÈåúÿÿÿÿ8ÏáðŒë/
+@javascript:S125ì"Remove this commented out code.(ƒü{8ÏáðŒë/
+Gjavascript:S125ò"Remove this commented out code.(˜„Èçùÿÿÿÿ8ÏáðŒë/
+}javascript:S3776ù"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(­¼¯üÿÿÿÿ8ÐáðŒë/
+Bjavascript:S125œ"Remove this commented out code.(­Âíö8ÐáðŒë/
+Gjavascript:S125¡"Remove this commented out code.(é¬Œ®øÿÿÿÿ8ÐáðŒë/
+œjavascript:S2392«"sConsider moving declaration of 'interactiveNodeLocalModelview' as it is referenced outside current binding context.(õÌ÷¸þÿÿÿÿ8ÐáðŒë/
+œjavascript:S2392¬"sConsider moving declaration of 'interactiveNodeWorldModelview' as it is referenced outside current binding context.(‚ÛÁþùÿÿÿÿ8ÐáðŒë/
+`javascript:S1481ƒ"7Remove the declaration of the unused 'normal' variable.(”œÑäùÿÿÿÿ8ÐáðŒë/
+]javascript:S1854ƒ"4Remove this useless assignment to variable "normal".(”œÑäùÿÿÿÿ8ÐáðŒë/
+’javascript:S2392†"iConsider moving declaration of 'polygonTextureCoord' as it is referenced outside current binding context.(„Ïåéÿÿÿÿÿ8ÐáðŒë/
+pjavascript:S4138Ì"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(›ûÁ½8ÐáðŒë/
+?javascript:S1116ê"Unnecessary semicolon.(ôŸŽìúÿÿÿÿ8ÐáðŒë/
+Gjavascript:S125¸"Remove this commented out code.(ØËÙ ùÿÿÿÿ8ÑáðŒë/
+Gjavascript:S125½"Remove this commented out code.(òÄ›øÿÿÿÿ8ÑáðŒë/
+Gjavascript:S125Á"Remove this commented out code.(ÞÃáÐÿÿÿÿÿ8ÑáðŒë/
+Gjavascript:S125Ç"Remove this commented out code.(ÞÃáÐÿÿÿÿÿ8ÑáðŒë/
+Gjavascript:S125Ì"Remove this commented out code.(ó•éÅþÿÿÿÿ8ÑáðŒë/
+^javascript:S1126—"AReplace this if-then-else statement by a single return statement.(¨¼üÿ
