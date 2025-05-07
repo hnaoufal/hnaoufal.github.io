@@ -8,7 +8,10 @@ import {
   Stack,
   Center,
   Spinner,
+  Flex
 } from "@chakra-ui/react";
+import { Button, CloseButton, Dialog, Portal } from "@chakra-ui/react";
+
 import {
   PieChart,
   Pie,
@@ -45,24 +48,30 @@ function App() {
     });
   }, []);
 
-  // Classify image on load
-    // Function to classify image on load and safely set results
+  // Classify image on load with safety
   const classifyImage = () => {
     if (classifier && imgRef.current) {
-      classifier.classify(imgRef.current, (res) => {
-        // Ensure results is always an array
+      classifier.classify(imgRef.current, (res, err) => {
+        if (err) {
+          console.error('Classification error:', err);
+          alert("error", err);
+          return;
+        }
         const safeResults = Array.isArray(res) ? res : [res];
         setResults(safeResults);
         if (safeResults.length > 0) {
           setName(safeResults[0].label || '');
-          setConfidence(safeResults[0].confidence != null ? (safeResults[0].confidence * 100).toFixed(2) : null);
+          setConfidence(
+            safeResults[0].confidence != null
+              ? (safeResults[0].confidence * 100).toFixed(2)
+              : null
+          );
         }
       });
     }
   };
 
   const borderColor = isDragging ? "blue.300" : "gray.600";
-
   const handleDragEnter = (e) => { e.preventDefault(); setIsDragging(true); };
   const handleDragLeave = (e) => { e.preventDefault(); setIsDragging(false); };
   const handleDrop = (e) => {
@@ -78,16 +87,15 @@ function App() {
     }
   };
 
-  // Data for pie chart
+  // Pie chart data
   const pieData = confidence != null
     ? [
-        { name: 'Accuracy', value: parseFloat(confidence) },
-        { name: 'Remaining', value: 100 - parseFloat(confidence) }
+        { name: 'Confidence', value: parseFloat(confidence) },
+        { name: '', value: 100 - parseFloat(confidence) }
       ]
     : [];
 
-    // Data for bar chart: top 3 predictions, ensure results is an array
-    // Data for bar chart: top 3 valid predictions
+  // Bar chart data: top 3 predictions
   const barData = Array.isArray(results)
     ? results
         .filter(r => r && r.label !== undefined && r.confidence != null)
@@ -99,39 +107,75 @@ function App() {
     <Provider>
       <Grid p={4} bg="gray.900" templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6} h="100vh" w="100vw">
 
-        {/* Column One */}
+        {/* Column One: integrated drop zone */}
         <Box bg="gray.800" p={6} borderRadius="2xl" boxShadow="lg" h="100%">
-          <Stack spacing={6} h="100%">
-            <Box>
-              <Heading size="lg" mb={2} color="whiteAlpha.900">Image for Classification</Heading>
-              <Text fontSize="sm" color="gray.400">Drag an image below to classify it automatically.</Text>
-            </Box>
-            <Center flex="1">
+          {/* Use flex column to let header and dropzone fill available space */}
+          <Flex direction="column" h="100%">
+            {/* Header with title, description, and doc button right-aligned */}
+            <Flex justify="space-between" align="center" mb={4}>
+              <Box>
+                <Heading size="lg" color="whiteAlpha.900">Image for Classification</Heading>
+                <Text fontSize="sm" color="gray.400">Drag and drop an image into the area below to classify it.</Text>
+              </Box>
+              <Dialog.Root size="cover" placement="center" motionPreset="slide-in-bottom">
+                <Dialog.Trigger asChild>
+                  <Button size="sm">
+                    Documentation
+                  </Button>
+                </Dialog.Trigger>
+                <Portal>
+                  <Dialog.Backdrop />
+                  <Dialog.Positioner>
+                    <Dialog.Content>
+                      <Dialog.Header>
+                        <Dialog.Title>Documentation</Dialog.Title>
+                        <Dialog.CloseTrigger asChild>
+                          <CloseButton size="sm" />
+                        </Dialog.CloseTrigger>
+                      </Dialog.Header>
+                      <Dialog.Body>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      </Dialog.Body>
+                    </Dialog.Content>
+                  </Dialog.Positioner>
+                </Portal>
+              </Dialog.Root>
+            </Flex>
+
+            {/* Drag & drop area takes remaining vertical space */}
+            <Center
+              flex="1"
+              bg="gray.700"
+              border="2px dashed"
+              borderColor={borderColor}
+              borderRadius="md"
+              onDragEnter={handleDragEnter}
+              onDragOver={handleDragEnter}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+            >
               {loading ? (
                 <Spinner size="xl" color="blue.300" />
               ) : image ? (
                 <Image
                   ref={imgRef}
                   src={image}
-                  maxH="60%"
+                  maxH="100%"
+                  maxW="100%"
                   objectFit="contain"
                   borderRadius="md"
-                  boxShadow="md"
                   onLoad={classifyImage}
                 />
               ) : (
-                <Text color="gray.500">No image uploaded yet</Text>
+                <Text color="gray.400">Drag & drop a single image here</Text>
               )}
             </Center>
-            <Center>
-              <Box w="100%" h="150px" bg="gray.700" border="2px dashed" borderColor={borderColor}
-                   borderRadius="md" onDragEnter={handleDragEnter} onDragOver={handleDragEnter}
-                   onDragLeave={handleDragLeave} onDrop={handleDrop} display="flex"
-                   alignItems="center" justifyContent="center">
-                <Text color="gray.400">Drag & drop a single image here</Text>
-              </Box>
-            </Center>
-          </Stack>
+          </Flex>
         </Box>
 
         {/* Column Two */}
@@ -149,12 +193,21 @@ function App() {
             <Heading size="lg" mb={4} color="whiteAlpha.900">Diagram Representation</Heading>
             <Grid templateColumns="repeat(2, 1fr)" gap={4} h="calc(100% - 2rem)">
 
-              {/* Pie Chart */}
+              {/* Pie Chart with Percentage Label */}
               <Box bg="gray.700" borderRadius="md" p={4} display="flex" alignItems="center" justifyContent="center">
                 {pieData.length > 0 ? (
-                  <PieResponsiveContainer width={200} height={200}>
+                  <PieResponsiveContainer width={250} height={250}>
                     <PieChart>
-                      <Pie data={pieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80}>
+                      <Pie
+                        data={pieData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={80}
+                        label={({ percent, name}) => `${(percent * 100).toFixed(0)}% ${name}`}
+                        labelLine={false}
+                      >
                         <Cell fill="#48BB78" />
                         <Cell fill="#A0AEC0" />
                       </Pie>
