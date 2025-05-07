@@ -40,7 +40,7 @@ import ml5 from 'ml5';
     { src: 'images/img3.png', label: 'Bird', confidence: 85, correct: true },
     { src: 'images/img4.jpeg', label: 'Apple (recognized as pomgranade)', confidence: 49.44, correct: false },
     { src: 'images/img5.jpeg', label: 'Roof (recognized as solar panels)', confidence: 27.47, correct: false },
-    { src: 'images/img6.png', label: 'Flower', confidence: 10, correct: false },
+    { src: 'images/img6.webp', label: 'Flowers (recognized as vase)', confidence: 48.41, correct: false },
   ];
 
 function App() {
