@@ -37,7 +37,7 @@ import ml5 from 'ml5';
   const sampleResults = [
     { src: 'images/img1.png', label: 'Banana', confidence: 75.85, correct: true },
     { src: 'images/img2.jpeg', label: 'Cock', confidence: 90, correct: true },
-    { src: 'images/img3.png', label: 'Bird', confidence: 85, correct: true },
+    { src: 'images/img3.jpg', label: 'Espresso', confidence: 76.62, correct: true },
     { src: 'images/img4.jpeg', label: 'Apple (recognized as pomgranade)', confidence: 49.44, correct: false },
     { src: 'images/img5.jpeg', label: 'Roof (recognized as solar panels)', confidence: 27.47, correct: false },
     { src: 'images/img6.webp', label: 'Flowers (recognized as vase)', confidence: 48.41, correct: false },
