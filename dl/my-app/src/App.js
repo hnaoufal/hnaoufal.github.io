@@ -34,14 +34,14 @@ import {
 import { Provider } from './components/ui/provider';
 import ml5 from 'ml5';
 
-  const sampleResults = [
-    { src: 'images/img1.png', label: 'Banana', confidence: 75.85, correct: true },
-    { src: 'images/img2.jpeg', label: 'Cock', confidence: 90, correct: true },
-    { src: 'images/img3.jpg', label: 'Espresso', confidence: 76.62, correct: true },
-    { src: 'images/img4.jpeg', label: 'Apple (recognized as pomgranade)', confidence: 49.44, correct: false },
-    { src: 'images/img5.jpeg', label: 'Roof (recognized as solar panels)', confidence: 27.47, correct: false },
-    { src: 'images/img6.webp', label: 'Flowers (recognized as vase)', confidence: 48.41, correct: false },
-  ];
+const sampleResults = [
+  { src: 'images/img1.png', label: 'Banana', confidence: 75.85, correct: true },
+  { src: 'images/img2.jpeg', label: 'Cock', confidence: 36.22, correct: true },
+  { src: 'images/img3.jpg', label: 'Espresso', confidence: 76.62, correct: true },
+  { src: 'images/img4.jpeg', label: 'Apple (recognized as pomgranade)', confidence: 49.44, correct: false },
+  { src: 'images/img5.jpeg', label: 'Roof (recognized as solar panels)', confidence: 27.47, correct: false },
+  { src: 'images/img6.webp', label: 'Flowers (recognized as vase)', confidence: 48.41, correct: false },
+];
 
 function App() {
   const [image, setImage] = useState(null);
@@ -194,6 +194,59 @@ function App() {
                           <p>Logik: Nach Auswahl des Klassifikators lädt die Komponente ml5.imageClassifier neu und leert vorherige Ergebnisse. Beim Laden eines Bildes wird es automatisch klassifiziert, und die Top-3-Vorhersagen werden in einem Balkendiagramm angezeigt. Die Konfidenz des besten Treffers wird als Prozentwert dargestellt und farblich bewertet (grün/orange/rot).</p>
                           <p>Ansatz: Drag-and-Drop-Bereich für Bilder, automatisches Klassifizieren via Web API, Visualisierung mittels Recharts.</p>
                           <p>Ergebnisse: Nutzer erhält sofortige Rückmeldung zur Objektklasse im Bild und Vertrauensmaß.</p>
+  <br />
+  <br />
+  <hr />
+    <h2>1. Geringe Konfidenz trotz korrekter Klassifikation („Cock“, 36,22 %)</h2>
+  <ul>
+    <li><strong>Klassen-Ungleichgewicht und Datensatz-Bias:</strong> In ImageNet, auf dem MobileNet vortrainiert ist, kommen Hähne seltener vor, daher weniger Merkmalsrepräsentationen für diese Klasse.</li>
+    <li><strong>Fehlende Unterscheidungsmerkmale:</strong> Einzelner Hahn vor unruhigem Hintergrund kann leicht mit anderen Vögeln verwechselt werden.</li>
+    <li><strong>Bildqualität und Auflösung:</strong> JPEG-Artefakte verschleiern feine Merkmale wie Schnabel oder Gefieder.</li>
+  </ul>
+
+  <br />
+  <h2>2. Hohe Konfidenz, aber falsche Klassifikation („Apple“ → „Pomegranate“, 49,44 %)</h2>
+  <ul>
+    <li><strong>Ähnliche visuelle Merkmale:</strong> Granatäpfel und Äpfel teilen Form und Farbe, was die Trennung erschwert.</li>
+    <li><strong>Überanpassung an häufige Granatapfel-Bilder:</strong> Modell erwartet rote, strukturierte Früchte eher als Granatäpfel.</li>
+    <li><strong>Konfidenz oberhalb 50 % nötig:</strong> 49,44 % liegt in der unsicheren Zone (40–60 %), wodurch das Modell kaum differenziert.</li>
+  </ul>
+
+  <br />
+  <h2>Mögliche Ursachen und Gegenmaßnahmen</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Ursache</th>
+        <th>Wirkung</th>
+        <th>Abhilfe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Datensatz-Bias</td>
+        <td>Unterrepräsentierte Klassen → niedrige Konfidenz</td>
+        <td>Fein-Tuning mit eigenen, balancierten Beispieldaten</td>
+      </tr>
+      <tr>
+        <td>Visuelle Ähnlichkeit</td>
+        <td>Verwechslung ähnlicher Objekte (Apfel vs. Granatapfel)</td>
+        <td>Zusätzliche Feature-Extraktion, andere Blickwinkel</td>
+      </tr>
+      <tr>
+        <td>Bildqualität & Kontext</td>
+        <td>Artefakte, unruhiger Hintergrund → unsichere Zuordnung</td>
+        <td>Bildvorverarbeitung (Crop, Rauschunterdrückung, Normierung)</td>
+      </tr>
+      <tr>
+        <td>Modell-Größe vs. Genauigkeit</td>
+        <td>Leichtgewichtig, aber weniger präzise</td>
+        <td>Einsatz eines stärkeren Modells (z. B. ResNet)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Empfehlung: Für höhere Zuverlässigkeit spezifische Objekte mit Transfer Learning nachtrainieren.</p>
                           <p>Quellen: <a href="https://ml5js.org/" target="_blank" rel="noopener noreferrer">ml5.js Documentation</a>, <a href="https://chakra-ui.com/" target="_blank" rel="noopener noreferrer">Chakra UI Docs</a>, <a href="https://recharts.org/" target="_blank" rel="noopener noreferrer">Recharts Guide</a>.</p>
                         </Dialog.Body>
                       </Dialog.Content>
