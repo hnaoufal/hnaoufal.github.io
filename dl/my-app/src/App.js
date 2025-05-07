@@ -5,12 +5,16 @@ import {
   Heading,
   Text,
   Image,
-  Stack,
-  Center,
   Spinner,
-  Flex
+  Flex,
+  Center,
+  Select,
+  Portal,
+  createListCollection,
+  Button,
+  CloseButton,
+  Dialog,
 } from "@chakra-ui/react";
-import { Button, CloseButton, Dialog, Portal } from "@chakra-ui/react";
 
 import {
   PieChart,
@@ -38,23 +42,27 @@ function App() {
   const [results, setResults] = useState([]);
   const [classifier, setClassifier] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedModel, setSelectedModel] = useState(classifiers.items[0].value);
   const imgRef = useRef(null);
 
-  // Load the MobileNet classifier
+  // Reload classifier whenever selection changes
   useEffect(() => {
-    const clf = ml5.imageClassifier('MobileNet', () => {
+    setLoading(true);
+    ml5.imageClassifier(selectedModel, (clf) => {
       setClassifier(clf);
       setLoading(false);
+      setName('');
+      setConfidence(null);
+      setResults([]);
     });
-  }, []);
+  }, [selectedModel]);
 
-  // Classify image on load with safety
+  // Classify image on load
   const classifyImage = () => {
     if (classifier && imgRef.current) {
       classifier.classify(imgRef.current, (res, err) => {
         if (err) {
           console.error('Classification error:', err);
-          alert("error", err);
           return;
         }
         const safeResults = Array.isArray(res) ? res : [res];
@@ -90,7 +98,7 @@ function App() {
   // Pie chart data
   const pieData = confidence != null
     ? [
-        { name: 'Confidence', value: parseFloat(confidence) },
+        { name: 'Conf.', value: parseFloat(confidence) },
         { name: '', value: 100 - parseFloat(confidence) }
       ]
     : [];
@@ -109,41 +117,83 @@ function App() {
 
         {/* Column One: integrated drop zone */}
         <Box bg="gray.800" p={6} borderRadius="2xl" boxShadow="lg" h="100%">
-          {/* Use flex column to let header and dropzone fill available space */}
           <Flex direction="column" h="100%">
-            {/* Header with title, description, and doc button right-aligned */}
             <Flex justify="space-between" align="center" mb={4}>
               <Box>
                 <Heading size="lg" color="whiteAlpha.900">Image for Classification</Heading>
                 <Text fontSize="sm" color="gray.400">Drag and drop an image into the area below to classify it.</Text>
               </Box>
-              <Dialog.Root size="cover" placement="center" motionPreset="slide-in-bottom">
-                <Dialog.Trigger asChild>
-                  <Button size="sm">
-                    Documentation
-                  </Button>
-                </Dialog.Trigger>
-                <Portal>
-                  <Dialog.Backdrop />
-                  <Dialog.Positioner>
-                    <Dialog.Content>
-                      <Dialog.Header>
-                        <Dialog.Title>Documentation</Dialog.Title>
-                        <Dialog.CloseTrigger asChild>
-                          <CloseButton size="sm" />
-                        </Dialog.CloseTrigger>
-                      </Dialog.Header>
-                      <Dialog.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      </Dialog.Body>
-                    </Dialog.Content>
-                  </Dialog.Positioner>
-                </Portal>
-              </Dialog.Root>
+              <Flex align="center">
+                <Select.Root
+                  color="whiteAlpha.900"
+                  collection={classifiers}
+                  value="MobileNet"
+                  defaultValue="MobileNet"
+                  onValueChange={setSelectedModel}
+                  size="sm"
+                  width="320px"
+                  disabled
+                >
+                  <Select.HiddenSelect />
+                  <Select.Label color="whiteAlpha.900">Classifier</Select.Label>
+                  <Select.Control>
+                    <Select.Trigger>
+                      <Select.ValueText placeholder="MobileNet" />
+                    </Select.Trigger>
+                    <Select.IndicatorGroup>
+                      <Select.Indicator />
+                    </Select.IndicatorGroup>
+                  </Select.Control>
+                  <Portal>
+                    <Select.Positioner>
+                      <Select.Content>
+                        {classifiers.items.map((c) => (
+                          <Select.Item item={c} key={c.value}>
+                            {c.label}
+                            <Select.ItemIndicator />
+                          </Select.Item>
+                        ))}
+                      </Select.Content>
+                    </Select.Positioner>
+                  </Portal>
+                </Select.Root>
+    <Dialog.Root size="cover" placement="center" motionPreset="slide-in-bottom">
+                  <Dialog.Trigger asChild>
+                    <Button size="sm" ml={2}>Documentation</Button>
+                  </Dialog.Trigger>
+                  <Portal>
+                    <Dialog.Backdrop />
+                    <Dialog.Positioner>
+                      <Dialog.Content>
+                        <Dialog.Header>
+                          <Dialog.Title>Dokumentation</Dialog.Title>
+                          <Dialog.CloseTrigger asChild>
+                            <CloseButton size="sm" />
+                          </Dialog.CloseTrigger>
+                        </Dialog.Header>
+                        <Dialog.Body>
+                          <strong>1) Technisch:</strong>
+                          <ul>
+                            <li><strong>React:</strong> Basisbibliothek zur Erstellung von UI-Komponenten mit deklarativen Zustands- und Lifecycle-Methoden.</li>
+                            <li><strong>Chakra UI:</strong> Component-Library für React, die sofort einsatzbereite, anpassbare UI-Bausteine liefert.</li>
+                            <li><strong>ml5.js:</strong> High-Level-API für maschinelles Lernen im Browser (WebGL-basiertes ImageClassifier-Modul).</li>
+                            <li><strong>Recharts:</strong> Bibliothek zur Darstellung von Diagrammen (PieChart, BarChart) als React-Komponenten.</li>
+                          </ul>
+                          <p>Technische Besonderheiten: Dynamisches Nachladen verschiedener Klassifikatoren (MobileNet, Darknet, DoodleNet) per Dropdown; flexibles Layout mit Chakra UI Grids und Flexbox.</p>
+
+                          <strong>2) Fachlich:</strong>
+                          <p>Logik: Nach Auswahl des Klassifikators lädt die Komponente ml5.imageClassifier neu und leert vorherige Ergebnisse. Beim Laden eines Bildes wird es automatisch klassifiziert, und die Top-3-Vorhersagen werden in einem Balkendiagramm angezeigt. Die Konfidenz des besten Treffers wird als Prozentwert dargestellt und farblich bewertet (grün/orange/rot).</p>
+                          <p>Ansatz: Drag-and-Drop-Bereich für Bilder, automatisches Klassifizieren via Web API, Visualisierung mittels Recharts.</p>
+                          <p>Ergebnisse: Nutzer erhält sofortige Rückmeldung zur Objektklasse im Bild und Vertrauensmaß.</p>
+                          <p>Quellen: <a href="https://ml5js.org/" target="_blank" rel="noopener noreferrer">ml5.js Documentation</a>, <a href="https://chakra-ui.com/" target="_blank" rel="noopener noreferrer">Chakra UI Docs</a>, <a href="https://recharts.org/" target="_blank" rel="noopener noreferrer">Recharts Guide</a>.</p>
+                        </Dialog.Body>
+                      </Dialog.Content>
+                    </Dialog.Positioner>
+                  </Portal>
+                </Dialog.Root>
+              </Flex>
             </Flex>
 
-            {/* Drag & drop area takes remaining vertical space */}
             <Center
               flex="1"
               bg="gray.700"
@@ -186,6 +236,17 @@ function App() {
             <Heading size="lg" mb={4} color="whiteAlpha.900">Result</Heading>
             <Text color="gray.200">Name: {name || '–'}</Text>
             <Text color="gray.200">Confidence: {confidence != null ? `${confidence}%` : '–'}</Text>
+            {confidence != null && (
+              <Text mt={2} color="gray.200">
+                {confidence >= 75 ? (
+                  <>Picture most likely <Text as="span" color="green.400">recognized</Text>.</>
+                ) : confidence >= 25 ? (
+                  <>Picture possibly <Text as="span" color="orange.400">recognized</Text>.</>
+                ) : (
+                  <>Picture most likely not <Text as="span" color="red.400">recognized</Text>.</>
+                )}
+              </Text>
+            )}
           </Box>
 
           {/* Diagram Representation */}
@@ -196,7 +257,7 @@ function App() {
               {/* Pie Chart with Percentage Label */}
               <Box bg="gray.700" borderRadius="md" p={4} display="flex" alignItems="center" justifyContent="center">
                 {pieData.length > 0 ? (
-                  <PieResponsiveContainer width={250} height={250}>
+                  <PieResponsiveContainer width={350} height={350}>
                     <PieChart>
                       <Pie
                         data={pieData}
@@ -243,6 +304,12 @@ function App() {
     </Provider>
   );
 }
+
+const classifiers = createListCollection({
+  items: [
+    { label: "MobileNet", value: "MobileNet" },
+  ],
+});
 
 export default App;
 
