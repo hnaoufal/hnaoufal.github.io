@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { AnimatePresence, motion } from "framer-motion";
 
-const cleanModelURL = "https://hnaoufal.github.io/tensorflow-js/build/modelClean.json";
-const bestModelURL  = "https://hnaoufal.github.io/tensorflow-js/build/modelBase.json";
-const overModelURL  = "https://hnaoufal.github.io/tensorflow-js/build/modelOver.json";
+const cleanModelURL = process.env.PUBLIC_URL + "https://hnaoufal.github.io/dl/tensorflow-js/build/modelClean.json";
+const bestModelURL  = process.env.PUBLIC_URL + "https://hnaoufal.github.io/dl/tensorflow-js/build/modelBase.json";
+const overModelURL  = process.env.PUBLIC_URL + "https://hnaoufal.github.io/dl/tensorflow-js/build/modelOver.json";
 
 
 // Utility: generate Gaussian noise
@@ -129,9 +129,9 @@ export default function App() {
   // On data change: load & evaluate saved models
   useEffect(() => {
     if (dataClean.test.length) {
-      evaluate(cleanModelURL, "cleanLoaded", dataClean.test);
-      evaluate(bestModelURL,  "bestLoaded",  dataNoisy.test);
-      evaluate(overModelURL,  "overLoaded",  dataNoisy.test);
+    //  evaluate(cleanModelURL, "cleanLoaded", dataClean.test);
+    //  evaluate(bestModelURL,  "bestLoaded",  dataNoisy.test);
+    //  evaluate(overModelURL,  "overLoaded",  dataNoisy.test);
     }
   }, [dataClean, dataNoisy]);
 
@@ -544,27 +544,60 @@ export default function App() {
               </div>
             </>
           )}
-              {/* Render loaded-model results */}
-          <section style={{ marginTop: 40 }}>
-            {predictions.cleanLoaded && (
-              <div style={{ marginBottom: 40 }}>
-                <h4 className="text-2xl font-bold">Loaded Clean Model Test (MSE = {losses.cleanLoaded.toFixed(4)})</h4>
-                <Line data={makeData(dataClean.test, predictions.cleanLoaded)} />
+              {histories.clean && (
+            <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Clean Train (MSE={losses.clean.train.toFixed(4)})
+                </h4>
+                <Line
+                  data={makeData(dataClean.train, predictions.clean.train)}
+                />
               </div>
-            )}
-            {predictions.bestLoaded && (
-              <div style={{ marginBottom: 40 }}>
-                <h4 className="text-2xl font-bold">Loaded Best Model Test (MSE = {losses.bestLoaded.toFixed(4)})</h4>
-                <Line data={makeData(dataNoisy.test, predictions.bestLoaded)} />
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Clean Test (MSE={losses.clean.test.toFixed(4)})
+                </h4>
+                <Line data={makeData(dataClean.test, predictions.clean.test)} />
               </div>
-            )}
-            {predictions.overLoaded && (
-              <div>
-                <h4 className="text-2xl font-bold">Loaded Overfit Model Test (MSE = {losses.overLoaded.toFixed(4)})</h4>
-                <Line data={makeData(dataNoisy.test, predictions.overLoaded)} />
+            </div>
+          )}
+          {histories.best && (
+            <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Best-Fit Train (MSE={losses.best.train.toFixed(4)})
+                </h4>
+                <Line
+                  data={makeData(dataNoisy.train, predictions.best.train)}
+                />
               </div>
-            )}
-          </section>
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Best-Fit Test (MSE={losses.best.test.toFixed(4)})
+                </h4>
+                <Line data={makeData(dataNoisy.test, predictions.best.test)} />
+              </div>
+            </div>
+          )}
+          {histories.over && (
+            <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Over-Fit Train (MSE={losses.over.train.toFixed(4)})
+                </h4>
+                <Line
+                  data={makeData(dataNoisy.train, predictions.over.train)}
+                />
+              </div>
+              <div style={{ flex: 1 }}>
+                <h4 className="text-2xl font-bold">
+                  Over-Fit Test (MSE={losses.over.test.toFixed(4)})
+                </h4>
+                <Line data={makeData(dataNoisy.test, predictions.over.test)} />
+              </div>
+            </div>
+          )}
           <AnimatePresence>
             {showDocuModal && (
               <motion.div
