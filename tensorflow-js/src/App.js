@@ -587,7 +587,7 @@ export default function App() {
               </div>
             </>
           )}
-          {predictions.clean?.train && losses.clean.train && losses.clean.test && (
+          {predictions.clean?.train && predictions.clean?.test && losses.clean.train && losses.clean.test && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
@@ -605,7 +605,7 @@ export default function App() {
               </div>
             </div>
           )}
-          {predictions.clean?.train && losses.best.test && losses.best.train && (
+          {predictions.best?.train && predictions.best?.test && losses.best.test && losses.best.train && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
@@ -623,7 +623,7 @@ export default function App() {
               </div>
             </div>
           )}
-          {predictions.clean?.train && losses.over.train && losses.over.test && (
+          {predictions.over?.train && predictions.over?.test && losses.over.train && losses.over.test && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
