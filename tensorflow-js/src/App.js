@@ -129,9 +129,9 @@ export default function App() {
   // On data change: load & evaluate saved models
   useEffect(() => {
     if (dataClean.test.length) {
-    //  evaluate(cleanModelURL, "cleanLoaded", dataClean.test);
-    //  evaluate(bestModelURL,  "bestLoaded",  dataNoisy.test);
-    //  evaluate(overModelURL,  "overLoaded",  dataNoisy.test);
+      evaluate(cleanModelURL, "cleanLoaded", dataClean.test);
+      evaluate(bestModelURL,  "bestLoaded",  dataNoisy.test);
+      evaluate(overModelURL,  "overLoaded",  dataNoisy.test);
     }
   }, [dataClean, dataNoisy]);
 
