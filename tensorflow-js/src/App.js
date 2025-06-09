@@ -5,9 +5,9 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { AnimatePresence, motion } from "framer-motion";
 
-const cleanModelURL = process.env.PUBLIC_URL + "https://hnaoufal.github.io/tensorflow-js/build/modelClean.json";
-const bestModelURL  = process.env.PUBLIC_URL + "https://hnaoufal.github.io/tensorflow-js/build/modelBest.json";
-const overModelURL  = process.env.PUBLIC_URL + "https://hnaoufal.github.io/tensorflow-js/build/modelOver.json";
+const cleanModelURL = process.env.PUBLIC_URL + "/modelClean.json";
+const bestModelURL  = process.env.PUBLIC_URL + "/modelBest.json";
+const overModelURL  = process.env.PUBLIC_URL + "/modelOver.json";
 
 
 // Utility: generate Gaussian noise
