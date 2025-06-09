@@ -5,6 +5,10 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { AnimatePresence, motion } from "framer-motion";
 
+if (process.env.PUBLIC_URL === undefined) {
+  console.error("PUBLIC_URL is not defined. Please set it in your environment variables.");
+}
+
 const cleanModelURL = process.env.PUBLIC_URL + "/modelClean.json";
 const bestModelURL  = process.env.PUBLIC_URL + "/modelBest.json";
 const overModelURL  = process.env.PUBLIC_URL + "/modelOver.json";
@@ -63,17 +67,11 @@ export default function App() {
     clean: null,
     best: null,
     over: null,
-    cleanLoaded: null,
-    bestLoaded: null,
-    overLoaded: null,
   });
   const [losses, setLosses] = useState({
     clean: {},
     best: {},
     over: {},
-    cleanLoaded: {},
-    bestLoaded: {},
-    overLoaded: {},
   });
 
   const [training, setTraining] = useState(false);
@@ -97,7 +95,7 @@ export default function App() {
 
     setHistories({ clean: null, best: null, over: null });
     // reset loaded predictions
-    setPredictions(prev => ({ ...prev, cleanLoaded: null, bestLoaded: null, overLoaded: null }));
+    setPredictions(prev => ({ ...prev, clean: null, best: null, over: null }));
   };
 
   // On mount: generate data
@@ -115,23 +113,61 @@ export default function App() {
   const toLabel  = arr => tf.tensor2d(arr.map(d => d.y), [arr.length, 1]);
 
   // Evaluate a saved model on a dataset
-  async function evaluate(modelUrl, key, dataset) {
-    const model = await tf.loadLayersModel(modelUrl);
+  /**
+   * modelKey: one of "clean" | "best" | "over"
+   * split:    one of "train" | "test"
+   */
+  async function evaluate(modelUrl, modelKey, split, dataset) {
+    let model;
+    try {
+      model = await tf.loadLayersModel(modelUrl);
+    } catch (error) {
+      // fallback to your GitHub host
+      model = await tf.loadLayersModel("https://hnaoufal.github.io/" + modelUrl);
+    }
+
+    // prepare inputs & ground-truth
     const xs = toTensor(dataset);
     const ysTrue = dataset.map(d => d.y);
-    const preds = model.predict(xs).arraySync().flat();
-    const mse = preds.reduce((sum, p, i) => sum + Math.pow(p - ysTrue[i], 2), 0) / preds.length;
 
-    setPredictions(prev => ({ ...prev, [key]: preds }));
-    setLosses(prev => ({ ...prev, [key]: mse }));
+    // get predictions
+    const preds = model.predict(xs).arraySync().flat();
+
+    // compute MSE
+    const mseVal = preds.reduce((sum, p, i) =>
+      sum + Math.pow(p - ysTrue[i], 2), 0
+    ) / preds.length;
+
+    // merge into the existing nested state
+    setPredictions(prev => ({
+      ...prev,
+      [modelKey]: {
+        ...prev[modelKey],
+        [split]: preds
+      }
+    }));
+
+    setLosses(prev => ({
+      ...prev,
+      [modelKey]: {
+        ...prev[modelKey],
+        [split]: mseVal
+      }
+    }));
   }
+
 
   // On data change: load & evaluate saved models
   useEffect(() => {
     if (dataClean.test.length) {
-      evaluate(cleanModelURL, "cleanLoaded", dataClean.test);
-      evaluate(bestModelURL,  "bestLoaded",  dataNoisy.test);
-      evaluate(overModelURL,  "overLoaded",  dataNoisy.test);
+      evaluate(cleanModelURL, "clean", 'test', dataClean.test);
+      evaluate(cleanModelURL, "clean", 'train', dataClean.train);
+
+      evaluate(bestModelURL,  "best", 'test',  dataNoisy.test);
+      evaluate(bestModelURL,  "best",  'train', dataNoisy.train);
+
+      evaluate(overModelURL,  "over",  'test', dataNoisy.test);
+      evaluate(overModelURL,  "over",  'train', dataNoisy.train);
     }
   }, [dataClean, dataNoisy]);
 
@@ -171,7 +207,7 @@ export default function App() {
       best:  { train: mse(pBestT, dataNoisy.train.map(d=>d.y)),   test: mse(pBestV, dataNoisy.test.map(d=>d.y)) },
       over:  { train: mse(pOverT, dataNoisy.train.map(d=>d.y)),   test: mse(pOverV, dataNoisy.test.map(d=>d.y)) },
     });
-    setPredictions({ clean: { train: pCleanT, test: pCleanV }, best: { train: pBestT, test: pBestV }, over: { train: pOverT, test: pOverV }, cleanLoaded: null, bestLoaded: null, overLoaded: null });
+    setPredictions({ clean: { train: pCleanT, test: pCleanV }, best: { train: pBestT, test: pBestV }, over: { train: pOverT, test: pOverV } });
     setHistories({ clean: hClean, best: hBest, over: hOver });
     setTraining(false);
   };
@@ -544,7 +580,7 @@ export default function App() {
               </div>
             </>
           )}
-              {histories.clean && (
+          {predictions.clean?.train && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
@@ -562,7 +598,7 @@ export default function App() {
               </div>
             </div>
           )}
-          {histories.best && (
+          {predictions.clean?.train && losses.best.test && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
@@ -580,7 +616,7 @@ export default function App() {
               </div>
             </div>
           )}
-          {histories.over && (
+          {predictions.clean?.train && losses.over.train && (
             <div style={{ display: "flex", gap: 20, marginTop: 40 }}>
               <div style={{ flex: 1 }}>
                 <h4 className="text-2xl font-bold">
