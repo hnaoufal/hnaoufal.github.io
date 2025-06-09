@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tensorflow-js/build/static/css/main.acdc6647.css",
-    "main.js": "/tensorflow-js/build/static/js/main.37b0d1be.js",
+    "main.css": "/tensorflow-js/build/static/css/main.2799f97f.css",
+    "main.js": "/tensorflow-js/build/static/js/main.e246a451.js",
     "static/js/453.e4d9d5ff.chunk.js": "/tensorflow-js/build/static/js/453.e4d9d5ff.chunk.js",
     "index.html": "/tensorflow-js/build/index.html",
-    "main.acdc6647.css.map": "/tensorflow-js/build/static/css/main.acdc6647.css.map",
-    "main.37b0d1be.js.map": "/tensorflow-js/build/static/js/main.37b0d1be.js.map",
+    "main.2799f97f.css.map": "/tensorflow-js/build/static/css/main.2799f97f.css.map",
+    "main.e246a451.js.map": "/tensorflow-js/build/static/js/main.e246a451.js.map",
     "453.e4d9d5ff.chunk.js.map": "/tensorflow-js/build/static/js/453.e4d9d5ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acdc6647.css",
-    "static/js/main.37b0d1be.js"
+    "static/css/main.2799f97f.css",
+    "static/js/main.e246a451.js"
   ]
 }

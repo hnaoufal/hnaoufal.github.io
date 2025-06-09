@@ -390,7 +390,8 @@ export default function App() {
             </div>
           </form>
           <div className="flex-col flex">
-            <h4 className="text-2xl font-bold mb-4">(NEUE!) Modelle herunterladen</h4>
+            <h4 className="text-2xl font-bold mb-4">Modelle herunterladen</h4>
+            <h5 className="text-xl mb-4">Modelle werden neu erzeugt wenn parameter akt. werden</h5>
             {modelBest ? (
               <button
                 type="button"
@@ -400,7 +401,9 @@ export default function App() {
                 Download Best-Model
               </button>
             ) : (
-              <span>Neues Best Model noch nicht trainiert</span>
+              <span>
+                <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/modelClean.json" target="_blank" rel="noopener noreferrer">akt. Model Clean (json)</a> - <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/model_clean.weights.bin" target="_blank" rel="noopener noreferrer">akt. Model Clean (bin)</a>
+              </span>
             )}
             {modelOver ? (
               <button
@@ -411,7 +414,9 @@ export default function App() {
                 Download Overfit-Model
               </button>
             ) : (
-              <span>Neues Overfit Model noch nicht trainiert</span>
+              <span>
+                <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/modelBest.json" target="_blank" rel="noopener noreferrer">akt. Model Best (json)</a> - <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/model_best.weights.bin" target="_blank" rel="noopener noreferrer">akt. Model Best (bin)</a>
+              </span>
             )}
             {modelClean ? (
               <button
@@ -422,7 +427,9 @@ export default function App() {
                 Download Clean-Model
               </button>
             ) : (
-              <span>Neues Clean Model noch nicht trainiert</span>
+              <span>
+                <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/modelOver.json" target="_blank" rel="noopener noreferrer">akt. Model Over (json)</a> - <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://hnaoufal.github.io/tensorflow-js/build/model_over.weights.bin" target="_blank" rel="noopener noreferrer">akt. Model Over (bin)</a>
+              </span>
             )}
           </div>
         </div>
