@@ -390,7 +390,7 @@ export default function App() {
             </div>
           </form>
           <div className="flex-col flex">
-            <h4 className="text-2xl font-bold mb-4">Modelle herunterladen</h4>
+            <h4 className="text-2xl font-bold mb-4">(NEUE!) Modelle herunterladen</h4>
             {modelBest ? (
               <button
                 type="button"
@@ -400,7 +400,7 @@ export default function App() {
                 Download Best-Model
               </button>
             ) : (
-              <span>Best Model noch nicht trainiert</span>
+              <span>Neues Best Model noch nicht trainiert</span>
             )}
             {modelOver ? (
               <button
@@ -411,7 +411,7 @@ export default function App() {
                 Download Overfit-Model
               </button>
             ) : (
-              <span>Overfit Model noch nicht trainiert</span>
+              <span>Neues Overfit Model noch nicht trainiert</span>
             )}
             {modelClean ? (
               <button
@@ -422,7 +422,7 @@ export default function App() {
                 Download Clean-Model
               </button>
             ) : (
-              <span>Clean Model noch nicht trainiert</span>
+              <span>Neues Clean Model noch nicht trainiert</span>
             )}
           </div>
         </div>
