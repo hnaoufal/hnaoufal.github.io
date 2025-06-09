@@ -2,6 +2,7 @@
   "name": "tensorflow-js",
   "version": "0.1.0",
   "private": true,
+   "homepage": "https://hnaoufal.github.io/tensorflow-js/build/",
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "@testing-library/dom": "^10.4.0",
